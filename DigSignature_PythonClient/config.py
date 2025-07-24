@@ -4,7 +4,7 @@ Configuration module for PiSignage Device Simulator - Simplified Version
 """
 
 # Device Presets - Different types of devices to simulate
-DEVICE_PRESETS = {
+DEVICE_PRESETS = { 
     "Android Tablet 10\" (1920x1080)": {
         "resolution": "1920x1080",
         "orientation": "landscape",
