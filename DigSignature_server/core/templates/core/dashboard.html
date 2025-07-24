@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - piSignage{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Dashboard</h1>
+        <hr>
+    </div>
+</div>
+
+<!-- Stats Cards (exactamente como el original) -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-desktop fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">12</div>
+                        <div>Total Players</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'players_list' %}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-check-circle fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">8</div>
+                        <div>Online Players</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'players_list' %}?status=online">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-file fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">45</div>
+                        <div>Total Assets</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'assets_list' %}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-list fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">7</div>
+                        <div>Total Playlists</div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'playlists_list' %}">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Players Status Table -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-desktop"></i> Players Status
+                    <button class="btn btn-xs btn-default pull-right" 
+                            hx-get="{% url 'dashboard_players_status' %}" 
+                            hx-target="#players-status-table"
+                            title="Refresh">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="players-status-table" 
+                     hx-get="{% url 'dashboard_players_status' %}" 
+                     hx-trigger="every 45s"
+                     data-auto-refresh="true" 
+                     data-refresh-url="{% url 'dashboard_players_status' %}">
+                    <!-- Content loaded via HTMX -->
+                    {% include 'partials/players_status_table.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Player Registered</h4>
+                        <p class="list-group-item-text">
+                            Lobby Display (1234567890123456)
+                            <small class="pull-right text-muted">5 minutes ago</small>
+                        </p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Playlist Updated</h4>
+                        <p class="list-group-item-text">
+                            Welcome Playlist modified
+                            <small class="pull-right text-muted">1 hour ago</small>
+                        </p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Asset Uploaded</h4>
+                        <p class="list-group-item-text">
+                            company_video.mp4 processed successfully
+                            <small class="pull-right text-muted">2 hours ago</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-exclamation-triangle"></i> System Status</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <span class="badge" style="background-color: #27ae60;">OK</span>
+                        Storage Space
+                    </div>
+                    <div class="list-group-item">
+                        <span class="badge" style="background-color: #27ae60;">OK</span>
+                        Database Connection
+                    </div>
+                    <div class="list-group-item">
+                        <span class="badge" style="background-color: #f39c12;">4</span>
+                        Offline Players
+                    </div>
+                    <div class="list-group-item">
+                        <span class="badge" style="background-color: #3498db;">2</span>
+                        Processing Assets
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

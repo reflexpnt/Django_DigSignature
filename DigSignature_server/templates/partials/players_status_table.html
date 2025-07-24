@@ -1,0 +1,138 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr style="background: #34495e; color: white;">
+                <th>Name</th>
+                <th>Device ID</th>
+                <th>Group</th>
+                <th>Status</th>
+                <th>Last Seen</th>
+                <th>IP Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>Lobby Display</strong>
+                    <br><small class="text-muted">v5.3.2</small>
+                </td>
+                <td><code>1234567890123456</code></td>
+                <td>
+                    <span class="label label-info">Default Group</span>
+                </td>
+                <td>
+                    <span class="label label-success">
+                        <i class="fa fa-circle status-online"></i> Online
+                    </span>
+                </td>
+                <td>
+                    <span title="2024-01-15 10:30:00">2 minutes ago</span>
+                </td>
+                <td>
+                    <a href="http://192.168.1.100:8000" target="_blank" title="Open Player WebUI">
+                        192.168.1.100
+                    </a>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{% url 'player_detail' 1 %}" 
+                           class="btn btn-xs btn-info" title="View Details">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button class="btn btn-xs btn-warning" 
+                                hx-post="{% url 'player_sync' 1 %}"
+                                hx-confirm="Sync player Lobby Display?"
+                                title="Force Sync">
+                            <i class="fa fa-refresh"></i>
+                        </button>
+                        <a href="{% url 'player_edit' 1 %}" 
+                           class="btn btn-xs btn-default" title="Edit">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Reception Screen</strong>
+                    <br><small class="text-muted">v5.3.1</small>
+                </td>
+                <td><code>2345678901234567</code></td>
+                <td>
+                    <span class="label label-info">Reception</span>
+                </td>
+                <td>
+                    <span class="label label-danger">
+                        <i class="fa fa-circle status-offline"></i> Offline
+                    </span>
+                </td>
+                <td>
+                    <span title="2024-01-15 09:15:00">1 hour ago</span>
+                </td>
+                <td>
+                    <span class="text-muted">Unknown</span>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{% url 'player_detail' 2 %}" 
+                           class="btn btn-xs btn-info" title="View Details">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button class="btn btn-xs btn-warning" 
+                                hx-post="{% url 'player_sync' 2 %}"
+                                hx-confirm="Sync player Reception Screen?"
+                                title="Force Sync">
+                            <i class="fa fa-refresh"></i>
+                        </a>
+                        <a href="{% url 'player_edit' 2 %}" 
+                           class="btn btn-xs btn-default" title="Edit">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Cafeteria Menu</strong>
+                    <br><small class="text-muted">v5.3.2</small>
+                </td>
+                <td><code>3456789012345678</code></td>
+                <td>
+                    <span class="label label-info">Cafeteria</span>
+                </td>
+                <td>
+                    <span class="label label-warning">
+                        <i class="fa fa-refresh status-syncing fa-spin"></i> Syncing
+                    </span>
+                </td>
+                <td>
+                    <span title="2024-01-15 10:28:00">4 minutes ago</span>
+                </td>
+                <td>
+                    <a href="http://192.168.1.102:8000" target="_blank" title="Open Player WebUI">
+                        192.168.1.102
+                    </a>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{% url 'player_detail' 3 %}" 
+                           class="btn btn-xs btn-info" title="View Details">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button class="btn btn-xs btn-warning" 
+                                hx-post="{% url 'player_sync' 3 %}"
+                                hx-confirm="Sync player Cafeteria Menu?"
+                                title="Force Sync" disabled>
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </button>
+                        <a href="{% url 'player_edit' 3 %}" 
+                           class="btn btn-xs btn-default" title="Edit">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
