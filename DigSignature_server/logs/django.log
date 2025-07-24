@@ -201,3 +201,4 @@ INFO 2025-07-24 10:32:36,613 basehttp 4808 11536 "GET /admin/core/systemsettings
 INFO 2025-07-24 10:32:37,954 basehttp 4808 11536 "GET /admin/scheduling/schedule/add/ HTTP/1.1" 200 26023
 INFO 2025-07-24 10:32:38,002 basehttp 4808 11536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-07-24 10:32:41,779 basehttp 4808 11536 "GET /admin/core/systemsettings/ HTTP/1.1" 200 15053
+INFO 2025-07-24 10:49:01,724 autoreload 16900 1924 Watching for file changes with StatReloader
