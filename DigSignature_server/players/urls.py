@@ -20,4 +20,22 @@ urlpatterns = [
     path('groups/<int:pk>/edit/', views.group_edit, name='group_edit'),
     path('groups/<int:pk>/delete/', views.group_delete, name='group_delete'),
     path('groups/<int:pk>/deploy/', views.group_deploy, name='group_deploy'),
+
+    # === NUEVAS URLs PARA LOGS ===
+    
+    # API endpoints para logs desde dispositivos Android
+    path('api/logs/batch/', views.device_log_batch, name='device_log_batch'),
+    path('api/logs/single/', views.device_log_single, name='device_log_single'),
+    
+    # Vista terminal de logs para un dispositivo específico
+    path('<str:device_id>/logs/', views.device_logs_terminal, name='device_logs_terminal'),
+    path('<str:device_id>/logs/api/', views.device_logs_api, name='device_logs_api'),
+    
+    # Shortcuts para acceso rápido a logs
+    path('<int:pk>/logs-redirect/', views.device_logs_redirect, name='device_logs_redirect'),
+
+
+    # API para registro de players
+    path('api/register/', views.api_register_player, name='api_register_player'),
+    path('api/list/', views.api_list_players, name='api_list_players'),
 ]
