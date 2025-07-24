@@ -288,7 +288,8 @@ def device_logs_terminal(request, device_id):
     search = request.GET.get('search', '')
     
     # Construir queryset
-    logs = player.get_recent_logs(hours=hours)
+    #logs = player.get_recent_logs(hours=hours)
+    logs = player.get_recent_logs(hours=hours).order_by('device_timestamp')
     
     if level_filter:
         logs = logs.filter(level=level_filter)
@@ -329,7 +330,8 @@ def device_logs_api(request, device_id):
     level_filter = request.GET.get('level', '')
     hours = int(request.GET.get('hours', 1))
     
-    logs = player.get_recent_logs(hours=hours)
+    #logs = player.get_recent_logs(hours=hours)
+    logs = player.get_recent_logs(hours=hours).order_by('device_timestamp')
     
     if level_filter:
         logs = logs.filter(level=level_filter)

@@ -355,3 +355,1752 @@ INFO 2025-07-24 19:57:37,288 basehttp 17512 15992 "GET /players/A1B2C3D4E5F6G7H8
 INFO 2025-07-24 19:58:07,334 basehttp 17512 15992 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 15181
 INFO 2025-07-24 19:58:38,204 basehttp 17512 15992 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 15181
 INFO 2025-07-24 19:59:09,200 basehttp 17512 15992 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 15181
+INFO 2025-07-24 21:26:15,580 autoreload 10428 6720 Watching for file changes with StatReloader
+ERROR 2025-07-24 21:26:26,444 log 10428 8276 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\core\views.py", line 13, in dashboard
+    return render(request, 'core/dashboard.html', context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'schedules_list' not found. 'schedules_list' is not a valid view function or pattern name.
+ERROR 2025-07-24 21:26:26,452 basehttp 10428 8276 "GET / HTTP/1.1" 500 155502
+INFO 2025-07-24 21:26:38,632 basehttp 10428 8276 "GET /admin HTTP/1.1" 301 0
+INFO 2025-07-24 21:26:38,650 basehttp 10428 16516 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:26:38,707 basehttp 10428 16516 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-07-24 21:26:38,813 basehttp 10428 16516 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-07-24 21:26:38,817 basehttp 10428 7840 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-07-24 21:26:38,823 basehttp 10428 16516 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-07-24 21:26:38,828 basehttp 10428 7840 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-07-24 21:26:38,838 basehttp 10428 16516 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-07-24 21:26:38,851 basehttp 10428 7840 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-07-24 21:26:38,859 basehttp 10428 16516 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-24 21:26:40,964 basehttp 10428 16516 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4341
+INFO 2025-07-24 21:26:52,430 basehttp 10428 16516 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:26:52,455 basehttp 10428 16516 "GET /admin/ HTTP/1.1" 200 17725
+INFO 2025-07-24 21:26:52,535 basehttp 10428 16516 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-07-24 21:26:52,543 basehttp 10428 17776 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-07-24 21:26:52,552 basehttp 10428 16516 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-07-24 21:26:52,552 basehttp 10428 7840 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-07-24 21:26:52,552 basehttp 10428 6812 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+ERROR 2025-07-24 21:27:19,131 log 10428 6812 Internal Server Error: /admin/content/layout/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'playlist_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Layout has no field named 'playlist_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ~~~~^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py", line 81, in playlist_count
+    count = obj.playlists.count()
+            ^^^^^^^^^^^^^
+AttributeError: 'Layout' object has no attribute 'playlists'. Did you mean: 'playlist_set'?
+ERROR 2025-07-24 21:27:19,145 basehttp 10428 6812 "GET /admin/content/layout/ HTTP/1.1" 500 414875
+INFO 2025-07-24 21:27:30,500 basehttp 10428 6812 "GET /admin/ HTTP/1.1" 200 17725
+ERROR 2025-07-24 21:27:34,197 log 10428 6812 Internal Server Error: /admin/content/label/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'asset_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Label has no field named 'asset_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ~~~~^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py", line 23, in asset_count
+    count = obj.assets.count()
+            ^^^^^^^^^^
+AttributeError: 'Label' object has no attribute 'assets'
+ERROR 2025-07-24 21:27:34,209 basehttp 10428 6812 "GET /admin/content/label/ HTTP/1.1" 500 413786
+INFO 2025-07-24 21:27:36,025 basehttp 10428 6812 "GET /admin/ HTTP/1.1" 200 17725
+INFO 2025-07-24 21:27:44,595 basehttp 10428 6812 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:27:44,663 basehttp 10428 6812 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-07-24 21:27:44,670 basehttp 10428 17776 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-07-24 21:27:44,670 basehttp 10428 6812 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-07-24 21:27:44,675 basehttp 10428 17776 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-07-24 21:27:44,675 basehttp 10428 6812 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-07-24 21:27:44,679 basehttp 10428 7840 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:27:44,680 basehttp 10428 6812 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-07-24 21:27:44,680 basehttp 10428 17776 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-07-24 21:27:44,682 basehttp 10428 16516 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-07-24 21:27:44,685 basehttp 10428 6812 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-07-24 21:27:44,686 basehttp 10428 7840 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-07-24 21:27:44,700 basehttp 10428 17776 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-07-24 21:27:44,711 basehttp 10428 17776 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-07-24 21:27:44,715 basehttp 10428 17776 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-07-24 21:27:44,715 basehttp 10428 7840 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-07-24 21:27:59,863 basehttp 10428 7840 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:27:59,932 basehttp 10428 7840 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:27:59,940 basehttp 10428 17776 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+ERROR 2025-07-24 21:28:14,450 log 10428 17776 Internal Server Error: /admin/content/layout/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'playlist_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Layout has no field named 'playlist_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ~~~~^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py", line 81, in playlist_count
+    count = obj.playlists.count()
+            ^^^^^^^^^^^^^
+AttributeError: 'Layout' object has no attribute 'playlists'. Did you mean: 'playlist_set'?
+ERROR 2025-07-24 21:28:14,462 basehttp 10428 17776 "GET /admin/content/layout/ HTTP/1.1" 500 414894
+INFO 2025-07-24 21:30:09,365 autoreload 10428 6720 C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py changed, reloading.
+INFO 2025-07-24 21:30:10,094 autoreload 2668 13216 Watching for file changes with StatReloader
+INFO 2025-07-24 21:30:23,772 basehttp 2668 17288 "GET /admin/players/devicelog/ HTTP/1.1" 200 23933
+INFO 2025-07-24 21:30:23,845 basehttp 2668 17288 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,849 basehttp 2668 15660 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,850 basehttp 2668 17288 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,856 basehttp 2668 13080 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,856 basehttp 2668 9228 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,857 basehttp 2668 15660 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,857 basehttp 2668 3948 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,858 basehttp 2668 17288 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,860 basehttp 2668 13080 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,861 basehttp 2668 9228 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,862 basehttp 2668 15660 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,864 basehttp 2668 17288 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,865 basehttp 2668 3948 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,866 basehttp 2668 13080 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,867 basehttp 2668 15660 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,870 basehttp 2668 7288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:30:23,872 basehttp 2668 15660 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,875 basehttp 2668 15660 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,886 basehttp 2668 15660 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,888 basehttp 2668 15660 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:23,889 basehttp 2668 7288 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:27,471 basehttp 2668 7288 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:30:27,539 basehttp 2668 7288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:30:27,553 basehttp 2668 7288 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:30:27,570 basehttp 2668 15660 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+ERROR 2025-07-24 21:30:31,793 log 2668 15660 Internal Server Error: /admin/content/label/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'asset_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: Label has no field named 'asset_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ~~~~^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py", line 23, in asset_count
+    count = obj.assets.count()
+            ^^^^^^^^^^
+AttributeError: 'Label' object has no attribute 'assets'
+ERROR 2025-07-24 21:30:31,810 basehttp 2668 15660 "GET /admin/content/label/ HTTP/1.1" 500 412733
+INFO 2025-07-24 21:32:11,420 autoreload 2668 13216 C:\laragon\www\Django_DigSignature\DigSignature_server\content\admin.py changed, reloading.
+INFO 2025-07-24 21:32:12,097 autoreload 18840 5724 Watching for file changes with StatReloader
+INFO 2025-07-24 21:32:17,472 basehttp 18840 7980 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:32:17,555 basehttp 18840 7980 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:32:46,024 basehttp 18840 7980 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:32:46,098 basehttp 18840 7980 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:32:46,102 basehttp 18840 13392 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:32:52,524 basehttp 18840 13392 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:32:52,591 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-07-24 21:32:54,597 log 18840 13392 Internal Server Error: /admin/playlists/playlist/1/change/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_active_now'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: PlaylistSchedule has no field named 'is_active_now'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\playlists\admin.py", line 46, in is_active_now
+    if obj.is_active_now():
+       ~~~~~~~~~~~~~~~~~^^
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\playlists\models.py", line 276, in is_active_now
+    if self.start_time <= self.end_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'NoneType' and 'NoneType'
+ERROR 2025-07-24 21:32:54,622 basehttp 18840 13392 "GET /admin/playlists/playlist/1/change/ HTTP/1.1" 500 651452
+INFO 2025-07-24 21:32:56,314 basehttp 18840 13392 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:33:02,308 basehttp 18840 13392 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:33:02,366 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:03,490 basehttp 18840 13392 "GET /admin/content/layout/1/change/ HTTP/1.1" 200 24233
+INFO 2025-07-24 21:33:03,540 basehttp 18840 13392 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:33:03,559 basehttp 18840 7980 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:33:03,564 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:03,564 basehttp 18840 7980 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-07-24 21:33:03,568 basehttp 18840 13392 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:33:05,045 basehttp 18840 13392 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:33:06,461 basehttp 18840 13392 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:33:06,519 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:07,442 basehttp 18840 13392 "GET /admin/content/label/3/change/ HTTP/1.1" 200 17516
+INFO 2025-07-24 21:33:07,497 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:09,569 basehttp 18840 13392 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:33:13,790 basehttp 18840 13392 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:33:13,845 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:15,358 basehttp 18840 13392 "GET /admin/players/group/1/change/ HTTP/1.1" 200 26395
+INFO 2025-07-24 21:33:15,425 basehttp 18840 7980 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:33:15,427 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:33:15,464 basehttp 18840 13392 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-07-24 21:33:17,177 basehttp 18840 13392 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:33:19,711 basehttp 18840 13392 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:33:19,765 basehttp 18840 13392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-07-24 21:33:21,246 log 18840 13392 Internal Server Error: /admin/playlists/playlist/1/change/
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_active_now'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: PlaylistSchedule has no field named 'is_active_now'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 722, in resolve
+    obj = self.var.resolve(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 925, in _resolve_lookup
+    current = current()
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\helpers.py", line 275, in contents
+    f, attr, value = lookup_field(field, obj, model_admin)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\playlists\admin.py", line 46, in is_active_now
+    if obj.is_active_now():
+       ~~~~~~~~~~~~~~~~~^^
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\playlists\models.py", line 276, in is_active_now
+    if self.start_time <= self.end_time:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'NoneType' and 'NoneType'
+ERROR 2025-07-24 21:33:21,263 basehttp 18840 13392 "GET /admin/playlists/playlist/1/change/ HTTP/1.1" 500 651452
+INFO 2025-07-24 21:36:23,652 autoreload 18840 5724 C:\laragon\www\Django_DigSignature\DigSignature_server\playlists\models.py changed, reloading.
+INFO 2025-07-24 21:36:24,349 autoreload 19392 9024 Watching for file changes with StatReloader
+INFO 2025-07-24 21:36:29,036 basehttp 19392 7844 "GET /admin/playlists/playlist/1/change/ HTTP/1.1" 200 44575
+INFO 2025-07-24 21:36:29,117 basehttp 19392 16360 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-07-24 21:36:29,124 basehttp 19392 6100 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:29,187 basehttp 19392 7844 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-07-24 21:36:29,192 basehttp 19392 7660 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-07-24 21:36:29,217 basehttp 19392 7660 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-07-24 21:36:36,161 basehttp 19392 7660 "GET /admin/content/asset/ HTTP/1.1" 200 18361
+INFO 2025-07-24 21:36:36,230 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:40,115 basehttp 19392 7660 "GET /admin/content/asset/add/ HTTP/1.1" 200 32070
+INFO 2025-07-24 21:36:40,167 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:40,196 basehttp 19392 7844 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-07-24 21:36:40,206 basehttp 19392 7660 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-07-24 21:36:40,270 basehttp 19392 7844 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:36:40,270 basehttp 19392 6100 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-07-24 21:36:40,279 basehttp 19392 7660 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-07-24 21:36:45,976 basehttp 19392 7660 "GET /admin/content/asset/ HTTP/1.1" 200 18361
+INFO 2025-07-24 21:36:47,823 basehttp 19392 7660 "GET /admin/content/assetconversion/ HTTP/1.1" 200 17362
+INFO 2025-07-24 21:36:47,876 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:52,855 basehttp 19392 7660 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:36:52,906 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:54,287 basehttp 19392 7660 "GET /admin/content/label/3/change/ HTTP/1.1" 200 17516
+INFO 2025-07-24 21:36:54,348 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:55,541 basehttp 19392 7660 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:36:56,666 basehttp 19392 7660 "GET /admin/content/label/6/change/ HTTP/1.1" 200 17540
+INFO 2025-07-24 21:36:56,718 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:36:58,065 basehttp 19392 7660 "GET /admin/content/label/ HTTP/1.1" 200 19906
+INFO 2025-07-24 21:36:59,213 basehttp 19392 7660 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:36:59,285 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:00,308 basehttp 19392 7660 "GET /admin/content/layout/1/change/ HTTP/1.1" 200 24233
+INFO 2025-07-24 21:37:00,368 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:01,698 basehttp 19392 7660 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:37:02,830 basehttp 19392 7660 "GET /admin/content/layout/3/change/ HTTP/1.1" 200 24499
+INFO 2025-07-24 21:37:02,891 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:09,998 basehttp 19392 7660 "GET /admin/content/layout/ HTTP/1.1" 200 22676
+INFO 2025-07-24 21:37:13,982 basehttp 19392 7660 "GET /admin/core/activitylog/ HTTP/1.1" 200 17169
+INFO 2025-07-24 21:37:14,036 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:17,183 basehttp 19392 7660 "GET /admin/core/activitylog/add/ HTTP/1.1" 200 20581
+INFO 2025-07-24 21:37:17,264 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:19,428 basehttp 19392 7660 "GET /admin/core/activitylog/ HTTP/1.1" 200 17169
+INFO 2025-07-24 21:37:23,675 basehttp 19392 7660 "GET /admin/core/systemsettings/ HTTP/1.1" 200 16437
+INFO 2025-07-24 21:37:23,729 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:25,196 basehttp 19392 7660 "GET /admin/core/systemsettings/1/change/ HTTP/1.1" 200 23921
+INFO 2025-07-24 21:37:25,261 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:39,908 basehttp 19392 7660 "GET /admin/core/systemsettings/ HTTP/1.1" 200 16437
+INFO 2025-07-24 21:37:46,767 basehttp 19392 7660 "GET /admin/players/devicelog/ HTTP/1.1" 200 23933
+INFO 2025-07-24 21:37:46,829 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:47,904 basehttp 19392 7660 "GET /admin/players/devicelog/8/change/ HTTP/1.1" 200 26691
+INFO 2025-07-24 21:37:47,960 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:50,069 basehttp 19392 7660 "GET /admin/players/devicelog/ HTTP/1.1" 200 23933
+INFO 2025-07-24 21:37:53,571 basehttp 19392 7660 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:37:53,624 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:54,659 basehttp 19392 7660 "GET /admin/players/group/1/change/ HTTP/1.1" 200 26395
+INFO 2025-07-24 21:37:54,728 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:56,286 basehttp 19392 7660 "GET /admin/players/group/ HTTP/1.1" 200 20150
+INFO 2025-07-24 21:37:57,584 basehttp 19392 7660 "GET /admin/players/player/ HTTP/1.1" 200 21105
+INFO 2025-07-24 21:37:57,637 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:37:58,616 basehttp 19392 7660 "GET /admin/players/player/1/change/ HTTP/1.1" 200 34064
+INFO 2025-07-24 21:37:58,679 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:00,040 basehttp 19392 7660 "GET /admin/players/player/ HTTP/1.1" 200 21105
+INFO 2025-07-24 21:38:01,404 basehttp 19392 7660 "GET /admin/players/synclog/ HTTP/1.1" 200 16893
+INFO 2025-07-24 21:38:01,457 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:05,538 basehttp 19392 7660 "GET /admin/playlists/playlistitem/ HTTP/1.1" 200 17786
+INFO 2025-07-24 21:38:05,594 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:07,316 basehttp 19392 7660 "GET /admin/playlists/playlistitem/add/ HTTP/1.1" 200 27354
+INFO 2025-07-24 21:38:07,370 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:08,901 basehttp 19392 7660 "GET /admin/playlists/playlistitem/ HTTP/1.1" 200 17786
+INFO 2025-07-24 21:38:09,983 basehttp 19392 7660 "GET /admin/playlists/playlistschedule/ HTTP/1.1" 200 16488
+INFO 2025-07-24 21:38:10,050 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:11,724 basehttp 19392 7660 "GET /admin/playlists/playlistschedule/add/ HTTP/1.1" 200 27132
+INFO 2025-07-24 21:38:11,784 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:13,816 basehttp 19392 7660 "GET /admin/playlists/playlistschedule/ HTTP/1.1" 200 16488
+INFO 2025-07-24 21:38:15,542 basehttp 19392 7660 "GET /admin/playlists/playliststats/ HTTP/1.1" 200 16788
+INFO 2025-07-24 21:38:15,595 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:18,656 basehttp 19392 7660 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:38:18,707 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:20,862 basehttp 19392 7660 "GET /admin/playlists/playlist/1/change/ HTTP/1.1" 200 44575
+INFO 2025-07-24 21:38:20,924 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:38:22,258 basehttp 19392 7660 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:40:31,009 basehttp 19392 7660 "GET /admin/players/player/ HTTP/1.1" 200 21105
+INFO 2025-07-24 21:40:31,090 basehttp 19392 7660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-07-24 21:44:16,573 log 19392 5416 Bad Request: /players/api/register/
+WARNING 2025-07-24 21:44:16,575 basehttp 19392 5416 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-24 21:44:16,617 basehttp 19392 5416 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 21:44:16,631 basehttp 19392 5416 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 21:44:16,644 basehttp 19392 5416 "POST /players/api/logs/single/ HTTP/1.1" 200 122
+INFO 2025-07-24 21:44:16,663 basehttp 19392 5416 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 21:44:16,694 basehttp 19392 5416 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:44:18,733 basehttp 19392 5416 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:44:20,775 basehttp 19392 5416 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:46:15,689 basehttp 19392 18764 "POST /players/api/register/ HTTP/1.1" 200 248
+INFO 2025-07-24 21:46:15,729 basehttp 19392 18764 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 21:46:15,742 basehttp 19392 18764 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 21:46:15,752 basehttp 19392 18764 "POST /players/api/logs/single/ HTTP/1.1" 200 123
+INFO 2025-07-24 21:46:15,770 basehttp 19392 18764 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 21:46:15,801 basehttp 19392 18764 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:46:17,833 basehttp 19392 18764 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:46:19,865 basehttp 19392 18764 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:46:45,502 basehttp 19392 2592 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16559
+INFO 2025-07-24 21:47:15,590 basehttp 19392 2592 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16559
+INFO 2025-07-24 21:47:45,645 basehttp 19392 2592 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16559
+INFO 2025-07-24 21:48:15,692 basehttp 19392 2592 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16559
+INFO 2025-07-24 21:48:45,737 basehttp 19392 2592 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16559
+INFO 2025-07-24 21:48:51,555 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:49:22,100 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 21891
+INFO 2025-07-24 21:49:22,186 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:49:22,221 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:49:30,054 basehttp 19392 2592 "GET /admin/content/asset/ HTTP/1.1" 200 18361
+INFO 2025-07-24 21:49:30,112 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:49:45,287 basehttp 19392 2592 "GET /admin/content/asset/add/ HTTP/1.1" 200 32070
+INFO 2025-07-24 21:49:45,355 basehttp 19392 2908 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-07-24 21:49:45,355 basehttp 19392 2592 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-07-24 21:49:45,364 basehttp 19392 2908 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-07-24 21:49:45,364 basehttp 19392 2592 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-07-24 21:49:45,370 basehttp 19392 2592 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-07-24 21:49:45,373 basehttp 19392 2908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:49:45,373 basehttp 19392 2592 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-07-24 21:49:45,376 basehttp 19392 2592 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-07-24 21:49:45,377 basehttp 19392 2908 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-07-24 21:49:45,399 basehttp 19392 2592 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-07-24 21:49:45,452 basehttp 19392 2592 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-07-24 21:49:45,478 basehttp 19392 2592 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-07-24 21:49:45,478 basehttp 19392 2908 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-07-24 21:49:53,208 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:50:24,212 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:50:55,214 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:51:26,195 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:51:57,197 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:52:05,961 basehttp 19392 2592 "POST /admin/content/asset/add/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:52:05,987 basehttp 19392 2592 "GET /admin/content/asset/ HTTP/1.1" 200 21961
+INFO 2025-07-24 21:52:06,049 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:52:22,347 basehttp 19392 2592 "GET /admin/playlists/playlist/ HTTP/1.1" 200 21256
+INFO 2025-07-24 21:52:22,407 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:52:25,820 basehttp 19392 2592 "GET /admin/playlists/playlist/add/ HTTP/1.1" 200 44082
+INFO 2025-07-24 21:52:25,891 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:52:25,895 basehttp 19392 2592 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-07-24 21:52:28,200 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:52:59,209 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:53:14,821 basehttp 19392 2592 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 537
+INFO 2025-07-24 21:53:26,590 basehttp 19392 2592 "POST /admin/playlists/playlist/add/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:53:26,620 basehttp 19392 2592 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22178
+INFO 2025-07-24 21:53:26,700 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:53:30,206 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:53:35,435 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 21891
+INFO 2025-07-24 21:53:35,490 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:53:53,128 basehttp 19392 2592 "GET /admin/players/group/ HTTP/1.1" 200 20154
+INFO 2025-07-24 21:53:53,179 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:53:58,820 basehttp 19392 2592 "GET /admin/players/group/add/ HTTP/1.1" 200 26118
+INFO 2025-07-24 21:53:58,886 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:54:01,215 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:54:26,548 basehttp 19392 2592 "POST /admin/players/group/add/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:54:26,576 basehttp 19392 2592 "GET /admin/players/group/ HTTP/1.1" 200 20991
+INFO 2025-07-24 21:54:26,624 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:54:31,760 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 22196
+INFO 2025-07-24 21:54:31,811 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:54:32,198 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14493
+INFO 2025-07-24 21:54:36,294 basehttp 19392 2592 "GET /admin/players/player/2/change/ HTTP/1.1" 200 34157
+INFO 2025-07-24 21:54:36,350 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:54:47,306 basehttp 19392 2592 "POST /admin/players/player/2/change/ HTTP/1.1" 302 0
+INFO 2025-07-24 21:54:47,329 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 22425
+INFO 2025-07-24 21:54:47,391 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:55:03,210 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 14489
+INFO 2025-07-24 21:55:03,601 basehttp 19392 2592 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22108
+INFO 2025-07-24 21:55:03,649 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:55:09,969 basehttp 19392 2592 "GET /admin/playlists/playlist/2/change/ HTTP/1.1" 200 48422
+INFO 2025-07-24 21:55:10,020 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:55:16,327 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 22192
+INFO 2025-07-24 21:55:16,398 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-07-24 21:55:32,019 log 19392 2364 Bad Request: /players/api/register/
+WARNING 2025-07-24 21:55:32,021 basehttp 19392 2364 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-24 21:55:32,075 basehttp 19392 2364 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1171
+INFO 2025-07-24 21:55:32,094 basehttp 19392 2364 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 21:55:32,109 basehttp 19392 2364 "POST /players/api/logs/single/ HTTP/1.1" 200 123
+INFO 2025-07-24 21:55:32,136 basehttp 19392 2364 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 21:55:32,172 basehttp 19392 2364 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:55:34,226 basehttp 19392 2364 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:55:34,238 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:55:36,265 basehttp 19392 2364 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 21:56:05,203 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:56:36,208 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:57:07,209 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:57:38,213 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:58:09,202 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:58:40,204 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:59:06,359 basehttp 19392 2592 "GET /admin/players/player/ HTTP/1.1" 200 22192
+INFO 2025-07-24 21:59:06,426 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:59:11,196 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 21:59:13,039 basehttp 19392 2592 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22108
+INFO 2025-07-24 21:59:13,093 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:59:19,900 basehttp 19392 2592 "GET /admin/playlists/playlist/2/change/ HTTP/1.1" 200 48422
+INFO 2025-07-24 21:59:19,962 basehttp 19392 2592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 21:59:42,208 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:00:13,199 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:00:44,206 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:01:15,205 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:01:46,214 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:02:17,220 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:02:48,197 basehttp 19392 2592 "GET /players/B2C3D4E5F6G7H8A1/logs/ HTTP/1.1" 200 15849
+INFO 2025-07-24 22:52:45,742 autoreload 19108 14080 Watching for file changes with StatReloader
+INFO 2025-07-24 23:03:41,429 basehttp 19108 8196 "POST /players/api/register/ HTTP/1.1" 200 244
+INFO 2025-07-24 23:03:41,483 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:03:41,499 basehttp 19108 8196 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:03:55,890 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:03:57,846 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:03:58,514 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:04:11,467 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:04:13,763 basehttp 19108 15104 "GET /admin HTTP/1.1" 301 0
+INFO 2025-07-24 23:04:13,987 basehttp 19108 13396 "GET /admin/ HTTP/1.1" 200 19159
+INFO 2025-07-24 23:04:13,998 basehttp 19108 13396 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,000 basehttp 19108 16396 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,000 basehttp 19108 8616 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,030 basehttp 19108 8616 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,032 basehttp 19108 13396 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,032 basehttp 19108 16396 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,035 basehttp 19108 16396 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,043 basehttp 19108 16396 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,043 basehttp 19108 13396 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,043 basehttp 19108 8616 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:14,047 basehttp 19108 8616 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,166 basehttp 19108 8616 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:04:18,240 basehttp 19108 13852 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,240 basehttp 19108 16396 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,240 basehttp 19108 16580 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,240 basehttp 19108 8616 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,241 basehttp 19108 7788 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,244 basehttp 19108 13852 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,245 basehttp 19108 16396 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,247 basehttp 19108 16580 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,248 basehttp 19108 7788 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,248 basehttp 19108 13852 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,256 basehttp 19108 13852 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,270 basehttp 19108 13396 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:04:18,289 basehttp 19108 13852 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:18,289 basehttp 19108 13396 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:04:32,158 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:04:32,178 basehttp 19108 8196 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:04:34,904 basehttp 19108 13852 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:04:34,964 basehttp 19108 13852 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:04:41,447 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:04:41,502 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:05:11,476 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:05:22,054 basehttp 19108 7576 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16531
+INFO 2025-07-24 23:05:41,438 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:05:41,481 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:05:52,406 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 17027
+INFO 2025-07-24 23:06:11,469 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:06:23,214 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 17027
+INFO 2025-07-24 23:06:41,441 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:06:41,488 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:06:54,204 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 17523
+INFO 2025-07-24 23:07:11,462 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:07:25,202 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 17523
+INFO 2025-07-24 23:07:41,443 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:07:41,485 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:07:55,256 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18019
+INFO 2025-07-24 23:08:11,466 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:08:26,206 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18019
+INFO 2025-07-24 23:08:30,940 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18019
+INFO 2025-07-24 23:08:41,446 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:08:41,483 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:09:01,198 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18515
+INFO 2025-07-24 23:09:11,455 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:09:32,212 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18515
+INFO 2025-07-24 23:09:41,436 basehttp 19108 8196 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:09:41,474 basehttp 19108 8196 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:10:03,198 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:10:34,194 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:11:05,206 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:11:36,206 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:12:07,209 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:12:38,210 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:13:09,197 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:13:40,199 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:14:11,209 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:14:42,216 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:15:13,211 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:15:44,211 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:16:15,211 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:16:46,220 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:17:17,210 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:17:48,213 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:18:19,212 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:18:50,209 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:19:21,213 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:19:52,203 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:20:23,205 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:20:54,210 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:21:25,215 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:21:56,208 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:22:27,207 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:22:58,212 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:23:29,208 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:24:00,210 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:24:31,214 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:25:02,215 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:25:33,215 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:26:04,213 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:26:35,208 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:27:06,210 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:27:37,216 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:28:08,207 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:28:39,204 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:29:10,202 basehttp 19108 11952 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:29:41,518 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:30:12,206 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:30:43,205 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:31:14,205 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:31:45,203 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:32:16,210 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:32:47,215 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:33:18,209 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:33:49,200 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:34:20,202 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:34:51,202 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:35:22,204 basehttp 19108 8908 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:35:53,543 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:36:24,202 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:36:55,205 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:37:26,213 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:37:57,215 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:38:28,207 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:38:59,205 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:39:30,209 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:40:01,197 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:40:32,204 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:41:03,214 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:41:34,206 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:42:05,215 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:42:36,201 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:43:07,199 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:43:38,201 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:44:09,218 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:44:40,203 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:45:11,198 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:45:42,209 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:46:13,198 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:46:44,211 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:47:15,202 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:47:46,204 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:48:17,212 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:48:48,208 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:49:19,196 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:49:50,202 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:50:21,197 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:50:51,237 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+WARNING 2025-07-24 23:51:20,020 log 19108 14464 Bad Request: /players/api/register/
+WARNING 2025-07-24 23:51:20,022 basehttp 19108 14464 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-24 23:51:20,100 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:51:20,121 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:51:21,285 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:51:26,037 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:51:27,962 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:51:28,805 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:51:29,521 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19011
+INFO 2025-07-24 23:51:30,138 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:51:30,168 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:51:40,042 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:51:40,074 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:51:45,471 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 26503
+INFO 2025-07-24 23:51:50,041 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:51:50,071 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:00,050 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:00,086 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:00,205 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 28531
+INFO 2025-07-24 23:52:10,058 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:10,095 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:12,910 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 29545
+INFO 2025-07-24 23:52:16,201 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 29545
+INFO 2025-07-24 23:52:20,052 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:20,081 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:20,119 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:30,061 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:30,105 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:31,217 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 32653
+INFO 2025-07-24 23:52:37,186 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:40,072 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:40,114 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:52:40,865 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 35182
+INFO 2025-07-24 23:52:47,204 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 35182
+INFO 2025-07-24 23:52:50,051 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:52:50,086 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:00,055 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:00,090 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:02,207 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37210
+INFO 2025-07-24 23:53:09,075 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:10,061 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:10,095 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:10,914 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39739
+INFO 2025-07-24 23:53:18,204 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39739
+INFO 2025-07-24 23:53:20,054 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:20,089 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:20,125 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:27,834 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41833
+INFO 2025-07-24 23:53:30,060 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:30,091 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:33,215 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 42847
+INFO 2025-07-24 23:53:34,766 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 42847
+INFO 2025-07-24 23:53:40,068 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:40,102 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:41,202 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 43861
+INFO 2025-07-24 23:53:49,198 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 43861
+INFO 2025-07-24 23:53:50,059 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:53:50,091 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:53:59,090 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 44875
+INFO 2025-07-24 23:54:00,050 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:54:00,084 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:05,139 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:54:05,204 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:54:10,060 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:54:10,091 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:15,557 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:54:15,576 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:54:18,222 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:54:18,270 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:54:20,057 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:54:20,137 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:54:20,167 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:29,211 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 53949
+INFO 2025-07-24 23:54:30,066 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:54:30,098 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:30,862 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:54:30,888 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:54:34,462 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:54:34,506 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:54:35,811 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:54:35,855 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:54:40,131 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:54:40,170 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:48,821 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:54:48,856 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:54:50,138 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:54:50,174 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:54:55,970 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 66895
+INFO 2025-07-24 23:55:00,062 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:00,100 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:55:10,060 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:10,094 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:55:17,885 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:55:17,902 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:55:20,068 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:20,163 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:55:20,194 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:55:23,121 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 75969
+INFO 2025-07-24 23:55:30,059 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:30,088 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:55:40,057 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:40,088 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:55:41,000 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 77997
+INFO 2025-07-24 23:55:50,059 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:55:50,093 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:00,067 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:00,100 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:10,058 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:10,085 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:11,216 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 81039
+INFO 2025-07-24 23:56:12,547 basehttp 19108 13844 "GET /admin/players/devicelog/ HTTP/1.1" 200 100215
+INFO 2025-07-24 23:56:12,616 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:56:20,065 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:20,088 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:20,119 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:29,772 basehttp 19108 13844 "POST /admin/players/devicelog/ HTTP/1.1" 200 37259
+INFO 2025-07-24 23:56:29,830 basehttp 19108 13844 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:56:30,054 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:30,084 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:31,974 basehttp 19108 13844 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-24 23:56:32,025 basehttp 19108 13844 "GET /admin/players/devicelog/ HTTP/1.1" 200 63656
+INFO 2025-07-24 23:56:32,080 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:56:32,102 basehttp 19108 13844 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-07-24 23:56:36,545 basehttp 19108 13844 "POST /admin/players/devicelog/ HTTP/1.1" 200 26652
+INFO 2025-07-24 23:56:38,628 basehttp 19108 13844 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-24 23:56:38,651 basehttp 19108 13844 "GET /admin/players/devicelog/ HTTP/1.1" 200 19059
+INFO 2025-07-24 23:56:38,713 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:56:40,057 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:40,086 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:56:42,207 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 14139
+INFO 2025-07-24 23:56:45,490 basehttp 19108 13844 "GET /admin/players/devicelog/ HTTP/1.1" 200 23011
+INFO 2025-07-24 23:56:45,538 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:56:50,063 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:56:50,094 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:00,059 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:00,093 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:05,757 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16167
+INFO 2025-07-24 23:57:10,056 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:10,091 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:20,072 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:20,095 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:20,127 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:25,129 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 19275
+INFO 2025-07-24 23:57:30,055 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:30,089 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:40,066 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:57:40,096 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:48,936 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 771
+INFO 2025-07-24 23:57:48,961 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:57:50,135 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:57:50,170 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:57:55,187 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 27269
+INFO 2025-07-24 23:58:00,050 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:00,082 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:01,985 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23037
+INFO 2025-07-24 23:58:02,044 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:58:06,526 basehttp 19108 13844 "GET /admin/players/player/3/change/ HTTP/1.1" 200 34165
+INFO 2025-07-24 23:58:06,578 basehttp 19108 13844 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:58:06,586 basehttp 19108 8496 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:58:06,589 basehttp 19108 1212 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:58:06,589 basehttp 19108 8496 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-07-24 23:58:06,591 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:58:06,596 basehttp 19108 13844 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-07-24 23:58:10,053 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:10,085 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:12,398 basehttp 19108 13844 "POST /admin/players/player/3/change/ HTTP/1.1" 302 0
+INFO 2025-07-24 23:58:12,421 basehttp 19108 13844 "GET /admin/players/player/ HTTP/1.1" 200 23262
+INFO 2025-07-24 23:58:12,480 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-24 23:58:18,413 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1171
+INFO 2025-07-24 23:58:18,421 basehttp 19108 14464 "GET /content/assets/1/download/ HTTP/1.1" 200 28
+INFO 2025-07-24 23:58:18,441 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:58:20,057 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:20,168 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:58:20,202 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:26,214 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37869
+INFO 2025-07-24 23:58:30,056 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:30,089 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:40,063 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:40,099 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:50,073 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:58:50,105 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:58:56,266 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 40911
+INFO 2025-07-24 23:58:57,505 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 40911
+INFO 2025-07-24 23:59:00,061 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:59:00,092 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:10,051 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:59:10,082 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:18,082 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1171
+INFO 2025-07-24 23:59:18,112 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:59:20,056 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:59:20,151 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:59:20,185 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:28,214 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 50489
+INFO 2025-07-24 23:59:29,814 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1171
+INFO 2025-07-24 23:59:29,850 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-24 23:59:30,134 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-24 23:59:30,172 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:40,060 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:59:40,095 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:50,063 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-24 23:59:50,103 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-24 23:59:59,217 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58993
+INFO 2025-07-25 00:00:00,063 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:00,098 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:00:10,061 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:10,108 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:00:20,068 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:20,106 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:20,147 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:00:30,077 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:30,125 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:00:30,210 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64123
+INFO 2025-07-25 00:00:40,066 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:40,114 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:00:50,076 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:00:50,128 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:00,080 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:00,125 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:01,209 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67165
+INFO 2025-07-25 00:01:10,086 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:10,135 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:20,079 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:20,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:20,174 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:28,185 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 70267
+INFO 2025-07-25 00:01:30,080 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:30,123 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:32,209 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71281
+INFO 2025-07-25 00:01:40,080 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:40,129 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:01:50,095 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:01:50,149 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:00,098 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:00,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:03,210 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74323
+INFO 2025-07-25 00:02:10,088 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:10,123 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:13,958 basehttp 19108 13844 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22108
+INFO 2025-07-25 00:02:14,010 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:02:14,023 basehttp 19108 13844 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:16,372 basehttp 19108 13844 "GET /admin/playlists/playlist/2/change/ HTTP/1.1" 200 48422
+INFO 2025-07-25 00:02:16,433 basehttp 19108 8496 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:16,433 basehttp 19108 1212 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:16,437 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:02:16,442 basehttp 19108 13844 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:18,975 basehttp 19108 13844 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22108
+INFO 2025-07-25 00:02:20,069 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:20,098 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:20,135 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:25,098 basehttp 19108 13844 "GET /admin/playlists/playlist/2/change/ HTTP/1.1" 200 48422
+INFO 2025-07-25 00:02:25,145 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:02:30,095 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:30,137 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:32,011 basehttp 19108 13844 "GET /admin/content/asset/add/ HTTP/1.1" 200 32070
+INFO 2025-07-25 00:02:32,060 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:02:32,068 basehttp 19108 1212 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:32,070 basehttp 19108 1212 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:32,124 basehttp 19108 1212 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:32,131 basehttp 19108 1212 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:32,135 basehttp 19108 1212 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-07-25 00:02:34,219 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78439
+INFO 2025-07-25 00:02:40,085 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:40,126 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:02:50,089 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:02:50,135 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:00,099 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:00,140 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:05,222 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 81481
+INFO 2025-07-25 00:03:10,080 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:10,116 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:20,069 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:20,104 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:20,141 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:30,098 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:30,136 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:36,219 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85597
+INFO 2025-07-25 00:03:40,089 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:40,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:03:50,094 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:03:50,146 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:00,090 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:00,143 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:07,207 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 88639
+INFO 2025-07-25 00:04:10,088 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:10,141 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:11,799 basehttp 19108 1212 "POST /admin/content/asset/add/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:04:11,827 basehttp 19108 1212 "GET /admin/content/asset/ HTTP/1.1" 200 22768
+INFO 2025-07-25 00:04:11,890 basehttp 19108 1212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:04:20,086 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:20,138 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:20,186 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:24,362 basehttp 19108 1212 "GET /admin/content/asset/add/ HTTP/1.1" 200 32070
+INFO 2025-07-25 00:04:24,416 basehttp 19108 1212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:04:30,102 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:30,144 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:38,222 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 92755
+INFO 2025-07-25 00:04:40,108 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:40,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:50,111 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:04:50,155 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:04:55,269 basehttp 19108 1212 "POST /admin/content/asset/add/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:04:55,294 basehttp 19108 1212 "GET /admin/content/asset/ HTTP/1.1" 200 23679
+INFO 2025-07-25 00:04:55,353 basehttp 19108 1212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:04:55,429 basehttp 19108 13844 "GET /media/assets/2025/07/MISTBORN.png HTTP/1.1" 200 3710489
+INFO 2025-07-25 00:05:00,113 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:00,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:05:06,870 basehttp 19108 13844 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22108
+INFO 2025-07-25 00:05:06,920 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:05:08,852 basehttp 19108 13844 "GET /admin/playlists/playlist/2/change/ HTTP/1.1" 200 48576
+INFO 2025-07-25 00:05:08,899 basehttp 19108 13844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:05:09,217 basehttp 19108 13728 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 95797
+INFO 2025-07-25 00:05:10,106 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:10,150 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:05:20,077 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:20,113 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:20,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:05:30,118 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:30,166 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:05:33,839 basehttp 19108 15960 "POST /admin/playlists/playlist/2/change/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:05:33,870 basehttp 19108 15960 "GET /admin/playlists/playlist/ HTTP/1.1" 200 22322
+INFO 2025-07-25 00:05:33,935 basehttp 19108 15960 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:05:40,117 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:05:40,159 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1162
+INFO 2025-07-25 00:05:40,166 basehttp 19108 14464 "GET /content/assets/2/download/ HTTP/1.1" 200 28
+INFO 2025-07-25 00:05:40,183 basehttp 19108 14464 "POST /scheduling/api/v1/device/sync_confirmation/ HTTP/1.1" 200 62
+INFO 2025-07-25 00:05:40,531 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 100928
+INFO 2025-07-25 00:05:50,223 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 00:05:50,260 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:00,127 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:00,167 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:10,131 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:10,172 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:11,213 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 108956
+INFO 2025-07-25 00:06:20,070 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:20,114 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:20,150 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:30,124 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:30,160 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:40,127 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:40,161 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:06:42,212 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 113072
+INFO 2025-07-25 00:06:50,122 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:06:50,158 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:00,125 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:00,163 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:10,119 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:10,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:13,231 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 116114
+INFO 2025-07-25 00:07:20,067 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:20,123 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:20,163 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:30,121 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:30,156 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:40,120 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:40,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:07:44,224 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 120230
+INFO 2025-07-25 00:07:50,116 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:07:50,150 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:00,121 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:00,156 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:10,122 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:10,162 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:15,214 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 123272
+INFO 2025-07-25 00:08:20,081 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:20,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:20,164 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:30,134 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:30,168 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:40,132 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:40,163 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:08:46,222 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 127388
+INFO 2025-07-25 00:08:50,125 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:08:50,156 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:00,113 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:00,140 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:10,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:10,160 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:17,228 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 130430
+INFO 2025-07-25 00:09:20,074 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:20,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:20,159 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:30,130 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:30,164 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:40,119 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:40,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:09:48,214 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 134546
+INFO 2025-07-25 00:09:50,124 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:09:50,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:00,114 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:00,144 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:10,121 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:10,153 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:18,278 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 137588
+INFO 2025-07-25 00:10:20,073 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:20,119 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:20,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:30,119 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:30,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:40,131 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:40,166 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:10:48,377 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 141704
+INFO 2025-07-25 00:10:50,115 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:10:50,148 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:00,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:00,161 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:10,131 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:10,165 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:18,442 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 144746
+INFO 2025-07-25 00:11:20,076 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:20,120 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:20,151 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:30,126 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:30,163 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:40,133 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:40,180 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:11:49,223 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 148862
+INFO 2025-07-25 00:11:50,117 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:11:50,154 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:12:00,122 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:12:00,168 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:12:10,118 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:12:10,158 basehttp 19108 14464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 00:12:17,892 basehttp 19108 14464 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 00:12:20,220 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:12:51,216 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:13:22,230 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:13:53,263 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:14:24,228 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:14:55,224 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:15:26,227 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:15:57,232 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:16:28,213 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:16:59,218 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:17:30,220 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:18:01,223 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:18:32,241 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:19:03,225 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:19:34,228 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:20:05,225 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:20:36,225 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:21:07,215 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:21:38,241 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:22:09,225 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:22:40,233 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:23:11,234 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:23:42,221 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:24:13,218 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:24:44,227 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:25:05,220 basehttp 19108 10348 "GET /admin/players/synclog/ HTTP/1.1" 200 17212
+INFO 2025-07-25 00:25:05,294 basehttp 19108 10348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:25:09,586 basehttp 19108 10348 "GET /admin/players/devicelog/ HTTP/1.1" 200 100267
+INFO 2025-07-25 00:25:09,641 basehttp 19108 10348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:25:15,234 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 152918
+INFO 2025-07-25 00:25:19,982 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 200 37605
+INFO 2025-07-25 00:25:22,171 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:25:22,246 basehttp 19108 10348 "GET /admin/players/devicelog/ HTTP/1.1" 200 100319
+INFO 2025-07-25 00:25:22,306 basehttp 19108 10348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:25:25,969 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 200 37587
+INFO 2025-07-25 00:25:27,752 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:25:27,817 basehttp 19108 10348 "GET /admin/players/devicelog/ HTTP/1.1" 200 80144
+INFO 2025-07-25 00:25:27,878 basehttp 19108 10348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:25:34,098 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 200 31776
+INFO 2025-07-25 00:25:35,697 basehttp 19108 10348 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 00:25:35,721 basehttp 19108 10348 "GET /admin/players/devicelog/ HTTP/1.1" 200 19059
+INFO 2025-07-25 00:25:35,796 basehttp 19108 10348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 00:25:40,598 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 13218
+INFO 2025-07-25 00:26:04,212 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 13217
+INFO 2025-07-25 00:26:11,215 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 13218
+INFO 2025-07-25 00:26:35,198 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 13217
+INFO 2025-07-25 00:26:42,210 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 13218
+INFO 2025-07-25 00:27:06,201 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 13217
+INFO 2025-07-25 00:27:13,231 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16815
+INFO 2025-07-25 00:27:37,218 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:28:24,239 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:28:40,196 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:29:10,201 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:29:37,215 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:29:56,212 basehttp 19108 12240 "GET /players/A1B2C3D4E5F6G7H8/logs/ HTTP/1.1" 200 16814
+INFO 2025-07-25 00:30:03,184 autoreload 19108 14080 C:\laragon\www\Django_DigSignature\DigSignature_server\players\views.py changed, reloading.
+INFO 2025-07-25 00:30:03,742 autoreload 3452 6788 Watching for file changes with StatReloader

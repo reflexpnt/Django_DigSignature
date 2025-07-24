@@ -1,0 +1,16 @@
+# PiSignage Device Simulator Requirements
+# Install with: pip install -r requirements.txt
+
+# Core GUI Framework
+PyQt6>=6.4.0
+
+# HTTP requests for API communication  
+requests>=2.28.0
+
+# Optional: For advanced media handling
+# opencv-python>=4.7.0  # Uncomment if you need advanced video processing
+# Pillow>=9.0.0         # Uncomment for advanced image processing
+
+# Development/Testing (optional)
+# pytest>=7.0.0         # Uncomment for running tests
+# black>=22.0.0         # Uncomment for code formatting

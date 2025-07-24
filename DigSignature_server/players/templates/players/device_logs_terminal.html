@@ -1,4 +1,4 @@
-<!-- templates/players/device_logs_terminal.html - Versión simplificada -->
+<!-- templates/players/device_logs_terminal.html - Versión mejorada -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -292,6 +292,18 @@
             </div>
             
             <div class="filter-group">
+                <label>Refresh:</label>
+                <select id="refresh-interval">
+                    <option value="5">5s</option>
+                    <option value="10">10s</option>
+                    <option value="15" selected>15s</option>
+                    <option value="30">30s</option>
+                    <option value="60">60s</option>
+                    <option value="0">Manual</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
                 <input type="text" name="search" value="{{ search }}" placeholder="Search...">
                 <button type="submit">Filter</button>
             </div>
@@ -299,7 +311,8 @@
         
         <div class="auto-refresh">
             <input type="checkbox" id="auto-refresh" checked>
-            <label for="auto-refresh">Auto-refresh (30s)</label>
+            <label for="auto-refresh">Auto-refresh</label>
+            <span id="refresh-countdown"></span>
         </div>
     </div>
     
@@ -325,31 +338,52 @@
     </div>
 
     <script>
-        // Auto-refresh functionality
+        // Auto-refresh functionality with configurable interval
         let autoRefreshInterval;
+        let refreshCountdown;
+        let currentRefreshTime = 15; // Default 15 seconds
+        let countdownTime = currentRefreshTime;
+        
         const autoRefreshCheckbox = document.getElementById('auto-refresh');
+        const refreshIntervalSelect = document.getElementById('refresh-interval');
+        const refreshCountdownSpan = document.getElementById('refresh-countdown');
+        
+        function updateCountdown() {
+            if (autoRefreshCheckbox.checked && currentRefreshTime > 0) {
+                refreshCountdownSpan.textContent = `(${countdownTime}s)`;
+                countdownTime--;
+                
+                if (countdownTime < 0) {
+                    countdownTime = currentRefreshTime;
+                    window.location.reload();
+                }
+            } else {
+                refreshCountdownSpan.textContent = '';
+            }
+        }
         
         function startAutoRefresh() {
-            if (autoRefreshCheckbox.checked) {
-                autoRefreshInterval = setInterval(() => {
-                    window.location.reload();
-                }, 30000);
+            stopAutoRefresh();
+            
+            currentRefreshTime = parseInt(refreshIntervalSelect.value);
+            
+            if (autoRefreshCheckbox.checked && currentRefreshTime > 0) {
+                countdownTime = currentRefreshTime;
+                refreshCountdown = setInterval(updateCountdown, 1000);
+                updateCountdown();
             }
         }
         
         function stopAutoRefresh() {
-            if (autoRefreshInterval) {
-                clearInterval(autoRefreshInterval);
+            if (refreshCountdown) {
+                clearInterval(refreshCountdown);
+                refreshCountdownSpan.textContent = '';
             }
         }
         
-        autoRefreshCheckbox.addEventListener('change', () => {
-            if (autoRefreshCheckbox.checked) {
-                startAutoRefresh();
-            } else {
-                stopAutoRefresh();
-            }
-        });
+        // Event listeners
+        autoRefreshCheckbox.addEventListener('change', startAutoRefresh);
+        refreshIntervalSelect.addEventListener('change', startAutoRefresh);
         
         // Auto-submit form when filters change
         document.querySelector('select[name="level"]').addEventListener('change', () => {
@@ -374,9 +408,11 @@
         // Start auto-refresh
         startAutoRefresh();
         
-        // Auto-scroll to bottom
-        const terminalBody = document.querySelector('.terminal-body');
-        terminalBody.scrollTop = terminalBody.scrollHeight;
+        // Auto-scroll to bottom DESPUÉS de cargar la página
+        window.addEventListener('load', () => {
+            const terminalBody = document.querySelector('.terminal-body');
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        });
         
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
@@ -389,6 +425,11 @@
                 e.preventDefault();
                 document.querySelector('input[name="search"]').focus();
             }
+            
+            // ESC para limpiar filtros
+            if (e.key === 'Escape') {
+                window.location.href = window.location.pathname;
+            }
         });
         
         // Click to select log line (for copy/paste)
@@ -399,16 +440,49 @@
                 // Highlight selected line
                 line.style.backgroundColor = '#2a2a2a';
                 
-                // Select text for easy copying
-                if (window.getSelection) {
-                    const selection = window.getSelection();
-                    const range = document.createRange();
-                    range.selectNodeContents(line);
-                    selection.removeAllRanges();
-                    selection.addRange(range);
+                // Copy to clipboard
+                const text = line.textContent;
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        // Visual feedback
+                        line.style.backgroundColor = '#004400';
+                        setTimeout(() => {
+                            line.style.backgroundColor = '#2a2a2a';
+                        }, 200);
+                    });
+                } else {
+                    // Fallback: select text
+                    if (window.getSelection) {
+                        const selection = window.getSelection();
+                        const range = document.createRange();
+                        range.selectNodeContents(line);
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                    }
                 }
             });
         });
+        
+        // Mantener scroll en el bottom si ya está ahí
+        const terminalBody = document.querySelector('.terminal-body');
+        let isAtBottom = true;
+        
+        terminalBody.addEventListener('scroll', () => {
+            const threshold = 50;
+            isAtBottom = terminalBody.scrollTop + terminalBody.clientHeight >= terminalBody.scrollHeight - threshold;
+        });
+        
+        // Si recibimos nuevos logs y estamos en el bottom, mantener ahí
+        const observer = new MutationObserver(() => {
+            if (isAtBottom) {
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
+        });
+        
+        observer.observe(document.querySelector('.logs-container'), {
+            childList: true,
+            subtree: true
+        });
     </script>
 </body>
-</html> 
+</html>
