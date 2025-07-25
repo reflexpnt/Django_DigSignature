@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PiSignage Device Simulator - Main Application
-PyQt6-based simulator that mimics Android device behavior
+PyQt6-based simulator with dynamic zone system
 """
 
 import sys
@@ -26,21 +26,36 @@ except ImportError as e:
     sys.exit(1)
 
 try:
-    from media_player import MediaPlayerWidget
+    from media_player import DynamicMediaPlayerWidget
+    print("✅ Dynamic MediaPlayerWidget imported successfully")
 except ImportError as e:
-    print(f"Error importing media_player: {e}")
+    print(f"⚠️ Error importing dynamic media_player: {e}")
     # Create fallback class
-    class MediaPlayerWidget(QWidget):
+    class DynamicMediaPlayerWidget(QWidget):
+        layout_changed = pyqtSignal(str)
+        zones_created = pyqtSignal(list)
+        
         def __init__(self):
             super().__init__()
             self.setStyleSheet("background-color: black; color: white;")
             layout = QVBoxLayout(self)
-            label = QLabel("MediaPlayerWidget not available")
+            label = QLabel("Dynamic MediaPlayerWidget not available\nCheck media_player.py file")
             label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             layout.addWidget(label)
         
+        def create_layout(self, layout_code):
+            print(f"Fallback: Would create layout {layout_code}")
+            self.layout_changed.emit(layout_code)
+            self.zones_created.emit([])
+        
         def load_playlist(self, playlist_data):
             print(f"Fallback: Would load playlist {playlist_data.get('name', 'Unknown')}")
+            
+        def stop_playlist(self):
+            print("Fallback: Would stop playlist")
+            
+        def get_playback_status(self):
+            return {'layout': 'fallback', 'playlist_name': 'None', 'zones_active': 0, 'zones': []}
 
 try:
     from config import DeviceConfig, DEVICE_PRESETS, generate_device_id
@@ -459,7 +474,7 @@ class LogDisplayWidget(QWidget):
 
 
 class PiSignageSimulatorMainWindow(QMainWindow):
-    """Main window for PiSignage device simulator"""
+    """Main window for PiSignage device simulator with dynamic zones"""
     
     def __init__(self):
         super().__init__()
@@ -470,7 +485,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         self.setup_connections()
         
     def init_ui(self):
-        self.setWindowTitle("PiSignage Device Simulator")
+        self.setWindowTitle("PiSignage Device Simulator - Dynamic Zone System")
         self.setMinimumSize(1200, 800)
         
         # Create menu bar
@@ -490,9 +505,9 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         # Right side - Tabs
         tab_widget = QTabWidget()
         
-        # Media display tab - Use advanced MediaPlayerWidget with layouts
-        self.media_player = MediaPlayerWidget()
-        tab_widget.addTab(self.media_player, "📺 Media Display")
+        # Media display tab - Use Dynamic MediaPlayerWidget
+        self.media_player = DynamicMediaPlayerWidget()
+        tab_widget.addTab(self.media_player, "📺 Dynamic Media Display")
         
         # Logs tab
         self.log_display = LogDisplayWidget()
@@ -500,10 +515,15 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         
         layout.addWidget(tab_widget, 1)
         
-        # Status bar
+        # Status bar with additional info
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
-        self.status_bar.showMessage("Ready")
+        self.status_bar.showMessage("Ready - Dynamic Zone System")
+        
+        # Add permanent widget to status bar for layout info
+        self.layout_info = QLabel("Layout: None | Zones: 0")
+        self.layout_info.setStyleSheet("color: #666; padding: 2px 8px;")
+        self.status_bar.addPermanentWidget(self.layout_info)
         
     def create_menu_bar(self):
         """Create application menu bar"""
@@ -522,11 +542,26 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         exit_action.triggered.connect(self.close)
         file_menu.addAction(exit_action)
         
+        # View menu
+        view_menu = menubar.addMenu('View')
+        
+        test_layout_menu = view_menu.addMenu('Test Layouts')
+        
+        layouts = ['1', '2a', '2b', '3a', '3b', '4', '4b', '2ab']
+        for layout in layouts:
+            action = QAction(f'Layout {layout}', self)
+            action.triggered.connect(lambda checked, l=layout: self.test_layout(l))
+            test_layout_menu.addAction(action)
+        
         # Tools menu
         tools_menu = menubar.addMenu('Tools')
         
         config_action = QAction('Device Configuration', self)
         tools_menu.addAction(config_action)
+        
+        clear_assets_action = QAction('Clear Downloaded Assets', self)
+        clear_assets_action.triggered.connect(self.clear_downloaded_assets)
+        tools_menu.addAction(clear_assets_action)
         
         # Help menu
         help_menu = menubar.addMenu('Help')
@@ -542,6 +577,30 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         self.control_panel.sync_now.connect(self.sync_now)
         self.control_panel.send_logs.connect(self.send_test_logs)
         self.control_panel.go_fullscreen.connect(self.toggle_fullscreen)
+        
+        # Connect media player signals
+        self.media_player.layout_changed.connect(self.on_layout_changed)
+        self.media_player.zones_created.connect(self.on_zones_created)
+        
+    def test_layout(self, layout_code):
+        """Test layout without server data"""
+        print(f"🧪 Testing layout: {layout_code}")
+        self.media_player.create_layout(layout_code)
+        self.log_display.add_log("INFO", "UI", f"Testing layout: {layout_code}")
+        
+    def on_layout_changed(self, layout_code):
+        """Handle layout change signal"""
+        status = self.media_player.get_playback_status()
+        self.layout_info.setText(f"Layout: {layout_code} | Zones: {status['zones_active']}")
+        
+    def on_zones_created(self, zone_names):
+        """Handle zones created signal"""
+        self.log_display.add_log("INFO", "LAYOUT", f"Created zones: {', '.join(zone_names)}")
+        
+    def clear_downloaded_assets(self):
+        """Clear downloaded assets cache"""
+        self.downloaded_assets.clear()
+        self.log_display.add_log("INFO", "UI", "Downloaded assets cache cleared")
         
     def start_simulation(self):
         """Start device simulation"""
@@ -566,7 +625,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
             if self.device_simulator.start():
                 self.control_panel.set_simulation_running(True)
                 self.status_bar.showMessage("Simulation running...")
-                self.log_display.add_log("INFO", "SIMULATOR", "Device simulation started")
+                self.log_display.add_log("INFO", "SIMULATOR", "Device simulation started with dynamic zone system")
                 print("✅ Simulation started successfully!")
             else:
                 self.status_bar.showMessage("Failed to start simulation")
@@ -597,20 +656,20 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         
         self.log_display.add_log("INFO", "SYNC", f"Sync completed: {len(playlists)} playlists, {len(assets)} assets")
         
-        # Process the playlist with layout support
+        # Process the playlist with dynamic zone system
         if playlists:
             playlist = playlists[0]  # Use first playlist
-            self.process_playlist_with_layout(playlist, assets)
+            self.process_playlist_dynamic(playlist, assets)
             
-    def process_playlist_with_layout(self, playlist, assets):
-        """Process playlist and setup layout-aware playback"""
+    def process_playlist_dynamic(self, playlist, assets):
+        """Process playlist and setup dynamic zone playback"""
         playlist_name = playlist.get('name', 'Unknown')
         layout_code = playlist.get('layout', '1')
         items = playlist.get('items', [])
         
-        self.log_display.add_log("INFO", "LAYOUT", f"Setting up playlist '{playlist_name}' with layout '{layout_code}'")
+        self.log_display.add_log("INFO", "LAYOUT", f"Processing playlist '{playlist_name}' with layout '{layout_code}'")
         
-        # Create complete playlist data for MediaPlayerWidget
+        # Create complete playlist data for Dynamic MediaPlayerWidget
         playlist_data = {
             'name': playlist_name,
             'layout': layout_code,
@@ -619,6 +678,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         }
         
         # Process each playlist item
+        items_processed = 0
         for item in items:
             asset_id = item.get('asset_id')
             
@@ -635,12 +695,15 @@ class PiSignageSimulatorMainWindow(QMainWindow):
                 # Find the downloaded file path
                 file_path = None
                 for downloaded_name, downloaded_path in self.downloaded_assets.items():
-                    if asset_name in downloaded_name or downloaded_name in asset_name:
+                    # More flexible matching
+                    if (asset_name in downloaded_name or 
+                        downloaded_name.startswith(asset_name) or
+                        asset_name.startswith(downloaded_name.split('.')[0])):
                         file_path = downloaded_path
                         break
                 
                 if file_path and os.path.exists(file_path):
-                    # Create item data for MediaPlayerWidget
+                    # Create item data for Dynamic MediaPlayerWidget
                     item_data = {
                         'asset_id': asset_id,
                         'asset_type': asset.get('type', 'video'),
@@ -651,6 +714,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
                     }
                     
                     playlist_data['items'].append(item_data)
+                    items_processed += 1
                     
                     self.log_display.add_log("INFO", "LAYOUT", 
                         f"Added to {item.get('zone', 'main')} zone: {asset_name} ({asset.get('type', 'unknown')})")
@@ -659,9 +723,9 @@ class PiSignageSimulatorMainWindow(QMainWindow):
             else:
                 self.log_display.add_log("WARN", "LAYOUT", f"Asset not found for item: {asset_id}")
         
-        # Load the playlist into MediaPlayerWidget
+        # Load the playlist into Dynamic MediaPlayerWidget
         if playlist_data['items']:
-            print(f"🎬 Loading playlist with {len(playlist_data['items'])} items into MediaPlayerWidget")
+            print(f"🎬 Loading playlist with {len(playlist_data['items'])} items into Dynamic MediaPlayerWidget")
             self.media_player.load_playlist(playlist_data)
             
             self.log_display.add_log("INFO", "LAYOUT", 
@@ -687,6 +751,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
             
         self.control_panel.set_simulation_running(False)
         self.status_bar.showMessage("Simulation stopped")
+        self.layout_info.setText("Layout: None | Zones: 0")
         self.log_display.add_log("INFO", "SIMULATOR", "Device simulation stopped")
         
     def sync_now(self):
@@ -713,28 +778,37 @@ class PiSignageSimulatorMainWindow(QMainWindow):
     def create_fullscreen_window(self):
         """Create fullscreen window for media display"""
         self.fullscreen_window = QMainWindow()
-        self.fullscreen_window.setWindowTitle("PiSignage Player - Fullscreen")
+        self.fullscreen_window.setWindowTitle("PiSignage Player - Fullscreen Dynamic Layout")
         
-        # Create new media widget for fullscreen
-        fullscreen_media = MediaPlayerWidget()
+        # Create new dynamic media widget for fullscreen
+        fullscreen_media = DynamicMediaPlayerWidget()
         self.fullscreen_window.setCentralWidget(fullscreen_media)
         
-        # Copy current playlist state
+        # Copy current playlist state if available
         current_status = self.media_player.get_playback_status()
         if current_status['playlist_name'] != 'None':
-            # TODO: Copy playlist data to fullscreen player
-            pass
+            # Try to copy current playlist data to fullscreen
+            # For now, just show the same layout
+            current_layout = current_status.get('layout', '1')
+            fullscreen_media.create_layout(current_layout)
             
         self.fullscreen_window.showFullScreen()
         
         # Connect close event
-        self.fullscreen_window.closeEvent = lambda e: self.close_fullscreen_window()
+        def close_fullscreen_event(event):
+            self.close_fullscreen_window()
+            event.accept()
+        
+        self.fullscreen_window.closeEvent = close_fullscreen_event
+        
+        self.log_display.add_log("INFO", "UI", "Fullscreen mode activated")
         
     def close_fullscreen_window(self):
         """Close fullscreen window"""
         if self.fullscreen_window:
             self.fullscreen_window.close()
             self.fullscreen_window = None
+            self.log_display.add_log("INFO", "UI", "Fullscreen mode deactivated")
             
     def update_status(self, message):
         """Update status bar message"""
@@ -744,13 +818,35 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         """Create new simulator window"""
         new_window = PiSignageSimulatorMainWindow()
         new_window.show()
+        self.log_display.add_log("INFO", "UI", "New simulator window created")
         
     def show_about(self):
         """Show about dialog"""
-        QMessageBox.about(self, "About PiSignage Simulator", 
-                         "PiSignage Device Simulator\n\n"
-                         "A PyQt6-based simulator for testing PiSignage Django server.\n"
-                         "Simulates Android device behavior with media playback capabilities.")
+        about_text = """PiSignage Device Simulator - Dynamic Zone System
+
+A PyQt6-based simulator for testing PiSignage Django server.
+
+Features:
+• Dynamic zone creation based on server layouts
+• Multi-media support (video, image, HTML)
+• Real-time sync simulation
+• Layout testing and visualization
+• Health monitoring simulation
+• Log centralization
+
+Layout Support:
+• Layout 1: Full screen
+• Layout 2a: Main + Side (75% + 25%)
+• Layout 2b: Main + Bottom (75% + 25%)
+• Layout 3a: Side + Main + Side (25% + 50% + 25%)
+• Layout 3b: Main + Side + Bottom
+• Layout 4: 4 Quadrants
+• Layout 4b: Main + 3 Small zones
+• Layout 2ab: Main + Side + Bottom
+
+Version: 1.0.0 - Dynamic Zone System"""
+        
+        QMessageBox.about(self, "About PiSignage Simulator", about_text)
         
     def closeEvent(self, event):
         """Handle application close"""
@@ -767,12 +863,23 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName("PiSignage Simulator")
     app.setOrganizationName("PiSignage")
+    app.setApplicationVersion("1.0.0 - Dynamic Zone System")
     
     # Set application icon (if available)
     # app.setWindowIcon(QIcon("icon.png"))
     
+    # Print startup information
+    print("🎪 PiSignage Device Simulator - Dynamic Zone System")
+    print("   Features: Dynamic zone creation, multi-media support, layout testing")
+    print("   Supported layouts: 1, 2a, 2b, 3a, 3b, 4, 4b, 2ab")
+    print("   Controls: View menu -> Test Layouts for immediate layout testing")
+    print()
+    
     window = PiSignageSimulatorMainWindow()
     window.show()
+    
+    # Test initial layout
+    window.test_layout('1')
     
     sys.exit(app.exec())
 
