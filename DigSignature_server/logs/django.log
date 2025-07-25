@@ -2962,3 +2962,71 @@ INFO 2025-07-25 11:27:56,530 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/
 INFO 2025-07-25 11:28:02,566 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
 WARNING 2025-07-25 14:50:21,850 log 9704 17364 Not Found: /favicon.ico
 WARNING 2025-07-25 14:50:21,855 basehttp 9704 17364 "GET /favicon.ico HTTP/1.1" 404 4523
+INFO 2025-07-25 15:12:40,771 autoreload 15184 2024 Watching for file changes with StatReloader
+INFO 2025-07-25 15:13:03,262 basehttp 15184 9752 "POST /admin/players/devicelog/ HTTP/1.1" 200 18706
+INFO 2025-07-25 15:13:03,315 basehttp 15184 9752 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,327 basehttp 15184 9752 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,328 basehttp 15184 15480 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,333 basehttp 15184 15480 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,333 basehttp 15184 5416 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,334 basehttp 15184 1296 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,334 basehttp 15184 9752 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,334 basehttp 15184 12120 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,338 basehttp 15184 15480 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,339 basehttp 15184 13180 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,339 basehttp 15184 5416 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,341 basehttp 15184 1296 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,341 basehttp 15184 9752 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,348 basehttp 15184 9752 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,349 basehttp 15184 1296 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:03,355 basehttp 15184 1296 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,176 basehttp 15184 1296 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 15:13:05,236 basehttp 15184 1296 "GET /admin/players/devicelog/ HTTP/1.1" 200 48160
+INFO 2025-07-25 15:13:05,290 basehttp 15184 1296 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,303 basehttp 15184 9752 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,308 basehttp 15184 9752 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,309 basehttp 15184 1296 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 15:13:05,325 basehttp 15184 1296 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,325 basehttp 15184 9752 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:05,327 basehttp 15184 9752 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-07-25 15:13:11,701 basehttp 15184 9752 "POST /admin/players/devicelog/ HTTP/1.1" 200 22492
+INFO 2025-07-25 15:13:13,725 basehttp 15184 9752 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 15:13:13,754 basehttp 15184 9752 "GET /admin/players/devicelog/ HTTP/1.1" 200 19059
+INFO 2025-07-25 15:13:13,829 basehttp 15184 9752 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-07-25 15:13:35,950 log 15184 8208 Bad Request: /players/api/register/
+WARNING 2025-07-25 15:13:35,951 basehttp 15184 8208 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 15:13:39,045 basehttp 15184 10184 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 15:13:41,130 basehttp 15184 2564 "GET /content/assets/2/download/ HTTP/1.1" 200 28
+INFO 2025-07-25 15:13:46,087 basehttp 15184 7668 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 15:14:03,867 basehttp 15184 5368 "GET /content/assets/2/download/ HTTP/1.1" 200 28
+INFO 2025-07-25 15:14:05,984 basehttp 15184 10184 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:14:13,907 basehttp 15184 7668 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:14:35,965 basehttp 15184 7668 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:14:36,006 basehttp 15184 10184 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:14:43,901 basehttp 15184 7668 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:15:00,661 basehttp 15184 7668 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 15:15:32,124 log 15184 11776 Bad Request: /players/api/register/
+WARNING 2025-07-25 15:15:32,125 basehttp 15184 11776 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 15:15:35,256 basehttp 15184 16796 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 15:15:37,337 basehttp 15184 10228 "GET /content/assets/2/download/ HTTP/1.1" 200 28
+INFO 2025-07-25 15:15:42,235 basehttp 15184 18328 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 15:15:47,165 basehttp 15184 16796 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:15:50,051 basehttp 15184 18328 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:15:50,501 basehttp 15184 18328 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:23:58,279 autoreload 15184 2024 C:\laragon\www\Django_DigSignature\DigSignature_server\content\views.py changed, reloading.
+INFO 2025-07-25 15:23:59,008 autoreload 2132 10732 Watching for file changes with StatReloader
+INFO 2025-07-25 15:24:09,858 autoreload 17960 13356 Watching for file changes with StatReloader
+WARNING 2025-07-25 15:24:24,545 log 17960 18020 Bad Request: /players/api/register/
+WARNING 2025-07-25 15:24:24,547 basehttp 17960 18020 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 15:24:27,693 basehttp 17960 12996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 15:24:29,911 basehttp 17960 15856 "GET /content/assets/2/download/ HTTP/1.1" 200 11916526
+INFO 2025-07-25 15:24:34,929 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 15:24:39,620 basehttp 17960 12996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:24:42,507 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:24:54,617 basehttp 17960 12996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:25:02,516 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:25:09,630 basehttp 17960 12996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:25:12,509 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:25:24,591 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 15:25:24,645 basehttp 17960 12996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 15:25:24,917 basehttp 17960 19448 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
