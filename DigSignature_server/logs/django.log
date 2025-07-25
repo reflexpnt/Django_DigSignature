@@ -3180,3 +3180,244 @@ INFO 2025-07-25 16:34:51,453 basehttp 10196 16012 "POST /players/api/logs/batch/
 INFO 2025-07-25 16:35:11,352 basehttp 10196 19304 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
 INFO 2025-07-25 16:35:16,179 basehttp 10196 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
 INFO 2025-07-25 17:20:26,920 autoreload 7044 9952 Watching for file changes with StatReloader
+WARNING 2025-07-25 17:20:56,715 log 7044 17892 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:20:56,716 basehttp 7044 17892 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:20:59,827 basehttp 7044 18004 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:21:06,892 basehttp 7044 11776 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:21:26,774 basehttp 7044 18004 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:21:34,692 basehttp 7044 11776 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:21:56,747 basehttp 7044 11776 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:21:56,797 basehttp 7044 18004 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:22:04,705 basehttp 7044 11776 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:22:14,177 basehttp 7044 11776 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:27:09,286 log 7044 8616 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:27:09,287 basehttp 7044 8616 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:27:12,384 basehttp 7044 1408 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:27:14,542 basehttp 7044 8616 - Broken pipe from ('127.0.0.1', 57538)
+INFO 2025-07-25 17:27:14,542 basehttp 7044 1408 - Broken pipe from ('127.0.0.1', 57540)
+WARNING 2025-07-25 17:29:06,757 log 7044 12212 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:29:06,758 basehttp 7044 12212 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:29:09,878 basehttp 7044 14028 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:29:16,852 basehttp 7044 16848 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:29:36,811 basehttp 7044 14028 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:29:44,709 basehttp 7044 16848 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:29:58,610 basehttp 7044 16848 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:30:02,081 log 7044 11652 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:30:02,083 basehttp 7044 11652 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:30:05,189 basehttp 7044 12984 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:30:12,191 basehttp 7044 5776 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:30:32,113 basehttp 7044 12984 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:30:34,257 basehttp 7044 5776 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:30:37,449 log 7044 17172 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:30:37,450 basehttp 7044 17172 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:30:40,551 basehttp 7044 11112 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:30:42,778 basehttp 7044 13744 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+WARNING 2025-07-25 17:32:12,809 log 7044 11504 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:32:12,810 basehttp 7044 11504 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:32:15,942 basehttp 7044 9928 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:32:22,902 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:32:34,652 basehttp 7044 15448 "GET /admin/playlists/playlist/3/change/ HTTP/1.1" 200 52563
+INFO 2025-07-25 17:32:34,736 basehttp 7044 15448 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 17:32:42,867 basehttp 7044 9928 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:32:50,737 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:33:12,832 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:33:12,874 basehttp 7044 9928 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:33:20,752 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:33:42,862 basehttp 7044 9928 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:33:50,760 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:33:51,110 basehttp 7044 16012 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:34:05,622 log 7044 12476 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:34:05,623 basehttp 7044 12476 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:34:08,698 basehttp 7044 2464 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:34:15,729 basehttp 7044 15508 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:34:26,365 basehttp 7044 15508 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:37:07,936 log 7044 19296 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:37:07,937 basehttp 7044 19296 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:37:11,026 basehttp 7044 10344 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:37:17,987 basehttp 7044 11108 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:37:31,721 basehttp 7044 11108 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:39:43,024 log 7044 7812 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:39:43,025 basehttp 7044 7812 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:39:46,146 basehttp 7044 18388 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:39:53,085 basehttp 7044 16388 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:40:13,059 basehttp 7044 18388 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:40:20,964 basehttp 7044 16388 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:40:43,035 basehttp 7044 16388 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 17:40:43,069 basehttp 7044 18388 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 17:40:50,975 basehttp 7044 16388 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:41:26,002 log 7044 14804 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:41:26,003 basehttp 7044 14804 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:41:29,126 basehttp 7044 2992 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:41:36,070 basehttp 7044 19292 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:41:36,494 basehttp 7044 19292 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:47:30,312 log 7044 10704 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:47:30,314 basehttp 7044 10704 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:47:33,433 basehttp 7044 14064 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:47:40,422 basehttp 7044 8904 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:47:43,094 basehttp 7044 8904 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 17:48:26,167 log 7044 12696 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:48:26,168 basehttp 7044 12696 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:48:29,281 basehttp 7044 1924 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:48:34,499 basehttp 7044 8392 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:48:46,257 basehttp 7044 12696 - Broken pipe from ('127.0.0.1', 60383)
+INFO 2025-07-25 17:48:46,257 basehttp 7044 1924 - Broken pipe from ('127.0.0.1', 60385)
+INFO 2025-07-25 17:48:46,258 basehttp 7044 8392 - Broken pipe from ('127.0.0.1', 60387)
+WARNING 2025-07-25 17:59:36,679 log 7044 16868 Bad Request: /players/api/register/
+WARNING 2025-07-25 17:59:36,680 basehttp 7044 16868 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 17:59:39,775 basehttp 7044 16204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 17:59:46,813 basehttp 7044 18104 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 17:59:56,614 basehttp 7044 18104 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:13:44,388 log 7044 15448 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:13:44,389 basehttp 7044 15448 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:13:47,508 basehttp 7044 19304 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:13:54,536 basehttp 7044 9672 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:14:14,438 basehttp 7044 19304 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:14:17,639 basehttp 7044 9672 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:21:48,245 log 7044 13524 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:21:48,246 basehttp 7044 13524 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:21:51,335 basehttp 7044 6644 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:21:58,361 basehttp 7044 12788 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:22:18,297 basehttp 7044 6644 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:22:26,218 basehttp 7044 12788 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:22:36,999 basehttp 7044 16372 "POST /admin/playlists/playlist/3/change/ HTTP/1.1" 302 0
+INFO 2025-07-25 18:22:37,070 basehttp 7044 16372 "GET /admin/playlists/playlist/ HTTP/1.1" 200 23021
+INFO 2025-07-25 18:22:37,131 basehttp 7044 16372 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,140 basehttp 7044 16372 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,145 basehttp 7044 4880 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,145 basehttp 7044 9728 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,146 basehttp 7044 6376 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,146 basehttp 7044 16372 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,147 basehttp 7044 18488 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,149 basehttp 7044 4880 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,150 basehttp 7044 6376 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,151 basehttp 7044 9728 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,153 basehttp 7044 16372 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,154 basehttp 7044 18488 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,155 basehttp 7044 6376 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,156 basehttp 7044 4880 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,158 basehttp 7044 16372 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,162 basehttp 7044 16372 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,182 basehttp 7044 16372 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,185 basehttp 7044 1824 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:22:37,211 basehttp 7044 6376 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,211 basehttp 7044 1824 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,211 basehttp 7044 16372 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:37,211 basehttp 7044 4880 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-25 18:22:48,262 basehttp 7044 12788 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:22:48,305 basehttp 7044 6644 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:24:14,600 basehttp 7044 13524 - Broken pipe from ('127.0.0.1', 65185)
+INFO 2025-07-25 18:24:14,601 basehttp 7044 6644 - Broken pipe from ('127.0.0.1', 65190)
+INFO 2025-07-25 18:24:14,601 basehttp 7044 12788 - Broken pipe from ('127.0.0.1', 65192)
+WARNING 2025-07-25 18:24:24,117 log 7044 19204 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:24:24,118 basehttp 7044 19204 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:24:27,209 basehttp 7044 6084 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:24:34,229 basehttp 7044 2444 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:24:38,830 basehttp 7044 2444 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:27:54,985 log 7044 11188 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:27:54,986 basehttp 7044 11188 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:27:58,067 basehttp 7044 12356 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:28:05,112 basehttp 7044 16980 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:28:15,357 basehttp 7044 16980 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:28:20,171 log 7044 5752 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:28:20,172 basehttp 7044 5752 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:28:23,296 basehttp 7044 11272 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:28:30,292 basehttp 7044 1240 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:28:31,151 basehttp 7044 1240 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:28:44,759 log 7044 16596 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:28:44,760 basehttp 7044 16596 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:28:47,822 basehttp 7044 8424 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:28:54,884 basehttp 7044 14896 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:28:59,721 basehttp 7044 14896 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:35:37,840 log 7044 17104 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:35:37,841 basehttp 7044 17104 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:35:40,937 basehttp 7044 18924 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:35:47,962 basehttp 7044 13096 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:35:54,935 basehttp 7044 9380 "GET /admin/playlists/playlist/3/change/ HTTP/1.1" 200 52568
+INFO 2025-07-25 18:35:55,009 basehttp 7044 9380 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:36:01,134 basehttp 7044 9380 "POST /admin/playlists/playlist/3/change/ HTTP/1.1" 302 0
+INFO 2025-07-25 18:36:01,168 basehttp 7044 9380 "GET /admin/playlists/playlist/ HTTP/1.1" 200 23021
+INFO 2025-07-25 18:36:01,223 basehttp 7044 9380 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:36:07,902 basehttp 7044 18924 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:37:20,673 basehttp 7044 17104 - Broken pipe from ('127.0.0.1', 51389)
+INFO 2025-07-25 18:37:20,673 basehttp 7044 18924 - Broken pipe from ('127.0.0.1', 51391)
+INFO 2025-07-25 18:37:20,674 basehttp 7044 13096 - Broken pipe from ('127.0.0.1', 51393)
+WARNING 2025-07-25 18:37:34,751 log 7044 16896 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:37:34,752 basehttp 7044 16896 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:37:37,841 basehttp 7044 18344 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:37:42,033 basehttp 7044 11000 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+WARNING 2025-07-25 18:37:46,330 log 7044 18932 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:37:46,332 basehttp 7044 18932 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:37:49,419 basehttp 7044 17304 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:37:56,475 basehttp 7044 17116 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:37:58,897 basehttp 7044 17116 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 18:38:02,885 log 7044 18416 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:38:02,886 basehttp 7044 18416 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:38:05,991 basehttp 7044 10532 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:38:08,540 basehttp 7044 1200 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+WARNING 2025-07-25 18:38:36,823 log 7044 2640 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:38:36,824 basehttp 7044 2640 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:38:39,929 basehttp 7044 18924 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:39:20,723 basehttp 7044 18924 - Broken pipe from ('127.0.0.1', 51801)
+INFO 2025-07-25 18:39:20,727 basehttp 7044 10532 - Broken pipe from ('127.0.0.1', 51684)
+INFO 2025-07-25 18:39:20,728 basehttp 7044 18932 - Broken pipe from ('127.0.0.1', 51676)
+INFO 2025-07-25 18:39:20,728 basehttp 7044 17304 - Broken pipe from ('127.0.0.1', 51678)
+INFO 2025-07-25 18:39:20,728 basehttp 7044 1200 - Broken pipe from ('127.0.0.1', 51686)
+INFO 2025-07-25 18:39:20,729 basehttp 7044 17116 - Broken pipe from ('127.0.0.1', 51680)
+INFO 2025-07-25 18:39:20,729 basehttp 7044 18416 - Broken pipe from ('127.0.0.1', 51682)
+INFO 2025-07-25 18:39:20,729 basehttp 7044 2640 - Broken pipe from ('127.0.0.1', 51799)
+INFO 2025-07-25 18:49:30,438 basehttp 7044 3964 "GET /admin/playlists/playlist/3/change/ HTTP/1.1" 200 52563
+INFO 2025-07-25 18:49:30,477 basehttp 7044 3964 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-07-25 18:51:04,193 log 7044 4848 Bad Request: /players/api/register/
+WARNING 2025-07-25 18:51:04,193 basehttp 7044 4848 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 18:51:07,311 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:51:14,292 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:51:30,584 basehttp 7044 3964 "POST /admin/playlists/playlist/3/change/ HTTP/1.1" 302 0
+INFO 2025-07-25 18:51:30,612 basehttp 7044 3964 "GET /admin/playlists/playlist/ HTTP/1.1" 200 23021
+INFO 2025-07-25 18:51:30,655 basehttp 7044 3964 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:51:34,242 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1553
+INFO 2025-07-25 18:51:42,194 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:52:04,201 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:52:04,244 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:52:12,164 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:52:20,747 basehttp 7044 3964 "GET /admin/playlists/playlist/3/change/ HTTP/1.1" 200 52568
+INFO 2025-07-25 18:52:20,824 basehttp 7044 3964 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:52:31,260 basehttp 7044 3964 "POST /admin/playlists/playlist/3/change/ HTTP/1.1" 302 0
+INFO 2025-07-25 18:52:31,290 basehttp 7044 3964 "GET /admin/playlists/playlist/ HTTP/1.1" 200 23021
+INFO 2025-07-25 18:52:31,373 basehttp 7044 3964 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 18:52:34,245 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1544
+INFO 2025-07-25 18:52:42,211 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 18:53:04,200 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:53:04,246 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:53:12,159 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:53:34,233 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:53:42,161 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:54:04,220 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:54:04,268 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:54:12,168 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:54:34,255 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:54:42,168 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:55:04,207 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:55:04,263 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:55:12,160 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:55:34,237 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:55:42,155 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:56:04,216 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:56:04,270 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:56:12,165 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:56:34,263 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:56:42,172 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:57:04,216 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:57:04,280 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:57:12,169 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:57:34,280 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:57:42,174 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:58:04,222 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:58:04,278 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:58:12,165 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:58:34,262 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:58:42,176 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:59:04,202 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:59:04,254 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:59:12,162 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 18:59:34,254 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 18:59:37,763 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
