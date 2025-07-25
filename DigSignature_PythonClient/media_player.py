@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """
-Media Player Module for PiSignage Simulator
-Handles video/image playback with layout support
+Media Player Module for PiSignage Simulator - Simplified Version
+Handles video/image playback with layout support for PyQt6
 """
 
 import os
 import json
 from pathlib import Path
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, 
-                             QFrame, QStackedWidget, QGraphicsView, 
-                             QGraphicsScene, QGraphicsPixmapItem, 
-                             QGraphicsVideoItem)
-from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QUrl, QRectF, QSizeF
+                             QFrame, QStackedWidget, QPushButton)
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QUrl, QSize
 from PyQt6.QtGui import QPixmap, QFont, QPainter, QBrush, QColor
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtMultimediaWidgets import QVideoWidget
@@ -94,9 +92,11 @@ class LayoutZone(QWidget):
         """Play media in this zone"""
         self.current_media = asset_info
         
-        asset_type = asset_info.get('type', 'unknown')
+        asset_type = asset_info.get('asset_type', 'unknown')
         file_path = asset_info.get('file_path', '')
         duration = asset_info.get('duration', 10)
+        
+        print(f"🎬 Zone '{self.zone_name}' playing: {os.path.basename(file_path)} ({asset_type})")
         
         if asset_type == 'video':
             self.play_video(file_path)
@@ -112,6 +112,7 @@ class LayoutZone(QWidget):
             self.media_player.setSource(url)
             self.content_stack.setCurrentWidget(self.video_widget)
             self.media_player.play()
+            print(f"▶️ Playing video in zone '{self.zone_name}': {os.path.basename(file_path)}")
         else:
             self.show_error(f"Video not found: {os.path.basename(file_path)}")
             
@@ -131,6 +132,7 @@ class LayoutZone(QWidget):
                 
                 # Start timer for duration
                 self.playback_timer.start(duration * 1000)
+                print(f"🖼️ Displaying image in zone '{self.zone_name}': {os.path.basename(file_path)} ({duration}s)")
             else:
                 self.show_error("Invalid image file")
         else:
@@ -143,6 +145,14 @@ class LayoutZone(QWidget):
     def show_error(self, message):
         """Show error message"""
         self.placeholder_label.setText(f"Error: {message}")
+        self.placeholder_label.setStyleSheet("""
+            QLabel { 
+                background-color: #8B0000; 
+                color: white; 
+                font-size: 12px;
+                border: 2px solid #FF0000;
+            }
+        """)
         self.content_stack.setCurrentWidget(self.placeholder_label)
         
     def stop_media(self):
@@ -150,6 +160,7 @@ class LayoutZone(QWidget):
         self.media_player.stop()
         self.playback_timer.stop()
         self.current_media = None
+        self.show_placeholder()
         
     def handle_media_status(self, status):
         """Handle media player status changes"""
@@ -162,8 +173,8 @@ class LayoutZone(QWidget):
         
     def handle_playback_finished(self):
         """Handle when media playback finishes"""
+        print(f"🏁 Playback finished in zone '{self.zone_name}'")
         # Can emit signal to parent for playlist management
-        pass
 
 
 class TickerWidget(QLabel):
@@ -284,11 +295,19 @@ class MediaPlayerWidget(QWidget):
     def setup_layout(self, layout_code):
         """Setup layout zones based on layout code"""
         if self.current_layout == layout_code:
+            print(f"🔄 Layout '{layout_code}' already active")
             return
             
+        print(f"🎪 Setting up layout: {layout_code}")
+        
         # Clear existing layout
         self.clear_layout()
         
+        # Small delay to ensure cleanup is complete
+        QTimer.singleShot(10, lambda: self._create_layout(layout_code))
+        
+    def _create_layout(self, layout_code):
+        """Internal method to create layout after cleanup"""
         # Layout configurations - matching Django models
         layout_configs = {
             '1': {  # Full screen
@@ -336,52 +355,67 @@ class MediaPlayerWidget(QWidget):
             
         config = layout_configs[layout_code]
         
-        # Create new layout
-        if len(config) == 1:
+        # Get or create layout
+        existing_layout = self.content_widget.layout()
+        
+        # Create new layout using HBoxLayout for simplicity
+        if layout_code == '1':
             # Single zone - simple layout
-            layout = QVBoxLayout(self.content_widget)
-            zone_name = list(config.keys())[0]
-            zone = LayoutZone(zone_name, config[zone_name])
+            if not existing_layout or not isinstance(existing_layout, QVBoxLayout):
+                layout = QVBoxLayout()
+                self.content_widget.setLayout(layout)
+            else:
+                layout = existing_layout
+                
+            zone = LayoutZone('main', config['main'])
             layout.addWidget(zone)
-            self.zones[zone_name] = zone
+            self.zones['main'] = zone
+            print("📺 Created single zone layout")
+        elif layout_code == '2a':
+            # Main + Side - horizontal layout
+            if not existing_layout or not isinstance(existing_layout, QHBoxLayout):
+                layout = QHBoxLayout()
+                self.content_widget.setLayout(layout)
+            else:
+                layout = existing_layout
+            
+            # Main zone (75% width)
+            main_zone = LayoutZone('main', config['main'])
+            layout.addWidget(main_zone, 3)  # 3/4 of space
+            self.zones['main'] = main_zone
+            
+            # Side zone (25% width)
+            side_zone = LayoutZone('side', config['side'])
+            layout.addWidget(side_zone, 1)  # 1/4 of space
+            self.zones['side'] = side_zone
+            
+            print("📺 Created 2a layout: Main(75%) + Side(25%)")
         else:
-            # Multi-zone - grid layout with percentage-based positioning
-            # For simplicity, using nested layouts
-            self.setup_multi_zone_layout(config)
+            # For other layouts, create simple vertical for now
+            if not existing_layout or not isinstance(existing_layout, QVBoxLayout):
+                layout = QVBoxLayout()
+                self.content_widget.setLayout(layout)
+            else:
+                layout = existing_layout
+                
+            zone = LayoutZone('main', {'x': 0, 'y': 0, 'width': 100, 'height': 100})
+            layout.addWidget(zone)
+            self.zones['main'] = zone
+            print(f"📺 Created fallback layout for '{layout_code}'")
+        
+        # Force update
+        self.content_widget.update()
+        self.update()
             
         self.current_layout = layout_code
         self.layout_changed.emit(layout_code)
         
-    def setup_multi_zone_layout(self, config):
-        """Setup multi-zone layout using percentage positioning"""
-        # Create a frame for absolute positioning
-        frame = QFrame(self.content_widget)
-        frame.setStyleSheet("QFrame { background-color: black; }")
-        
-        layout = QVBoxLayout(self.content_widget)
-        layout.addWidget(frame)
-        
-        # Create zones with absolute positioning
-        for zone_name, zone_config in config.items():
-            zone = LayoutZone(zone_name, zone_config)
-            zone.setParent(frame)
-            self.zones[zone_name] = zone
-            
-        # Resize zones when frame is resized
-        def resize_zones():
-            frame_rect = frame.rect()
-            for zone_name, zone in self.zones.items():
-                zone_config = config[zone_name]
-                x = int(frame_rect.width() * zone_config['x'] / 100)
-                y = int(frame_rect.height() * zone_config['y'] / 100)
-                w = int(frame_rect.width() * zone_config['width'] / 100)
-                h = int(frame_rect.height() * zone_config['height'] / 100)
-                zone.setGeometry(x, y, w, h)
-                
-        frame.resizeEvent = lambda e: resize_zones()
+        print(f"✅ Layout '{layout_code}' setup complete with zones: {list(self.zones.keys())}")
         
     def clear_layout(self):
         """Clear current layout"""
+        print(f"🧹 Clearing layout: {self.current_layout}")
+        
         # Stop all media playback
         for zone in self.zones.values():
             zone.stop_media()
@@ -389,12 +423,20 @@ class MediaPlayerWidget(QWidget):
             
         self.zones.clear()
         
-        # Clear layout
+        # Clear layout properly
         layout = self.content_widget.layout()
         if layout:
-            for i in reversed(range(layout.count())):
-                layout.itemAt(i).widget().deleteLater()
-            layout.deleteLater()
+            print("🗑️ Removing existing layout items")
+            # Remove all items from layout
+            while layout.count():
+                item = layout.takeAt(0)
+                if item:
+                    widget = item.widget()
+                    if widget:
+                        widget.deleteLater()
+            
+            # Don't delete the layout or set to None - just clear it
+            print("✅ Layout cleared")
             
         # Remove ticker if exists
         if self.ticker:
@@ -406,16 +448,22 @@ class MediaPlayerWidget(QWidget):
         self.current_playlist = playlist_data
         self.current_item_index = 0
         
-        # Setup layout
+        playlist_name = playlist_data.get('name', 'Unknown')
         layout_code = playlist_data.get('layout', '1')
+        items = playlist_data.get('items', [])
+        
+        print(f"🎬 Loading playlist '{playlist_name}' with layout '{layout_code}' and {len(items)} items")
+        
+        # Setup layout
         self.setup_layout(layout_code)
         
         # Setup ticker if enabled
-        if playlist_data.get('ticker', {}).get('enabled', False):
-            self.setup_ticker(playlist_data['ticker'])
+        ticker_config = playlist_data.get('ticker', {})
+        if ticker_config.get('enabled', False):
+            self.setup_ticker(ticker_config)
             
-        # Start playing first item
-        self.play_current_item()
+        # Play all items in their respective zones
+        self.play_all_items()
         
     def setup_ticker(self, ticker_config):
         """Setup ticker widget"""
@@ -434,46 +482,42 @@ class MediaPlayerWidget(QWidget):
         else:  # top
             self.main_layout.insertWidget(0, self.ticker)
             
-    def play_current_item(self):
-        """Play current playlist item"""
+        print(f"📰 Setup ticker: '{text}' at {position}")
+            
+    def play_all_items(self):
+        """Play all items in their respective zones simultaneously"""
         if not self.current_playlist or not self.current_playlist.get('items'):
+            print("⚠️ No playlist items to play")
             return
             
         items = self.current_playlist['items']
-        if self.current_item_index >= len(items):
-            # Playlist finished - repeat if enabled
-            if self.current_playlist.get('repeat', True):
-                self.current_item_index = 0
-            else:
-                return
-                
-        item = items[self.current_item_index]
-        zone_name = item.get('zone', 'main')
-        duration = item.get('duration', 10)
+        zones_used = set()
         
-        # Get zone
-        if zone_name in self.zones:
-            zone = self.zones[zone_name]
+        print(f"🎭 Playing {len(items)} items across zones")
+        
+        for item in items:
+            zone_name = item.get('zone', 'main')
             
-            # Create asset info for zone
-            asset_info = {
-                'type': item.get('asset_type', 'image'),
-                'file_path': item.get('file_path', ''),
-                'duration': duration
-            }
-            
-            zone.play_media(asset_info)
-            
-            # Set timer for next item
-            self.playlist_timer.start(duration * 1000)
-            
+            if zone_name in self.zones:
+                zone = self.zones[zone_name]
+                zone.play_media(item)
+                zones_used.add(zone_name)
+                print(f"   ✅ Zone '{zone_name}': {os.path.basename(item.get('file_path', 'unknown'))}")
+            else:
+                print(f"   ❌ Zone '{zone_name}' not found in current layout")
+        
+        print(f"🎪 Active zones: {', '.join(zones_used)}")
+        
     def play_next_item(self):
-        """Play next playlist item"""
-        self.current_item_index += 1
-        self.play_current_item()
+        """Play next playlist item (for sequential playback)"""
+        # Currently playing all items simultaneously
+        # This method could be used for sequential playback in the future
+        pass
         
     def stop_playlist(self):
         """Stop current playlist"""
+        print("⏹️ Stopping playlist playback")
+        
         self.playlist_timer.stop()
         
         for zone in self.zones.values():
@@ -491,12 +535,13 @@ class MediaPlayerWidget(QWidget):
             
     def get_playback_status(self):
         """Get current playback status"""
+        playlist_name = self.current_playlist.get('name', 'None') if self.current_playlist else 'None'
+        
         return {
             'layout': self.current_layout,
-            'playlist_name': self.current_playlist.get('name', 'None') if self.current_playlist else 'None',
+            'playlist_name': playlist_name,
             'current_item': self.current_item_index + 1 if self.current_playlist else 0,
             'total_items': len(self.current_playlist.get('items', [])) if self.current_playlist else 0,
             'zones_active': len(self.zones),
             'ticker_active': self.ticker is not None and self.ticker.isVisible()
         }
-        

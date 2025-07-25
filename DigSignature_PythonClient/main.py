@@ -13,7 +13,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QHBoxLayout
                              QLineEdit, QTextEdit, QGroupBox, QCheckBox, QSlider,
                              QStatusBar, QMenuBar, QMenu, QDialog, QFormLayout,
                              QDialogButtonBox, QProgressBar, QTabWidget, QMessageBox)
-from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QThread, QSize
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QThread, QSize, QUrl
 from PyQt6.QtGui import QFont, QPixmap, QIcon, QAction
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtMultimediaWidgets import QVideoWidget
@@ -24,6 +24,23 @@ try:
 except ImportError as e:
     print(f"Error importing device_simulator: {e}")
     sys.exit(1)
+
+try:
+    from media_player import MediaPlayerWidget
+except ImportError as e:
+    print(f"Error importing media_player: {e}")
+    # Create fallback class
+    class MediaPlayerWidget(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setStyleSheet("background-color: black; color: white;")
+            layout = QVBoxLayout(self)
+            label = QLabel("MediaPlayerWidget not available")
+            label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            layout.addWidget(label)
+        
+        def load_playlist(self, playlist_data):
+            print(f"Fallback: Would load playlist {playlist_data.get('name', 'Unknown')}")
 
 try:
     from config import DeviceConfig, DEVICE_PRESETS, generate_device_id
@@ -366,115 +383,6 @@ class SimulatorControlPanel(QWidget):
         self.stop_btn.setEnabled(running)
 
 
-class MediaDisplayWidget(QWidget):
-    """Widget for displaying media content (videos, images)"""
-    
-    def __init__(self):
-        super().__init__()
-        self.init_ui()
-        self.setup_media_player()
-        
-    def init_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 0)
-        
-        # Video widget
-        self.video_widget = QVideoWidget()
-        self.video_widget.setMinimumSize(640, 480)
-        layout.addWidget(self.video_widget)
-        
-        # Media controls (hidden in fullscreen)
-        controls_layout = QHBoxLayout()
-        
-        self.play_btn = QPushButton("▶")
-        self.play_btn.clicked.connect(self.toggle_playback)
-        controls_layout.addWidget(self.play_btn)
-        
-        self.progress_bar = QProgressBar()
-        controls_layout.addWidget(self.progress_bar)
-        
-        self.volume_slider = QSlider(Qt.Orientation.Horizontal)
-        self.volume_slider.setRange(0, 100)
-        self.volume_slider.setValue(70)
-        self.volume_slider.setMaximumWidth(100)
-        self.volume_slider.valueChanged.connect(self.set_volume)
-        controls_layout.addWidget(self.volume_slider)
-        
-        layout.addLayout(controls_layout)
-        
-        # Status label
-        self.status_label = QLabel("Ready to play media")
-        self.status_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.status_label.setStyleSheet("QLabel { background-color: rgba(0,0,0,0.7); color: white; padding: 10px; }")
-        layout.addWidget(self.status_label)
-        
-    def setup_media_player(self):
-        """Setup Qt media player"""
-        self.media_player = QMediaPlayer()
-        self.audio_output = QAudioOutput()
-        
-        self.media_player.setVideoOutput(self.video_widget)
-        self.media_player.setAudioOutput(self.audio_output)
-        
-        # Connect signals
-        self.media_player.positionChanged.connect(self.update_progress)
-        self.media_player.durationChanged.connect(self.update_duration)
-        self.media_player.mediaStatusChanged.connect(self.handle_media_status)
-        
-        # Set initial volume
-        self.audio_output.setVolume(0.7)
-        
-    def play_media(self, file_path):
-        """Play media file"""
-        from PyQt6.QtCore import QUrl
-        
-        if os.path.exists(file_path):
-            url = QUrl.fromLocalFile(file_path)
-            self.media_player.setSource(url)
-            self.media_player.play()
-            self.status_label.setText(f"Playing: {os.path.basename(file_path)}")
-            self.play_btn.setText("⏸")
-        else:
-            self.status_label.setText(f"File not found: {file_path}")
-            
-    def stop_media(self):
-        """Stop media playback"""
-        self.media_player.stop()
-        self.status_label.setText("Stopped")
-        self.play_btn.setText("▶")
-        
-    def toggle_playback(self):
-        """Toggle play/pause"""
-        if self.media_player.playbackState() == QMediaPlayer.PlaybackState.PlayingState:
-            self.media_player.pause()
-            self.play_btn.setText("▶")
-        else:
-            self.media_player.play()
-            self.play_btn.setText("⏸")
-            
-    def set_volume(self, value):
-        """Set audio volume"""
-        self.audio_output.setVolume(value / 100.0)
-        
-    def update_progress(self, position):
-        """Update progress bar"""
-        if self.media_player.duration() > 0:
-            progress = int((position / self.media_player.duration()) * 100)
-            self.progress_bar.setValue(progress)
-            
-    def update_duration(self, duration):
-        """Update progress bar maximum"""
-        self.progress_bar.setMaximum(duration)
-        
-    def handle_media_status(self, status):
-        """Handle media status changes"""
-        if status == QMediaPlayer.MediaStatus.LoadedMedia:
-            self.status_label.setText("Media loaded, ready to play")
-        elif status == QMediaPlayer.MediaStatus.EndOfMedia:
-            self.status_label.setText("Playback finished")
-            self.play_btn.setText("▶")
-
-
 class LogDisplayWidget(QWidget):
     """Widget for displaying device logs"""
     
@@ -557,6 +465,7 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         super().__init__()
         self.device_simulator = None
         self.fullscreen_window = None
+        self.downloaded_assets = {}  # Store downloaded asset paths
         self.init_ui()
         self.setup_connections()
         
@@ -581,9 +490,9 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         # Right side - Tabs
         tab_widget = QTabWidget()
         
-        # Media display tab
-        self.media_display = MediaDisplayWidget()
-        tab_widget.addTab(self.media_display, "📺 Media Display")
+        # Media display tab - Use advanced MediaPlayerWidget with layouts
+        self.media_player = MediaPlayerWidget()
+        tab_widget.addTab(self.media_player, "📺 Media Display")
         
         # Logs tab
         self.log_display = LogDisplayWidget()
@@ -673,11 +582,13 @@ class PiSignageSimulatorMainWindow(QMainWindow):
             
     def on_media_file_received(self, file_path):
         """Handle when a media file is downloaded and ready to play"""
-        print(f"📺 Media file received: {file_path}")
-        self.log_display.add_log("INFO", "MEDIA", f"Playing media file: {os.path.basename(file_path)}")
+        print(f"📺 Main window received media file signal: {file_path}")
         
-        # Play the media file
-        self.media_display.play_media(file_path)
+        # Store the downloaded asset path for later use
+        asset_name = os.path.basename(file_path)
+        self.downloaded_assets[asset_name] = file_path
+        
+        self.log_display.add_log("INFO", "MEDIA", f"Asset downloaded: {asset_name}")
         
     def on_sync_completed(self, sync_data):
         """Handle when sync is completed"""
@@ -686,31 +597,77 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         
         self.log_display.add_log("INFO", "SYNC", f"Sync completed: {len(playlists)} playlists, {len(assets)} assets")
         
-        # If we have a playlist, process it for media display
+        # Process the playlist with layout support
         if playlists:
             playlist = playlists[0]  # Use first playlist
-            self.process_playlist_for_display(playlist, sync_data.get('assets', []))
+            self.process_playlist_with_layout(playlist, assets)
             
-    def process_playlist_for_display(self, playlist, assets):
-        """Process playlist and start media playback"""
+    def process_playlist_with_layout(self, playlist, assets):
+        """Process playlist and setup layout-aware playback"""
         playlist_name = playlist.get('name', 'Unknown')
+        layout_code = playlist.get('layout', '1')
         items = playlist.get('items', [])
-        layout = playlist.get('layout', '1')
         
-        self.log_display.add_log("INFO", "PLAYLIST", f"Processing playlist '{playlist_name}' with layout '{layout}'")
+        self.log_display.add_log("INFO", "LAYOUT", f"Setting up playlist '{playlist_name}' with layout '{layout_code}'")
         
-        # Create asset lookup
-        asset_lookup = {asset['id']: asset for asset in assets}
+        # Create complete playlist data for MediaPlayerWidget
+        playlist_data = {
+            'name': playlist_name,
+            'layout': layout_code,
+            'ticker': playlist.get('ticker', {}),
+            'items': []
+        }
         
-        # Find the first media item to play
+        # Process each playlist item
         for item in items:
             asset_id = item.get('asset_id')
-            if asset_id in asset_lookup:
-                asset = asset_lookup[asset_id]
-                if asset['type'] in ['video', 'image']:
-                    # Signal to download and play this asset
-                    self.log_display.add_log("INFO", "MEDIA", f"Queuing media: {asset['name']} ({asset['type']})")
+            
+            # Find the corresponding asset
+            asset = None
+            for a in assets:
+                if str(a['id']) == str(asset_id):
+                    asset = a
                     break
+            
+            if asset:
+                asset_name = asset['name']
+                
+                # Find the downloaded file path
+                file_path = None
+                for downloaded_name, downloaded_path in self.downloaded_assets.items():
+                    if asset_name in downloaded_name or downloaded_name in asset_name:
+                        file_path = downloaded_path
+                        break
+                
+                if file_path and os.path.exists(file_path):
+                    # Create item data for MediaPlayerWidget
+                    item_data = {
+                        'asset_id': asset_id,
+                        'asset_type': asset.get('type', 'video'),
+                        'file_path': file_path,
+                        'duration': item.get('duration', 10),
+                        'zone': item.get('zone', 'main'),
+                        'order': item.get('order', 0)
+                    }
+                    
+                    playlist_data['items'].append(item_data)
+                    
+                    self.log_display.add_log("INFO", "LAYOUT", 
+                        f"Added to {item.get('zone', 'main')} zone: {asset_name} ({asset.get('type', 'unknown')})")
+                else:
+                    self.log_display.add_log("WARN", "LAYOUT", f"File not found for asset: {asset_name}")
+            else:
+                self.log_display.add_log("WARN", "LAYOUT", f"Asset not found for item: {asset_id}")
+        
+        # Load the playlist into MediaPlayerWidget
+        if playlist_data['items']:
+            print(f"🎬 Loading playlist with {len(playlist_data['items'])} items into MediaPlayerWidget")
+            self.media_player.load_playlist(playlist_data)
+            
+            self.log_display.add_log("INFO", "LAYOUT", 
+                f"Loaded playlist with {len(playlist_data['items'])} items in layout '{layout_code}'")
+        else:
+            self.log_display.add_log("WARN", "LAYOUT", "No valid items found in playlist")
             
     def stop_simulation(self):
         """Stop device simulation"""
@@ -720,6 +677,13 @@ class PiSignageSimulatorMainWindow(QMainWindow):
             
         # Clear reference in control panel
         self.control_panel.set_device_simulator(None)
+        
+        # Stop media playback
+        if hasattr(self.media_player, 'stop_playlist'):
+            self.media_player.stop_playlist()
+        
+        # Clear downloaded assets
+        self.downloaded_assets.clear()
             
         self.control_panel.set_simulation_running(False)
         self.status_bar.showMessage("Simulation stopped")
@@ -752,12 +716,14 @@ class PiSignageSimulatorMainWindow(QMainWindow):
         self.fullscreen_window.setWindowTitle("PiSignage Player - Fullscreen")
         
         # Create new media widget for fullscreen
-        fullscreen_media = MediaDisplayWidget()
+        fullscreen_media = MediaPlayerWidget()
         self.fullscreen_window.setCentralWidget(fullscreen_media)
         
-        # Copy current media state
-        if hasattr(self.media_display, 'current_file'):
-            fullscreen_media.play_media(self.media_display.current_file)
+        # Copy current playlist state
+        current_status = self.media_player.get_playback_status()
+        if current_status['playlist_name'] != 'None':
+            # TODO: Copy playlist data to fullscreen player
+            pass
             
         self.fullscreen_window.showFullScreen()
         

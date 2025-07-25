@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}piSignage{% endblock %}</title>
+    <title>{% block title %}Digital Signage{% endblock %}</title>
     
     <!-- Bootstrap CSS (mismo que el original) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     
     <!-- Custom CSS para mantener el look original -->
     <style>
-        /* Estilos exactos del piSignage original */
+        /* Estilos exactos del server original */
         body {
             background: #ecf0f1;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -66,25 +66,25 @@
             min-height: calc(100vh - 70px);
         }
         
-        /* Botones del piSignage original */
-        .btn-pisignage {
+        /* Botones del server original */
+        .btn-app {
             background: #3498db;
             border-color: #3498db;
             color: white;
         }
         
-        .btn-pisignage:hover {
+        .btn-app:hover {
             background: #2980b9;
             border-color: #2980b9;
             color: white;
         }
         
-        .btn-success-pisignage {
+        .btn-success-app {
             background: #27ae60;
             border-color: #27ae60;
         }
         
-        .btn-danger-pisignage {
+        .btn-danger-app {
             background: #e74c3c;
             border-color: #e74c3c;
         }
@@ -170,7 +170,7 @@
                 </button>
                 <a class="navbar-brand" href="{% url 'dashboard' %}">
                     <i class="fa fa-tv" style="color: #3498db;"></i>
-                    piSignage
+                    App Signage
                 </a>
             </div>
             

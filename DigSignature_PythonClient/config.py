@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Configuration module for PiSignage Device Simulator - Simplified Version
+Configuration module for Device Simulator - Simplified Version
 """
 
 # Device Presets - Different types of devices to simulate
@@ -50,7 +50,7 @@ DEVICE_PRESETS = {
         "connection_type": "ethernet",
         "signal_strength": -35,
         "device_name": "Raspberry Pi 4B",
-        "description": "Original PiSignage hardware"
+        "description": "Original App hardware"
     }
 }
 

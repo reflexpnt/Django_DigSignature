@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
             name='SystemSettings',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('installation_name', models.CharField(default='PiSignage Installation', max_length=200)),
+                ('installation_name', models.CharField(default='{DjangoSETTINGs.APP_NAME} Installation', max_length=200)),
                 ('max_file_size_mb', models.PositiveIntegerField(default=500)),
                 ('allowed_file_types', models.CharField(default='mp4,avi,mov,jpg,png,pdf,html,zip,mp3', max_length=500)),
                 ('auto_convert_videos', models.BooleanField(default=True)),

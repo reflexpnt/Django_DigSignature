@@ -18,7 +18,7 @@ def device_check_server(request):
     """
     API principal de sincronización - reemplaza WebSocket del original
     
-    Equivalente a la funcionalidad de sync del pisignage-server original
+    Equivalente a la funcionalidad de sync del server original
     """
     try:
         data = json.loads(request.body)

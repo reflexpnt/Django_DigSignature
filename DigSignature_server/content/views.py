@@ -5,30 +5,31 @@ from django.utils.encoding import smart_str
 from .models import Asset
 import os
 import mimetypes
+from django.conf import settings as DjangoSETTINGs
 
 def assets_list(request):
     """Lista de assets"""
-    return HttpResponse("Assets List - PiSignage")
+    return HttpResponse("Assets List - {DjangoSETTINGs.APP_NAME}")
 
 def asset_upload(request):
     """Subir assets"""
-    return HttpResponse("Asset Upload - PiSignage")
+    return HttpResponse("Asset Upload - {DjangoSETTINGs.APP_NAME}")
 
 def asset_add_link(request):
     """Agregar link/URL"""
-    return HttpResponse("Add Link - PiSignage")
+    return HttpResponse("Add Link - {DjangoSETTINGs.APP_NAME}")
 
 def asset_detail(request, pk):
     """Detalle de asset"""
-    return HttpResponse(f"Asset Detail {pk} - PiSignage")
+    return HttpResponse(f"Asset Detail {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def asset_edit(request, pk):
     """Editar asset"""
-    return HttpResponse(f"Edit Asset {pk} - PiSignage")
+    return HttpResponse(f"Edit Asset {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def asset_delete(request, pk):
     """Eliminar asset"""
-    return HttpResponse(f"Delete Asset {pk} - PiSignage")
+    return HttpResponse(f"Delete Asset {pk} - {DjangoSETTINGs.APP_NAME}")
 
 @require_http_methods(["GET"])
 def asset_download(request, pk):
@@ -133,40 +134,40 @@ def asset_download(request, pk):
 
 def labels_list(request):
     """Lista de labels"""
-    return HttpResponse("Labels List - PiSignage")
+    return HttpResponse("Labels List - {DjangoSETTINGs.APP_NAME}")
 
 def label_create(request):
     """Crear label"""
-    return HttpResponse("Create Label - PiSignage")
+    return HttpResponse("Create Label - {DjangoSETTINGs.APP_NAME}")
 
 def label_edit(request, pk):
     """Editar label"""
-    return HttpResponse(f"Edit Label {pk} - PiSignage")
+    return HttpResponse(f"Edit Label {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def label_delete(request, pk):
     """Eliminar label"""
-    return HttpResponse(f"Delete Label {pk} - PiSignage")
+    return HttpResponse(f"Delete Label {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def layouts_list(request):
     """Lista de layouts"""
-    return HttpResponse("Layouts List - PiSignage")
+    return HttpResponse("Layouts List - {DjangoSETTINGs.APP_NAME}")
 
 def layout_create(request):
     """Crear layout"""
-    return HttpResponse("Create Layout - PiSignage")
+    return HttpResponse("Create Layout - {DjangoSETTINGs.APP_NAME}")
 
 def layout_detail(request, pk):
     """Detalle de layout"""
-    return HttpResponse(f"Layout Detail {pk} - PiSignage")
+    return HttpResponse(f"Layout Detail {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def layout_edit(request, pk):
     """Editar layout"""
-    return HttpResponse(f"Edit Layout {pk} - PiSignage")
+    return HttpResponse(f"Edit Layout {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def layout_delete(request, pk):
     """Eliminar layout"""
-    return HttpResponse(f"Delete Layout {pk} - PiSignage")
+    return HttpResponse(f"Delete Layout {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def upload_progress(request, upload_id):
     """API para progreso de upload"""
-    return HttpResponse(f"Upload Progress {upload_id} - PiSignage")
+    return HttpResponse(f"Upload Progress {upload_id} - {DjangoSETTINGs.APP_NAME}")

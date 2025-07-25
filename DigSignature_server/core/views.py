@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings as DjangoSETTINGs
+
 
 def dashboard(request):
     """Vista principal del dashboard"""
@@ -14,11 +16,11 @@ def dashboard(request):
 
 def settings_view(request):
     """Vista de configuración del sistema"""
-    return HttpResponse("Settings - PiSignage")
+    return HttpResponse("Settings - {DjangoSETTINGs.APP_NAME}")
 
 def activity_log(request):
     """Vista del log de actividades"""
-    return HttpResponse("Activity Log - PiSignage")
+    return HttpResponse("Activity Log - {DjangoSETTINGs.APP_NAME}")
 
 def dashboard_players_status(request):
     """API endpoint para HTMX - estado de players"""

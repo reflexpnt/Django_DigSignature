@@ -10,59 +10,60 @@ from django.shortcuts import get_object_or_404, render
 from .models import Player, DeviceLog, Group
 import json
 from datetime import datetime
+from django.conf import settings as DjangoSETTINGs
 
 
 def players_list(request):
     """Lista de players"""
-    return HttpResponse("Players List - PiSignage")
+    return HttpResponse("Players List - {DjangoSETTINGs.APP_NAME}")
 
 def player_register(request):
     """Registro de nuevo player"""
-    return HttpResponse("Player Registration - PiSignage")
+    return HttpResponse("Player Registration - {DjangoSETTINGs.APP_NAME}")
 
 def player_detail(request, pk):
     """Detalle de player específico"""
-    return HttpResponse(f"Player Detail {pk} - PiSignage")
+    return HttpResponse(f"Player Detail {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def player_edit(request, pk):
     """Editar player"""
-    return HttpResponse(f"Edit Player {pk} - PiSignage")
+    return HttpResponse(f"Edit Player {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def player_delete(request, pk):
     """Eliminar player"""
-    return HttpResponse(f"Delete Player {pk} - PiSignage")
+    return HttpResponse(f"Delete Player {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def player_sync(request, pk):
     """Sincronizar player"""
-    return HttpResponse(f"Sync Player {pk} - PiSignage")
+    return HttpResponse(f"Sync Player {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def player_screenshot(request, pk):
     """Screenshot de player"""
-    return HttpResponse(f"Screenshot Player {pk} - PiSignage")
+    return HttpResponse(f"Screenshot Player {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def groups_list(request):
     """Lista de grupos"""
-    return HttpResponse("Groups List - PiSignage")
+    return HttpResponse("Groups List - {DjangoSETTINGs.APP_NAME}")
 
 def group_create(request):
     """Crear grupo"""
-    return HttpResponse("Create Group - PiSignage")
+    return HttpResponse("Create Group - {DjangoSETTINGs.APP_NAME}")
 
 def group_detail(request, pk):
     """Detalle de grupo"""
-    return HttpResponse(f"Group Detail {pk} - PiSignage")
+    return HttpResponse(f"Group Detail {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def group_edit(request, pk):
     """Editar grupo"""
-    return HttpResponse(f"Edit Group {pk} - PiSignage")
+    return HttpResponse(f"Edit Group {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def group_delete(request, pk):
     """Eliminar grupo"""
-    return HttpResponse(f"Delete Group {pk} - PiSignage")
+    return HttpResponse(f"Delete Group {pk} - {DjangoSETTINGs.APP_NAME}")
 
 def group_deploy(request, pk):
     """Desplegar a grupo"""
-    return HttpResponse(f"Deploy to Group {pk} - PiSignage")
+    return HttpResponse(f"Deploy to Group {pk} - {DjangoSETTINGs.APP_NAME}")
 
 
 
@@ -81,33 +82,7 @@ from datetime import datetime
 @csrf_exempt
 @require_http_methods(["POST"])
 def device_log_batch(request):
-    """
-    API endpoint para recibir logs en batch desde dispositivos Android
     
-    Expected JSON:
-    {
-        "device_id": "A1B2C3D4E5F6G7H8",
-        "app_version": "1.2.3",
-        "logs": [
-            {
-                "timestamp": "2024-01-15T10:30:05.123Z",
-                "level": "INFO",
-                "category": "SYNC",
-                "tag": "SyncManager",
-                "message": "Starting sync process",
-                "thread_name": "SyncThread-1",
-                "method_name": "startSync",
-                "line_number": 45,
-                "extra_data": {"sync_id": "sync_123"}
-            },
-            // ... más logs
-        ],
-        "device_context": {
-            "battery_level": 85,
-            "memory_available_mb": 1024
-        }
-    }
-    """
     try:
         data = json.loads(request.body)
         device_id = data.get('device_id')
@@ -193,22 +168,7 @@ def device_log_batch(request):
 @csrf_exempt
 @require_http_methods(["POST"])
 def device_log_single(request):
-    """
-    API endpoint para un single log (para casos urgentes o tiempo real)
     
-    Expected JSON:
-    {
-        "device_id": "A1B2C3D4E5F6G7H8",
-        "timestamp": "2024-01-15T10:30:05.123Z",
-        "level": "ERROR",
-        "category": "SYSTEM",
-        "tag": "CrashHandler",
-        "message": "Application crashed",
-        "exception_class": "RuntimeException",
-        "stack_trace": "...",
-        "extra_data": {"crash_id": "crash_456"}
-    }
-    """
     try:
         data = json.loads(request.body)
         device_id = data.get('device_id')

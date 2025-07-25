@@ -1,9 +1,10 @@
 from django.db import models
 import os
+from django.conf import settings as DjangoSETTINGs
 
 class SystemSettings(models.Model):
     """Configuraciones globales del sistema (Singleton)"""
-    installation_name = models.CharField(max_length=200, default='PiSignage Installation')
+    installation_name = models.CharField(max_length=200, default='{DjangoSETTINGs.APP_NAME} Installation')
     
     # Configuraciones de upload
     max_file_size_mb = models.PositiveIntegerField(default=500)
