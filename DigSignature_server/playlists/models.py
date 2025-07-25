@@ -101,7 +101,9 @@ class Playlist(models.Model):
             })
         
         json_string = json.dumps(data, sort_keys=True)
-        return hashlib.sha256(json_string.encode()).hexdigest()
+        full_hash = hashlib.sha256(json_string.encode()).hexdigest()
+        return full_hash[:8]  # Primeros 8 caracteres
+        #return hashlib.sha256(json_string.encode()).hexdigest()
     
     def to_sync_data(self):
         """Convertir playlist a formato de sincronización - como en el original"""

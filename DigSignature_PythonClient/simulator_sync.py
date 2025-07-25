@@ -46,9 +46,11 @@ class SyncManager(QObject):
         }
         
         try:
-            # Show full hash instead of truncated
-            hash_display = self._format_hash(self.last_sync_hash)
-            self.log_message.emit("DEBUG", "SYNC", f"Checking server - Battery: {health_data['battery']}%, Temp: {health_data['temperature']}°C, Hash: {hash_display}", "SyncManager")
+            # Show hash (should be short, like 8 chars)
+            hash_display = self.last_sync_hash if self.last_sync_hash else 'None'
+            self.log_message.emit("DEBUG", "SYNC", 
+                f"Checking server - Battery: {health_data['battery']}%, Temp: {health_data['temperature']}°C, Hash: {hash_display}", 
+                "SyncManager")
             
             response = self.session.post(url, json=data, timeout=10)
             
@@ -64,8 +66,7 @@ class SyncManager(QObject):
                     
                     # Update sync hash
                     self.last_sync_hash = result.get('new_sync_hash', '')
-                    new_hash_display = self._format_hash(self.last_sync_hash)
-                    self.log_message.emit("DEBUG", "SYNC", f"Updated sync hash: {new_hash_display}", "SyncManager")
+                    self.log_message.emit("DEBUG", "SYNC", f"Updated sync hash: {self.last_sync_hash}", "SyncManager")
                     
                     # Process playlists info
                     sync_data = result['sync_data']
@@ -135,15 +136,6 @@ class SyncManager(QObject):
             error_msg = f"Sync confirmation error: {e}"
             print(f"❌ {error_msg}")
             self.log_message.emit("ERROR", "NETWORK", error_msg, "SyncConfirmation")
-            
-    def _format_hash(self, hash_str):
-        """Format hash for display (show more characters)"""
-        if not hash_str:
-            return "None"
-        elif len(hash_str) <= 32:
-            return hash_str
-        else:
-            return f"{hash_str[:16]}...{hash_str[-8:]}"
             
     def update_config(self, new_config):
         """Update configuration"""

@@ -26,18 +26,36 @@ except ImportError as e:
     sys.exit(1)
 
 try:
-    from config import DeviceConfig, DEVICE_PRESETS
+    from config import DeviceConfig, DEVICE_PRESETS, generate_device_id
 except ImportError as e:
     print(f"Error importing config: {e}")
     # Create minimal fallback
     class DeviceConfig:
-        pass
+        def __init__(self):
+            self.device_id = "A1B2C3D4E5F6G7H8"
+            self.device_name = "PyQt6 Simulator"
+            self.server_url = "http://localhost:8000"
+            self.resolution = "1920x1080"
+            self.sync_interval = 30
+            self.battery_level = 85
+            self.temperature = 38
+            self.storage_free_mb = 2048
+            self.connection_type = "wifi"
+            self.signal_strength = -45
+            self.offline_mode = False
+    
     DEVICE_PRESETS = {
         "Default Tablet": {
             "resolution": "1920x1080",
             "description": "Default configuration"
         }
     }
+    
+    def generate_device_id():
+        import random
+        import string
+        chars = string.digits + 'ABCDEF'
+        return ''.join(random.choices(chars, k=16))
 
 
 class SimulatorControlPanel(QWidget):
@@ -54,6 +72,10 @@ class SimulatorControlPanel(QWidget):
     def __init__(self):
         super().__init__()
         self.device_simulator = None  # Initialize reference
+        
+        # Create default config
+        self.default_config = DeviceConfig()
+        
         self.init_ui()
         
     def init_ui(self):
@@ -69,18 +91,29 @@ class SimulatorControlPanel(QWidget):
         self.preset_combo.currentTextChanged.connect(self.load_preset)
         device_layout.addRow("Preset:", self.preset_combo)
         
-        # Device ID
-        self.device_id_input = QLineEdit("A1B2C3D4E5F6G7H8")
+        # Device ID - Read from config
+        device_id_layout = QHBoxLayout()
+        self.device_id_input = QLineEdit(self.default_config.device_id)
         self.device_id_input.setMaxLength(16)
-        device_layout.addRow("Device ID:", self.device_id_input)
+        device_id_layout.addWidget(self.device_id_input)
         
-        # Device Name
-        self.device_name_input = QLineEdit("PyQt6 Simulator")
+        # Button to generate new device ID
+        generate_id_btn = QPushButton("🎲")
+        generate_id_btn.setToolTip("Generate new random Device ID")
+        generate_id_btn.setMaximumWidth(30)
+        generate_id_btn.clicked.connect(self.generate_new_device_id)
+        device_id_layout.addWidget(generate_id_btn)
+        
+        device_layout.addRow("Device ID:", device_id_layout)
+        
+        # Device Name - Read from config
+        self.device_name_input = QLineEdit(self.default_config.device_name)
         device_layout.addRow("Device Name:", self.device_name_input)
         
-        # Screen Resolution
+        # Screen Resolution - Read from config
         self.resolution_combo = QComboBox()
-        self.resolution_combo.addItems(["1920x1080", "1280x720", "1024x768", "800x600"])
+        self.resolution_combo.addItems(["1920x1080", "1280x720", "1024x768", "800x600", "3840x2160"])
+        self.resolution_combo.setCurrentText(self.default_config.resolution)
         device_layout.addRow("Resolution:", self.resolution_combo)
         
         layout.addWidget(device_group)
@@ -89,13 +122,14 @@ class SimulatorControlPanel(QWidget):
         server_group = QGroupBox("Server Configuration")
         server_layout = QFormLayout(server_group)
         
-        self.server_url_input = QLineEdit("http://localhost:8000")
+        # Server URL - Read from config
+        self.server_url_input = QLineEdit(self.default_config.server_url)
         server_layout.addRow("Server URL:", self.server_url_input)
         
-        # Sync interval spin box with immediate update
+        # Sync interval spin box with immediate update - Read from config
         self.sync_interval_spin = QSpinBox()
         self.sync_interval_spin.setRange(10, 3600)
-        self.sync_interval_spin.setValue(30)
+        self.sync_interval_spin.setValue(self.default_config.sync_interval)
         self.sync_interval_spin.setSuffix(" seconds")
         self.sync_interval_spin.valueChanged.connect(self.on_sync_interval_changed)
         server_layout.addRow("Sync Interval:", self.sync_interval_spin)
@@ -150,11 +184,11 @@ class SimulatorControlPanel(QWidget):
         health_group = QGroupBox("Device Health Simulation")
         health_layout = QFormLayout(health_group)
         
-        # Health sliders with immediate update
+        # Health sliders with immediate update - Read from config
         self.battery_slider = QSlider(Qt.Orientation.Horizontal)
         self.battery_slider.setRange(0, 100)
-        self.battery_slider.setValue(85)
-        self.battery_label = QLabel("85%")
+        self.battery_slider.setValue(self.default_config.battery_level)
+        self.battery_label = QLabel(f"{self.default_config.battery_level}%")
         battery_layout = QHBoxLayout()
         battery_layout.addWidget(self.battery_slider)
         battery_layout.addWidget(self.battery_label)
@@ -163,8 +197,8 @@ class SimulatorControlPanel(QWidget):
         
         self.temperature_slider = QSlider(Qt.Orientation.Horizontal)
         self.temperature_slider.setRange(20, 80)
-        self.temperature_slider.setValue(38)
-        self.temp_label = QLabel("38°C")
+        self.temperature_slider.setValue(self.default_config.temperature)
+        self.temp_label = QLabel(f"{self.default_config.temperature}°C")
         temp_layout = QHBoxLayout()
         temp_layout.addWidget(self.temperature_slider)
         temp_layout.addWidget(self.temp_label)
@@ -173,7 +207,7 @@ class SimulatorControlPanel(QWidget):
         
         self.storage_spin = QSpinBox()
         self.storage_spin.setRange(100, 32000)
-        self.storage_spin.setValue(2048)
+        self.storage_spin.setValue(self.default_config.storage_free_mb)
         self.storage_spin.setSuffix(" MB")
         self.storage_spin.valueChanged.connect(self.on_storage_changed)
         health_layout.addRow("Free Storage:", self.storage_spin)
@@ -186,12 +220,13 @@ class SimulatorControlPanel(QWidget):
         
         self.connection_combo = QComboBox()
         self.connection_combo.addItems(["wifi", "mobile", "ethernet"])
+        self.connection_combo.setCurrentText(self.default_config.connection_type)
         network_layout.addRow("Connection:", self.connection_combo)
         
         self.signal_slider = QSlider(Qt.Orientation.Horizontal)
         self.signal_slider.setRange(-120, -30)
-        self.signal_slider.setValue(-45)
-        self.signal_label = QLabel("-45 dBm")
+        self.signal_slider.setValue(self.default_config.signal_strength)
+        self.signal_label = QLabel(f"{self.default_config.signal_strength} dBm")
         signal_layout = QHBoxLayout()
         signal_layout.addWidget(self.signal_slider)
         signal_layout.addWidget(self.signal_label)
@@ -199,6 +234,8 @@ class SimulatorControlPanel(QWidget):
         network_layout.addRow("Signal Strength:", signal_layout)
         
         self.offline_checkbox = QCheckBox("Simulate Offline Mode")
+        self.offline_checkbox.setChecked(self.default_config.offline_mode)
+        self.offline_checkbox.stateChanged.connect(self.on_offline_mode_changed)
         network_layout.addRow("", self.offline_checkbox)
         
         layout.addWidget(network_group)
@@ -242,6 +279,12 @@ class SimulatorControlPanel(QWidget):
             config = self.get_config()
             self.device_simulator.update_config(config)
             
+    def on_offline_mode_changed(self, state):
+        """Handle offline mode checkbox change"""
+        if self.device_simulator:
+            config = self.get_config()
+            self.device_simulator.update_config(config)
+            
     def open_server_logs(self):
         """Open server logs in web browser"""
         device_id = self.device_id_input.text()
@@ -260,13 +303,46 @@ class SimulatorControlPanel(QWidget):
                 "Server Logs URL", 
                 f"Open this URL in your browser:\n\n{logs_url}"
             )
+    
+    def generate_new_device_id(self):
+        """Generate and set a new random device ID"""
+        new_id = generate_device_id()
+        self.device_id_input.setText(new_id)
+        print(f"Generated new device ID: {new_id}")
             
     def load_preset(self, preset_name):
         """Load device preset configuration"""
         if preset_name in DEVICE_PRESETS:
             preset = DEVICE_PRESETS[preset_name]
+            
+            # Update resolution
             self.resolution_combo.setCurrentText(preset['resolution'])
-            # Update other fields based on preset
+            
+            # Update device name if it has one
+            if 'device_name' in preset:
+                self.device_name_input.setText(preset['device_name'])
+            
+            # Update health values
+            if 'battery_level' in preset:
+                self.battery_slider.setValue(preset['battery_level'])
+                
+            if 'temperature' in preset:
+                self.temperature_slider.setValue(preset['temperature'])
+                
+            if 'storage_free_mb' in preset:
+                self.storage_spin.setValue(preset['storage_free_mb'])
+            
+            # Update network values
+            if 'connection_type' in preset:
+                self.connection_combo.setCurrentText(preset['connection_type'])
+                
+            if 'signal_strength' in preset:
+                self.signal_slider.setValue(preset['signal_strength'])
+                
+            # Update orientation if present (for future use)
+            if 'orientation' in preset:
+                # Could add orientation combo box later
+                pass
         
     def get_config(self):
         """Get current configuration"""

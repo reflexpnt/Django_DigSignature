@@ -2271,3 +2271,694 @@ INFO 2025-07-25 01:14:05,342 basehttp 3452 8876 "POST /players/api/logs/batch/ H
 INFO 2025-07-25 01:14:13,201 basehttp 3452 16680 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 29532
 INFO 2025-07-25 01:14:21,345 basehttp 3452 8876 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
 INFO 2025-07-25 01:14:43,203 basehttp 3452 16680 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+INFO 2025-07-25 09:18:12,371 autoreload 1852 14452 Watching for file changes with StatReloader
+INFO 2025-07-25 09:18:40,016 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:18:40,243 log 1852 10196 Not Found: /favicon.ico
+WARNING 2025-07-25 09:18:40,244 basehttp 1852 10196 "GET /favicon.ico HTTP/1.1" 404 4519
+INFO 2025-07-25 09:18:55,088 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+INFO 2025-07-25 09:19:10,136 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+INFO 2025-07-25 09:19:25,358 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+INFO 2025-07-25 09:19:48,357 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+INFO 2025-07-25 09:20:16,367 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:21:24,372 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:21:24,373 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:21:25,425 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:21:25,449 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:21:25,449 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:21:40,532 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:21:40,569 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:21:40,570 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:21:55,617 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:21:55,647 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:21:55,648 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:22:11,366 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:22:11,405 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:22:11,406 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:22:27,368 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:22:27,434 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:22:27,435 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:22:43,373 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:22:43,455 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:22:43,456 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:22:59,356 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:22:59,434 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:22:59,435 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:23:21,529 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:23:21,563 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:23:21,564 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:23:36,618 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:23:36,650 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:23:36,651 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:23:52,367 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30010
+WARNING 2025-07-25 09:23:52,407 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:23:52,407 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:24:07,567 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:24:07,605 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:24:07,606 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:24:19,699 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:24:19,727 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:24:19,728 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:24:34,793 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:24:34,819 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:24:34,820 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:24:48,115 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:24:48,144 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:24:48,145 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:25:01,021 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:25:01,053 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:25:01,054 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:25:16,373 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:25:16,406 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:25:16,407 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:25:31,501 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+INFO 2025-07-25 09:25:46,563 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:25:51,313 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:25:51,314 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:26:01,628 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:26:01,669 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:26:01,670 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:26:17,354 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:26:17,454 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:26:17,454 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:26:33,372 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:26:33,448 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:26:33,449 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:26:49,374 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:26:49,451 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:26:49,453 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:27:05,368 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:27:05,416 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:27:05,417 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:27:21,361 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:27:21,475 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:27:21,475 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:27:37,362 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:27:37,465 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:27:37,466 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:27:53,362 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30011
+WARNING 2025-07-25 09:27:53,515 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:27:53,517 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:28:31,960 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:28:31,987 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:28:31,988 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:28:47,060 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:28:47,095 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:28:47,095 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:29:02,369 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:29:02,420 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:29:02,421 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:29:18,356 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:29:18,462 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:29:18,464 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:29:34,359 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:29:34,501 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:29:34,502 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:29:50,360 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30324
+WARNING 2025-07-25 09:29:50,440 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:29:50,440 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:30:09,096 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:30:09,129 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:30:09,130 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:30:24,209 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:30:24,246 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:30:24,247 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:30:35,483 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:30:35,525 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:30:35,526 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:30:40,364 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:30:40,399 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:30:40,400 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:30:54,256 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:30:54,287 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:30:54,288 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:31:11,564 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:31:11,604 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:31:11,605 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:31:27,357 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:31:27,391 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:31:27,392 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:31:43,379 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30441
+WARNING 2025-07-25 09:31:43,465 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:31:43,466 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:31:58,238 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30443
+WARNING 2025-07-25 09:31:58,271 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:31:58,272 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:32:16,374 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30443
+WARNING 2025-07-25 09:32:16,422 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:32:16,423 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:32:32,364 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30443
+WARNING 2025-07-25 09:32:32,452 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:32:32,453 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:32:48,362 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30443
+WARNING 2025-07-25 09:32:48,492 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:32:48,493 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:33:04,369 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30443
+WARNING 2025-07-25 09:33:04,493 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:33:04,494 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:35:45,555 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30716
+WARNING 2025-07-25 09:35:45,582 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:35:45,583 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:36:03,360 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30716
+WARNING 2025-07-25 09:36:03,421 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:36:03,421 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:36:19,400 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:36:19,477 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:36:19,478 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:36:21,996 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:36:22,024 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:36:22,024 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:36:37,376 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:36:37,411 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:36:37,412 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:36:53,362 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:36:53,417 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:36:53,418 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:37:09,364 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:37:09,423 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:37:09,424 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:37:25,368 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30237
+WARNING 2025-07-25 09:37:25,414 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:37:25,415 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:38:30,714 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30248
+WARNING 2025-07-25 09:38:30,739 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:38:30,740 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:38:46,368 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30248
+WARNING 2025-07-25 09:38:46,410 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:38:46,411 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:39:02,371 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30248
+WARNING 2025-07-25 09:39:02,438 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:39:02,439 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:39:18,355 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30248
+WARNING 2025-07-25 09:39:18,422 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:39:18,423 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:39:24,983 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30250
+WARNING 2025-07-25 09:39:25,010 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:39:25,011 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:39:40,382 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30250
+WARNING 2025-07-25 09:39:40,418 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:39:40,419 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:39:56,387 basehttp 1852 10196 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30259
+WARNING 2025-07-25 09:39:56,460 log 1852 10196 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:39:56,461 basehttp 1852 10196 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:40:12,675 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30259
+WARNING 2025-07-25 09:40:12,740 log 1852 10732 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:40:12,741 basehttp 1852 10732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:40:28,369 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30259
+WARNING 2025-07-25 09:40:28,429 log 1852 10732 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:40:28,430 basehttp 1852 10732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:40:45,843 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30249
+WARNING 2025-07-25 09:40:45,872 log 1852 10732 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:40:45,873 basehttp 1852 10732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:41:00,941 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30249
+WARNING 2025-07-25 09:41:01,003 log 1852 10732 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-25 09:41:01,004 basehttp 1852 10732 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4630
+INFO 2025-07-25 09:41:16,055 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30249
+INFO 2025-07-25 09:41:20,238 basehttp 1852 1488 "GET /admin/players/devicelog/ HTTP/1.1" 200 42761
+INFO 2025-07-25 09:41:20,293 basehttp 1852 1488 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,300 basehttp 1852 1488 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,305 basehttp 1852 3952 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,306 basehttp 1852 3564 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,306 basehttp 1852 9488 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,306 basehttp 1852 2740 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,307 basehttp 1852 1488 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,310 basehttp 1852 3564 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,310 basehttp 1852 3952 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,313 basehttp 1852 9488 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,314 basehttp 1852 2740 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,315 basehttp 1852 3564 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,317 basehttp 1852 1488 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,318 basehttp 1852 3952 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,319 basehttp 1852 2740 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,325 basehttp 1852 2740 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,329 basehttp 1852 2740 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,346 basehttp 1852 17528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 09:41:20,374 basehttp 1852 17528 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,375 basehttp 1852 2740 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:20,376 basehttp 1852 17528 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+WARNING 2025-07-25 09:41:20,523 log 1852 17528 Not Found: /favicon.ico
+WARNING 2025-07-25 09:41:20,524 basehttp 1852 17528 "GET /favicon.ico HTTP/1.1" 404 4523
+INFO 2025-07-25 09:41:31,356 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 30249
+INFO 2025-07-25 09:41:35,235 basehttp 1852 17528 "POST /admin/players/devicelog/ HTTP/1.1" 200 20950
+INFO 2025-07-25 09:41:35,286 basehttp 1852 17528 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:36,870 basehttp 1852 17528 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 09:41:36,892 basehttp 1852 17528 "GET /admin/players/devicelog/ HTTP/1.1" 200 19059
+INFO 2025-07-25 09:41:36,957 basehttp 1852 17528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 09:41:36,979 basehttp 1852 17528 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-07-25 09:41:52,124 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:42:07,174 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:42:22,354 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:42:38,355 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:42:54,352 basehttp 1852 10732 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:49:16,657 basehttp 1852 11956 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:49:32,355 basehttp 1852 11956 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:49:48,354 basehttp 1852 11956 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:50:11,357 basehttp 1852 11956 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+INFO 2025-07-25 09:59:16,670 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 16634
+WARNING 2025-07-25 10:00:47,673 log 1852 9496 Bad Request: /players/api/register/
+WARNING 2025-07-25 10:00:47,674 basehttp 1852 9496 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 10:00:50,780 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1162
+INFO 2025-07-25 10:00:57,717 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 10:01:17,727 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:01:25,617 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:01:47,692 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:01:47,730 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:01:52,762 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 24589
+INFO 2025-07-25 10:01:55,609 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:02:07,122 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 26139
+INFO 2025-07-25 10:02:17,721 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:02:22,170 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 26139
+INFO 2025-07-25 10:02:25,605 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:02:33,179 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 27689
+INFO 2025-07-25 10:02:47,689 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:02:47,728 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:02:48,229 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 28217
+INFO 2025-07-25 10:02:55,613 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:03:03,361 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 29767
+INFO 2025-07-25 10:03:17,717 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:03:20,355 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 29767
+INFO 2025-07-25 10:03:25,616 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:03:36,357 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 31317
+INFO 2025-07-25 10:03:47,687 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:03:47,723 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:03:54,367 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 31845
+INFO 2025-07-25 10:03:55,610 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:04:10,355 basehttp 1852 14992 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 33395
+INFO 2025-07-25 10:04:17,728 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:04:25,618 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:04:47,708 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:04:47,747 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:04:55,622 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:05:17,754 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:05:25,628 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:05:47,713 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:05:47,763 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:05:55,637 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:06:17,748 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:06:25,645 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:06:47,715 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:06:47,762 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:06:55,663 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:07:17,749 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:07:25,649 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:07:47,715 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:07:47,767 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:07:55,660 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:08:17,761 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:08:25,649 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:08:47,720 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:08:47,787 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:08:55,664 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:09:17,762 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:09:25,664 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:09:37,546 basehttp 1852 19012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 54722
+INFO 2025-07-25 10:09:42,612 basehttp 1852 19012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 54722
+INFO 2025-07-25 10:09:47,673 basehttp 1852 19012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 54722
+INFO 2025-07-25 10:09:47,716 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:09:47,768 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:09:52,741 basehttp 1852 19012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 55250
+INFO 2025-07-25 10:09:55,659 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:09:57,804 basehttp 1852 19012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:03,155 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:08,198 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:13,249 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:17,744 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:10:18,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:24,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 56800
+INFO 2025-07-25 10:10:25,656 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:10:30,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58350
+INFO 2025-07-25 10:10:36,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58350
+INFO 2025-07-25 10:10:42,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58350
+INFO 2025-07-25 10:10:47,721 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:10:47,773 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:10:49,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58878
+INFO 2025-07-25 10:10:55,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 58878
+INFO 2025-07-25 10:10:55,657 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:11:01,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 60428
+INFO 2025-07-25 10:11:07,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 60428
+INFO 2025-07-25 10:11:13,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 60428
+INFO 2025-07-25 10:11:17,752 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:11:19,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 60428
+INFO 2025-07-25 10:11:25,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 60428
+INFO 2025-07-25 10:11:25,654 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:11:31,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 61978
+INFO 2025-07-25 10:11:37,356 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 61978
+INFO 2025-07-25 10:11:43,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 61978
+INFO 2025-07-25 10:11:47,729 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:11:47,772 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:11:49,358 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 62506
+INFO 2025-07-25 10:11:55,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 62506
+INFO 2025-07-25 10:11:55,650 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:12:01,361 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64056
+INFO 2025-07-25 10:12:07,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64056
+INFO 2025-07-25 10:12:13,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64056
+INFO 2025-07-25 10:12:17,774 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:12:19,375 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64056
+INFO 2025-07-25 10:12:25,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 64056
+INFO 2025-07-25 10:12:25,663 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:12:31,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 65606
+INFO 2025-07-25 10:12:37,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 65606
+INFO 2025-07-25 10:12:43,361 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 65606
+INFO 2025-07-25 10:12:47,729 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:12:47,777 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:12:49,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 66134
+INFO 2025-07-25 10:12:55,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 66134
+INFO 2025-07-25 10:12:55,673 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:13:01,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67684
+INFO 2025-07-25 10:13:07,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67684
+INFO 2025-07-25 10:13:13,360 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67684
+INFO 2025-07-25 10:13:17,759 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:13:19,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67684
+INFO 2025-07-25 10:13:25,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 67684
+INFO 2025-07-25 10:13:25,679 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:13:31,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 69234
+INFO 2025-07-25 10:13:37,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 69234
+INFO 2025-07-25 10:13:43,361 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 69234
+INFO 2025-07-25 10:13:47,719 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:13:47,782 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:13:49,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 69762
+INFO 2025-07-25 10:13:55,354 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 69762
+INFO 2025-07-25 10:13:55,678 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:14:01,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71312
+INFO 2025-07-25 10:14:07,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71312
+INFO 2025-07-25 10:14:13,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71312
+INFO 2025-07-25 10:14:17,764 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:14:19,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71312
+INFO 2025-07-25 10:14:25,358 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 71312
+INFO 2025-07-25 10:14:25,680 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:14:31,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 72862
+INFO 2025-07-25 10:14:37,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 72862
+INFO 2025-07-25 10:14:43,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 72862
+INFO 2025-07-25 10:14:47,726 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:14:47,785 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:14:49,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 73390
+INFO 2025-07-25 10:14:55,377 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 73390
+INFO 2025-07-25 10:14:55,680 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:15:01,360 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74940
+INFO 2025-07-25 10:15:07,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74940
+INFO 2025-07-25 10:15:13,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74940
+INFO 2025-07-25 10:15:17,763 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:15:19,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74940
+INFO 2025-07-25 10:15:25,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 74940
+INFO 2025-07-25 10:15:25,672 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:15:31,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 76490
+INFO 2025-07-25 10:15:37,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 76490
+INFO 2025-07-25 10:15:43,358 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 76490
+INFO 2025-07-25 10:15:47,722 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:15:47,769 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:15:49,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 77018
+INFO 2025-07-25 10:15:55,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 77018
+INFO 2025-07-25 10:15:55,676 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:16:01,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78568
+INFO 2025-07-25 10:16:07,375 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78568
+INFO 2025-07-25 10:16:13,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78568
+INFO 2025-07-25 10:16:17,752 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:16:19,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78568
+INFO 2025-07-25 10:16:25,357 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 78568
+INFO 2025-07-25 10:16:25,672 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:16:31,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 80118
+INFO 2025-07-25 10:16:37,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 80118
+INFO 2025-07-25 10:16:43,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 80118
+INFO 2025-07-25 10:16:47,729 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:16:47,785 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:16:49,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 80646
+INFO 2025-07-25 10:16:55,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 80646
+INFO 2025-07-25 10:16:55,672 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:17:01,360 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 82196
+INFO 2025-07-25 10:17:07,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 82196
+INFO 2025-07-25 10:17:13,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 82196
+INFO 2025-07-25 10:17:17,768 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:17:19,360 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 82196
+INFO 2025-07-25 10:17:25,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 82196
+INFO 2025-07-25 10:17:25,683 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:17:31,388 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 83746
+INFO 2025-07-25 10:17:37,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 83746
+INFO 2025-07-25 10:17:43,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 83746
+INFO 2025-07-25 10:17:47,731 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:17:47,788 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:17:49,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 84274
+INFO 2025-07-25 10:17:55,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 84274
+INFO 2025-07-25 10:17:55,678 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:18:01,361 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85824
+INFO 2025-07-25 10:18:07,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85824
+INFO 2025-07-25 10:18:13,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85824
+INFO 2025-07-25 10:18:17,752 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:18:19,385 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85824
+INFO 2025-07-25 10:18:25,379 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 85824
+INFO 2025-07-25 10:18:25,684 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:18:31,383 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 87374
+INFO 2025-07-25 10:18:37,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 87374
+INFO 2025-07-25 10:18:43,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 87374
+INFO 2025-07-25 10:18:47,719 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:18:47,767 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:18:49,374 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 87902
+INFO 2025-07-25 10:18:55,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 87902
+INFO 2025-07-25 10:18:55,679 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:19:01,380 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 89452
+INFO 2025-07-25 10:19:07,379 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 89452
+INFO 2025-07-25 10:19:13,374 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 89452
+INFO 2025-07-25 10:19:17,783 basehttp 1852 19204 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:19:19,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 89452
+INFO 2025-07-25 10:19:25,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 89452
+INFO 2025-07-25 10:19:25,695 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:19:31,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91002
+INFO 2025-07-25 10:19:37,375 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91002
+INFO 2025-07-25 10:19:43,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91002
+INFO 2025-07-25 10:19:46,063 basehttp 1852 7160 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:19:49,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91480
+INFO 2025-07-25 10:19:55,375 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91480
+WARNING 2025-07-25 10:19:57,389 log 1852 7568 Bad Request: /players/api/register/
+WARNING 2025-07-25 10:19:57,390 basehttp 1852 7568 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 10:20:00,470 basehttp 1852 1056 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1162
+INFO 2025-07-25 10:20:01,378 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 91483
+INFO 2025-07-25 10:20:07,452 basehttp 1852 5284 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 10:20:07,466 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 97534
+INFO 2025-07-25 10:20:12,519 basehttp 1852 5284 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:20:13,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:19,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:25,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:31,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:37,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:43,377 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:49,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:20:55,387 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:01,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:07,361 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:13,359 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:19,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:25,367 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:31,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:37,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:43,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:49,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:21:55,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:01,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:07,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:13,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:19,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:25,374 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:31,374 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:37,390 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:43,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:49,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:22:55,381 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:01,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:07,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:13,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:19,365 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:25,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:31,378 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:37,375 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:43,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:49,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:23:55,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:01,379 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:07,377 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:13,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:19,376 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:25,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:31,378 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:37,379 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:43,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:49,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:24:55,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:01,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:07,381 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:13,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:19,372 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:25,373 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:31,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:37,364 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:43,377 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:49,378 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:25:55,362 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:01,370 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:07,363 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:13,366 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:19,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:25,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:31,371 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:37,369 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:43,368 basehttp 1852 16012 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:26:44,760 autoreload 1852 14452 C:\laragon\www\Django_DigSignature\DigSignature_server\scheduling\views.py changed, reloading.
+INFO 2025-07-25 10:26:45,470 autoreload 11568 16292 Watching for file changes with StatReloader
+INFO 2025-07-25 10:26:49,700 basehttp 11568 9620 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 98012
+INFO 2025-07-25 10:27:17,934 autoreload 3948 14128 Watching for file changes with StatReloader
+WARNING 2025-07-25 10:27:46,160 log 3948 7908 Bad Request: /players/api/register/
+WARNING 2025-07-25 10:27:46,162 basehttp 3948 7908 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 10:27:49,280 basehttp 3948 15208 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 10:27:56,281 basehttp 3948 16184 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 10:28:16,225 basehttp 3948 15208 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:28:24,112 basehttp 3948 16184 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:28:27,281 basehttp 3948 16184 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:50:10,708 basehttp 3948 8540 "GET /admin/content/asset/ HTTP/1.1" 200 23479
+INFO 2025-07-25 10:50:10,771 basehttp 3948 8540 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:50:10,782 basehttp 3948 8540 "GET /media/assets/2025/07/MISTBORN.png HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:10,797 basehttp 3948 8540 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,731 basehttp 3948 8540 "GET /admin/content/asset/2/change/ HTTP/1.1" 200 33019
+INFO 2025-07-25 10:50:20,784 basehttp 3948 8540 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,799 basehttp 3948 13480 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,799 basehttp 3948 10164 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,799 basehttp 3948 18660 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,805 basehttp 3948 180 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,807 basehttp 3948 18660 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,807 basehttp 3948 2528 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,808 basehttp 3948 10164 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,808 basehttp 3948 8540 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:50:20,813 basehttp 3948 8540 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,869 basehttp 3948 8540 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,876 basehttp 3948 8540 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:20,883 basehttp 3948 8540 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-07-25 10:50:36,895 basehttp 3948 8540 - Broken pipe from ('192.168.1.131', 50579)
+INFO 2025-07-25 10:50:36,993 basehttp 3948 10164 "GET /media/assets/2025/07/cuidad.mp4 HTTP/1.1" 200 11916526
+INFO 2025-07-25 10:54:03,315 autoreload 14424 1304 Watching for file changes with StatReloader
+INFO 2025-07-25 10:54:23,388 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 105941
+INFO 2025-07-25 10:54:29,374 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 105941
+INFO 2025-07-25 10:54:32,385 basehttp 14424 10508 "GET /admin/core/activitylog/ HTTP/1.1" 200 17169
+INFO 2025-07-25 10:54:32,437 basehttp 14424 10508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:54:35,364 basehttp 14424 10508 "GET /admin/players/devicelog/ HTTP/1.1" 200 99658
+INFO 2025-07-25 10:54:35,390 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 105941
+INFO 2025-07-25 10:54:35,428 basehttp 14424 10508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:54:41,370 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 105941
+INFO 2025-07-25 10:54:43,097 basehttp 14424 10508 "POST /admin/players/devicelog/ HTTP/1.1" 200 37126
+INFO 2025-07-25 10:54:45,424 basehttp 14424 10508 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 10:54:45,482 basehttp 14424 10508 "GET /admin/players/devicelog/ HTTP/1.1" 200 77028
+INFO 2025-07-25 10:54:45,544 basehttp 14424 10508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:54:47,369 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 54725
+INFO 2025-07-25 10:54:51,887 basehttp 14424 10508 "POST /admin/players/devicelog/ HTTP/1.1" 200 30769
+INFO 2025-07-25 10:54:53,355 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 54725
+INFO 2025-07-25 10:54:54,058 basehttp 14424 10508 "POST /admin/players/devicelog/ HTTP/1.1" 302 0
+INFO 2025-07-25 10:54:54,082 basehttp 14424 10508 "GET /admin/players/devicelog/ HTTP/1.1" 200 19059
+INFO 2025-07-25 10:54:54,158 basehttp 14424 10508 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-25 10:54:58,415 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18270
+INFO 2025-07-25 10:55:03,466 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18270
+INFO 2025-07-25 10:55:08,519 basehttp 14424 4644 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18270
+INFO 2025-07-25 10:55:16,964 autoreload 11876 10264 Watching for file changes with StatReloader
+INFO 2025-07-25 10:55:17,236 basehttp 11876 8060 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 18270
+INFO 2025-07-25 10:55:57,103 autoreload 10892 7416 Watching for file changes with StatReloader
+WARNING 2025-07-25 10:56:19,869 log 10892 8208 Bad Request: /players/api/register/
+WARNING 2025-07-25 10:56:19,870 basehttp 10892 8208 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 10:56:23,002 basehttp 10892 3964 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 10:56:29,895 basehttp 10892 16204 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 10:57:19,881 basehttp 10892 16204 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 10:57:19,934 basehttp 10892 3964 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 10:57:26,701 basehttp 10892 16204 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+ERROR 2025-07-25 10:59:40,327 log 10892 9604 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\laragon\www\Django_DigSignature\DigSignature_server\core\views.py", line 13, in dashboard
+    return render(request, 'core/dashboard.html', context)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\laragon\www\Django_DigSignature\myDjango_DigSignature\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'schedules_list' not found. 'schedules_list' is not a valid view function or pattern name.
+ERROR 2025-07-25 10:59:40,337 basehttp 10892 9604 "GET / HTTP/1.1" 500 155724
+INFO 2025-07-25 11:00:01,934 basehttp 10892 9604 "GET /admin/players/devicelog/ HTTP/1.1" 200 34921
+WARNING 2025-07-25 11:00:10,991 log 10892 9604 Not Found: /admin/asd
+WARNING 2025-07-25 11:00:10,992 basehttp 10892 9604 "GET /admin/asd HTTP/1.1" 404 9058
+INFO 2025-07-25 11:00:31,765 basehttp 10892 9604 "GET /admin/players/devicelog/ HTTP/1.1" 200 34921
+INFO 2025-07-25 11:24:31,127 autoreload 9704 11224 Watching for file changes with StatReloader
+WARNING 2025-07-25 11:24:42,229 log 9704 17400 Bad Request: /players/api/register/
+WARNING 2025-07-25 11:24:42,230 basehttp 9704 17400 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-25 11:24:45,323 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 1106
+INFO 2025-07-25 11:24:52,318 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 136
+INFO 2025-07-25 11:25:12,291 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:25:20,225 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:25:42,265 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:25:42,310 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:25:50,227 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:25:55,291 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 36122
+INFO 2025-07-25 11:26:00,385 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 36122
+INFO 2025-07-25 11:26:05,438 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 36122
+INFO 2025-07-25 11:26:10,481 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 36122
+INFO 2025-07-25 11:26:12,276 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:26:15,529 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 36122
+INFO 2025-07-25 11:26:20,229 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:26:20,585 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37634
+INFO 2025-07-25 11:26:25,628 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37634
+INFO 2025-07-25 11:26:30,677 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37634
+INFO 2025-07-25 11:26:35,722 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37634
+INFO 2025-07-25 11:26:40,769 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 37634
+INFO 2025-07-25 11:26:42,256 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:26:42,305 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:26:45,825 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 38162
+INFO 2025-07-25 11:26:50,231 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:26:50,880 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:26:55,931 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:27:00,982 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:27:06,031 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:27:11,080 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:27:12,289 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:27:16,136 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 39674
+INFO 2025-07-25 11:27:20,236 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:27:21,185 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41186
+INFO 2025-07-25 11:27:26,228 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41186
+INFO 2025-07-25 11:27:31,283 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41186
+INFO 2025-07-25 11:27:36,334 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41186
+INFO 2025-07-25 11:27:41,374 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41186
+INFO 2025-07-25 11:27:42,254 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:27:42,300 basehttp 9704 15996 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
+INFO 2025-07-25 11:27:46,430 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 41714
+INFO 2025-07-25 11:27:50,232 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-25 11:27:51,486 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 43226
+INFO 2025-07-25 11:27:56,530 basehttp 9704 12476 "GET /players/A1B2C3D4E5F6G7BB/logs/ HTTP/1.1" 200 43226
+INFO 2025-07-25 11:28:02,566 basehttp 9704 15868 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+WARNING 2025-07-25 14:50:21,850 log 9704 17364 Not Found: /favicon.ico
+WARNING 2025-07-25 14:50:21,855 basehttp 9704 17364 "GET /favicon.ico HTTP/1.1" 404 4523

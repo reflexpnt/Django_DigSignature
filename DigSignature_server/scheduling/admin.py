@@ -177,7 +177,9 @@ def calculate_player_sync_hash(player):
     
     # Generar hash SHA256 del JSON
     json_string = json.dumps(sync_data, sort_keys=True)
-    return hashlib.sha256(json_string.encode()).hexdigest()
+    #return hashlib.sha256(json_string.encode()).hexdigest()
+    full_hash = hashlib.sha256(json_string.encode()).hexdigest()
+    return full_hash[:8]  # Primeros 8 caracteres
 
 
 def generate_sync_data(player):
