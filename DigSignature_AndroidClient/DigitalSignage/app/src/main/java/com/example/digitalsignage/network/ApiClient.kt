@@ -4,6 +4,7 @@ package com.digitalsignage.network
 
 import android.content.Context
 import com.digitalsignage.utils.Constants
+import com.digitalsignage.utils.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.*
@@ -15,271 +16,307 @@ import java.util.concurrent.TimeUnit
 
 class ApiClient(private val context: Context) {
 
-    private val client: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
+    private val client: OkHttpClient
+    private var logger: Logger? = null
+
+    init {
+        client = OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(LoggingInterceptor())
-            .addInterceptor(UserAgentInterceptor())
             .build()
     }
 
     /**
-     * Interceptor para logging de requests/responses
+     * Establece el logger para uso interno
      */
-    private class LoggingInterceptor : Interceptor {
+    fun setLogger(logger: Logger) {
+        this.logger = logger
+    }
+
+    /**
+     * Registra un dispositivo en el servidor
+     */
+    suspend fun registerDevice(deviceData: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/players/api/register/"
+
+            val requestBody = deviceData.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Registering device: $url")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Verifica el servidor para sincronización (endpoint principal)
+     */
+    suspend fun checkServer(syncRequest: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/scheduling/api/v1/device/check_server/"
+
+            val requestBody = syncRequest.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Checking server for sync: $url")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Confirma sincronización completada al servidor
+     */
+    suspend fun confirmSync(confirmationData: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/scheduling/api/v1/device/sync_confirmation/"
+
+            val requestBody = confirmationData.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Confirming sync: $url")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Descarga un archivo (asset) desde el servidor
+     */
+    suspend fun downloadFile(downloadUrl: String): Response {
+        return withContext(Dispatchers.IO) {
+            val fullUrl = if (downloadUrl.startsWith("http")) {
+                downloadUrl
+            } else {
+                "${Constants.SERVER_URL}$downloadUrl"
+            }
+
+            val request = Request.Builder()
+                .url(fullUrl)
+                .get()
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Downloading file: $fullUrl")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Envía un log individual al servidor
+     */
+    suspend fun sendLogEntry(logData: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/players/api/logs/single/"
+
+            val requestBody = logData.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            // No usar logger aquí para evitar loops infinitos
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Envía logs en batch al servidor
+     */
+    suspend fun sendLogsBatch(batchData: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/players/api/logs/batch/"
+
+            val requestBody = batchData.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            // No usar logger aquí para evitar loops infinitos
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Confirma mensaje de emergencia
+     */
+    suspend fun acknowledgeEmergencyMessage(ackData: JSONObject): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/scheduling/api/v1/device/emergency_ack/"
+
+            val requestBody = ackData.toString()
+                .toRequestBody("application/json; charset=utf-8".toMediaType())
+
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Acknowledging emergency message: $url")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Descarga thumbnail de un asset
+     */
+    suspend fun downloadThumbnail(assetId: String): Response {
+        return withContext(Dispatchers.IO) {
+            val url = "${Constants.SERVER_URL}/scheduling/api/v1/assets/$assetId/thumbnail/"
+
+            val request = Request.Builder()
+                .url(url)
+                .get()
+                .build()
+
+            logger?.d(Logger.Category.NETWORK, "Downloading thumbnail: $url")
+            client.newCall(request).execute()
+        }
+    }
+
+    /**
+     * Interceptor para logging de requests HTTP
+     */
+    private inner class LoggingInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val request = chain.request()
             val startTime = System.currentTimeMillis()
-
-            android.util.Log.d("ApiClient", "🌐 ${request.method} ${request.url}")
 
             try {
                 val response = chain.proceed(request)
                 val endTime = System.currentTimeMillis()
                 val duration = endTime - startTime
 
-                android.util.Log.d("ApiClient", "✅ ${response.code} ${request.url} (${duration}ms)")
+                // Log de la request exitosa
+                logger?.v(Logger.Category.NETWORK,
+                    "${request.method} ${request.url} -> ${response.code} (${duration}ms)")
 
                 return response
-            } catch (e: Exception) {
+
+            } catch (e: IOException) {
                 val endTime = System.currentTimeMillis()
                 val duration = endTime - startTime
 
-                android.util.Log.e("ApiClient", "❌ ERROR ${request.url} (${duration}ms): ${e.message}")
+                // Log de error de red
+                logger?.e(Logger.Category.NETWORK,
+                    "${request.method} ${request.url} -> NETWORK_ERROR (${duration}ms): ${e.message}",
+                    exception = e)
+
                 throw e
             }
         }
     }
 
     /**
-     * Interceptor para User-Agent personalizado
+     * Verifica conectividad con el servidor
      */
-    private class UserAgentInterceptor : Interceptor {
-        override fun intercept(chain: Interceptor.Chain): Response {
-            val originalRequest = chain.request()
-            val requestWithUserAgent = originalRequest.newBuilder()
-                .header("User-Agent", "DigitalSignage-Android/1.0.0")
-                .build()
-            return chain.proceed(requestWithUserAgent)
-        }
-    }
+    suspend fun checkConnectivity(): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val url = "${Constants.SERVER_URL}/scheduling/api/v1/device/check_server/"
 
-    /**
-     * Resultado de una operación de API
-     */
-    sealed class ApiResult<T> {
-        data class Success<T>(val data: T) : ApiResult<T>()
-        data class Error<T>(val message: String, val code: Int? = null, val exception: Throwable? = null) : ApiResult<T>()
-    }
+                val testRequest = JSONObject().apply {
+                    put("action", "connectivity_test")
+                    put("device_id", "test")
+                    put("last_sync_hash", "")
+                }
 
-    /**
-     * GET request genérico
-     */
-    suspend fun get(
-        endpoint: String,
-        queryParams: Map<String, String> = emptyMap()
-    ): ApiResult<String> = withContext(Dispatchers.IO) {
+                val requestBody = testRequest.toString()
+                    .toRequestBody("application/json; charset=utf-8".toMediaType())
 
-        try {
-            val baseUrl = "${Constants.SERVER_URL}$endpoint"
-            var urlBuilder = baseUrl
+                val request = Request.Builder()
+                    .url(url)
+                    .post(requestBody)
+                    .build()
 
-            if (queryParams.isNotEmpty()) {
-                val params = queryParams.map { "${it.key}=${it.value}" }.joinToString("&")
-                urlBuilder = "$baseUrl?$params"
+                val response = client.newCall(request).execute()
+                val isConnected = response.isSuccessful
+
+                logger?.d(Logger.Category.NETWORK,
+                    "Connectivity check: ${if (isConnected) "SUCCESS" else "FAILED (${response.code})"}")
+
+                response.close()
+                isConnected
+
+            } catch (e: Exception) {
+                logger?.w(Logger.Category.NETWORK, "Connectivity check failed", exception = e)
+                false
             }
-
-            val request = Request.Builder()
-                .url(urlBuilder)
-                .get()
-                .build()
-
-            val response = client.newCall(request).execute()
-
-            return@withContext handleResponse(response)
-
-        } catch (e: IOException) {
-            ApiResult.Error("Network error: ${e.message}", exception = e)
-        } catch (e: Exception) {
-            ApiResult.Error("Unexpected error: ${e.message}", exception = e)
         }
     }
 
     /**
-     * POST request con JSON
+     * Obtiene información del servidor
      */
-    suspend fun post(
-        endpoint: String,
-        jsonData: JSONObject
-    ): ApiResult<String> = withContext(Dispatchers.IO) {
+    suspend fun getServerInfo(): JSONObject? {
+        return withContext(Dispatchers.IO) {
+            try {
+                val url = "${Constants.SERVER_URL}/api/server/info/"
 
-        try {
-            val mediaType = "application/json; charset=utf-8".toMediaType()
-            val requestBody = jsonData.toString().toRequestBody(mediaType)
+                val request = Request.Builder()
+                    .url(url)
+                    .get()
+                    .build()
 
-            val request = Request.Builder()
-                .url("${Constants.SERVER_URL}$endpoint")
-                .post(requestBody)
-                .build()
+                val response = client.newCall(request).execute()
 
-            val response = client.newCall(request).execute()
+                if (response.isSuccessful) {
+                    val responseBody = response.body()?.string()
+                    if (responseBody != null) {
+                        JSONObject(responseBody)
+                    } else null
+                } else {
+                    logger?.w(Logger.Category.NETWORK, "Failed to get server info: ${response.code()}")
+                    null
+                }
 
-            return@withContext handleResponse(response)
-
-        } catch (e: IOException) {
-            ApiResult.Error("Network error: ${e.message}", exception = e)
-        } catch (e: Exception) {
-            ApiResult.Error("Unexpected error: ${e.message}", exception = e)
-        }
-    }
-
-    /**
-     * PUT request con JSON
-     */
-    suspend fun put(
-        endpoint: String,
-        jsonData: JSONObject
-    ): ApiResult<String> = withContext(Dispatchers.IO) {
-
-        try {
-            val mediaType = "application/json; charset=utf-8".toMediaType()
-            val requestBody = jsonData.toString().toRequestBody(mediaType)
-
-            val request = Request.Builder()
-                .url("${Constants.SERVER_URL}$endpoint")
-                .put(requestBody)
-                .build()
-
-            val response = client.newCall(request).execute()
-
-            return@withContext handleResponse(response)
-
-        } catch (e: IOException) {
-            ApiResult.Error("Network error: ${e.message}", exception = e)
-        } catch (e: Exception) {
-            ApiResult.Error("Unexpected error: ${e.message}", exception = e)
-        }
-    }
-
-    /**
-     * DELETE request
-     */
-    suspend fun delete(
-        endpoint: String
-    ): ApiResult<String> = withContext(Dispatchers.IO) {
-
-        try {
-            val request = Request.Builder()
-                .url("${Constants.SERVER_URL}$endpoint")
-                .delete()
-                .build()
-
-            val response = client.newCall(request).execute()
-
-            return@withContext handleResponse(response)
-
-        } catch (e: IOException) {
-            ApiResult.Error("Network error: ${e.message}", exception = e)
-        } catch (e: Exception) {
-            ApiResult.Error("Unexpected error: ${e.message}", exception = e)
-        }
-    }
-
-    /**
-     * Descarga un archivo desde una URL
-     */
-    suspend fun downloadFile(
-        url: String,
-        onProgress: ((bytesDownloaded: Long, totalBytes: Long) -> Unit)? = null
-    ): ApiResult<ByteArray> = withContext(Dispatchers.IO) {
-
-        try {
-            val request = Request.Builder()
-                .url(url)
-                .get()
-                .build()
-
-            val response = client.newCall(request).execute()
-
-            if (!response.isSuccessful) {
-                return@withContext ApiResult.Error("Download failed: ${response.code}", response.code)
+            } catch (e: Exception) {
+                logger?.w(Logger.Category.NETWORK, "Error getting server info", exception = e)
+                null
             }
-
-            val responseBody = response.body
-                ?: return@withContext ApiResult.Error("Empty response body")
-
-            val totalBytes = responseBody.contentLength()
-            val inputStream = responseBody.byteStream()
-            val buffer = ByteArray(Constants.DOWNLOAD_CHUNK_SIZE)
-            var bytesDownloaded = 0L
-            var bytesRead: Int
-            val outputStream = java.io.ByteArrayOutputStream()
-
-            while (inputStream.read(buffer).also { bytesRead = it } != -1) {
-                outputStream.write(buffer, 0, bytesRead)
-                bytesDownloaded += bytesRead
-
-                onProgress?.invoke(bytesDownloaded, totalBytes)
-            }
-
-            inputStream.close()
-            responseBody.close()
-
-            ApiResult.Success(outputStream.toByteArray())
-
-        } catch (e: IOException) {
-            ApiResult.Error("Download error: ${e.message}", exception = e)
-        } catch (e: Exception) {
-            ApiResult.Error("Unexpected download error: ${e.message}", exception = e)
         }
     }
 
     /**
-     * Maneja la respuesta HTTP común
+     * Cancela todas las requests pendientes
      */
-    private fun handleResponse(response: Response): ApiResult<String> {
-        return try {
-            val responseBody = response.body?.string() ?: ""
-
-            when {
-                response.isSuccessful -> {
-                    ApiResult.Success(responseBody)
-                }
-                response.code == 404 -> {
-                    ApiResult.Error("Resource not found", 404)
-                }
-                response.code == 401 -> {
-                    ApiResult.Error("Unauthorized", 401)
-                }
-                response.code == 403 -> {
-                    ApiResult.Error("Forbidden", 403)
-                }
-                response.code == 500 -> {
-                    ApiResult.Error("Server error", 500)
-                }
-                response.code >= 400 -> {
-                    ApiResult.Error("Client error: $responseBody", response.code)
-                }
-                else -> {
-                    ApiResult.Error("Unknown error: ${response.code}", response.code)
-                }
-            }
-        } catch (e: Exception) {
-            ApiResult.Error("Error reading response: ${e.message}", response.code, e)
-        } finally {
-            response.close()
-        }
+    fun cancelAllRequests() {
+        client.dispatcher.cancelAll()
+        logger?.i(Logger.Category.NETWORK, "All network requests cancelled")
     }
 
     /**
-     * Verifica si el servidor está disponible
+     * Obtiene estadísticas del cliente HTTP
      */
-    suspend fun ping(): ApiResult<Boolean> {
-        return when (val result = get("/")) {
-            is ApiResult.Success -> ApiResult.Success(true)
-            is ApiResult.Error -> ApiResult.Success(false) // Servidor no disponible pero no es error crítico
-        }
+    fun getNetworkStats(): Map<String, Any> {
+        val dispatcher = client.dispatcher
+
+        return mapOf(
+            "running_calls" to dispatcher.runningCallsCount(),
+            "queued_calls" to dispatcher.queuedCallsCount(),
+            "max_requests" to dispatcher.maxRequests,
+            "max_requests_per_host" to dispatcher.maxRequestsPerHost,
+            "connection_pool_idle_count" to client.connectionPool.idleConnectionCount(),
+            "connection_pool_total_count" to client.connectionPool.connectionCount()
+        )
     }
 }

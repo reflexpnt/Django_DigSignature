@@ -3,7 +3,9 @@
 package com.digitalsignage.managers
 
 import android.content.Context
-import com.digitalsignage.models.*
+import com.digitalsignage.models.Asset
+import com.digitalsignage.models.Playlist
+import com.digitalsignage.models.SyncData
 import com.digitalsignage.network.ApiClient
 import com.digitalsignage.storage.PreferencesManager
 import com.digitalsignage.utils.Constants
@@ -22,306 +24,301 @@ class SyncManager(
     private val logger: Logger
 ) {
 
-    private val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US)
-    private var syncJob: Job? = null
-    private val syncScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-
-    // Callbacks para notificar cambios
+    // Callbacks para eventos de sincronización
+    var onSyncStarted: (() -> Unit)? = null
     var onSyncCompleted: ((SyncData) -> Unit)? = null
     var onSyncError: ((String) -> Unit)? = null
+    var onSyncProgress: ((String) -> Unit)? = null
+
+    // Control de sincronización
+    private var syncJob: Job? = null
+    private val syncScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    private var isSyncing = false
+    private var lastSyncTime: Long = 0
+
+    // Configuración de sincronización
+    private var syncInterval: Long = Constants.SYNC_INTERVAL_DEBUG
+    private var forceNextSync = false
+
+    // Estadísticas de sincronización
+    private var syncSuccessCount = 0
+    private var syncErrorCount = 0
+    private var lastSyncHash = ""
 
     /**
-     * Resultado de sincronización
+     * Inicia la sincronización automática con el servidor
      */
-    sealed class SyncResult {
-        data class Success(val syncData: SyncData) : SyncResult()
-        object NoUpdates : SyncResult()
-        data class Error(val message: String, val exception: Throwable? = null) : SyncResult()
-    }
-
-    /**
-     * Inicia la sincronización periódica
-     */
-    fun startPeriodicSync() {
-        stopPeriodicSync()
+    fun startAutoSync() {
+        logger.i(Logger.Category.SYNC, "Starting automatic sync with interval: ${syncInterval / 1000}s")
 
         syncJob = syncScope.launch {
-            logger.i(Logger.Category.SYNC, "Starting periodic sync with interval: ${preferencesManager.syncInterval}ms")
-
             while (isActive) {
                 try {
-                    performSync()
-                    delay(preferencesManager.syncInterval)
+                    performSyncInternal(isManual = false)
+                    delay(syncInterval)
                 } catch (e: CancellationException) {
-                    logger.d(Logger.Category.SYNC, "Sync job cancelled")
+                    logger.i(Logger.Category.SYNC, "Auto sync cancelled")
                     break
                 } catch (e: Exception) {
-                    logger.e(Logger.Category.SYNC, "Error in periodic sync", exception = e)
-                    delay(preferencesManager.syncInterval * 2) // Esperar más tiempo en caso de error
+                    logger.e(Logger.Category.SYNC, "Error in auto sync loop", exception = e)
+                    delay(syncInterval * 2) // Esperar más tiempo si hay error
                 }
             }
         }
     }
 
     /**
-     * Detiene la sincronización periódica
+     * Detiene la sincronización automática
      */
-    fun stopPeriodicSync() {
+    fun stopAutoSync() {
+        logger.i(Logger.Category.SYNC, "Stopping automatic sync")
         syncJob?.cancel()
         syncJob = null
-        logger.d(Logger.Category.SYNC, "Periodic sync stopped")
     }
 
     /**
-     * Realiza una sincronización manual
+     * Ejecuta una sincronización manual (método público)
      */
-    suspend fun performSync(): SyncResult {
+    suspend fun performManualSync(): Boolean {
+        return performSyncInternal(isManual = true)
+    }
+
+    /**
+     * Fuerza la próxima sincronización (ignora hash)
+     */
+    fun forceNextSync() {
+        forceNextSync = true
+        logger.i(Logger.Category.SYNC, "Next sync will be forced")
+    }
+
+    /**
+     * Limpia el cache y fuerza re-sincronización
+     */
+    fun forceClearCache() {
+        lastSyncHash = ""
+        preferencesManager.lastSyncHash = ""
+        forceNextSync = true
+        logger.i(Logger.Category.SYNC, "Cache cleared, forcing next sync")
+    }
+
+    /**
+     * Realiza el proceso de sincronización principal
+     */
+    private suspend fun performSyncInternal(isManual: Boolean): Boolean {
+        if (isSyncing && !isManual) {
+            logger.d(Logger.Category.SYNC, "Sync already in progress, skipping")
+            return false
+        }
+
+        return try {
+            isSyncing = true
+            onSyncStarted?.invoke()
+
+            logger.i(Logger.Category.SYNC, "Starting sync${if (isManual) " (manual)" else ""}")
+
+            // Preparar datos para el servidor
+            val syncRequest = buildSyncRequest()
+
+            // Llamar al endpoint check_server
+            val response = apiClient.checkServer(syncRequest)
+
+            if (response.isSuccessful) {
+                val responseData = response.body?.string()
+                if (responseData != null) {
+                    val result = processSyncResponse(responseData)
+                    syncSuccessCount++
+                    lastSyncTime = System.currentTimeMillis()
+
+                    logger.i(Logger.Category.SYNC, "Sync completed successfully")
+                    result
+                } else {
+                    throw Exception("Empty response from server")
+                }
+            } else {
+                throw Exception("Server error: ${response.code} ${response.message}")
+            }
+
+        } catch (e: Exception) {
+            syncErrorCount++
+            val errorMessage = "Sync failed: ${e.message}"
+            logger.e(Logger.Category.SYNC, errorMessage, exception = e)
+            onSyncError?.invoke(errorMessage)
+            false
+        } finally {
+            isSyncing = false
+        }
+    }
+
+    /**
+     * Construye la solicitud de sincronización para enviar al servidor
+     */
+    private suspend fun buildSyncRequest(): JSONObject {
         return withContext(Dispatchers.IO) {
-            try {
-                logger.d(Logger.Category.SYNC, "Starting sync check")
+            val deviceInfo = DeviceUtils.getDeviceInfo()
+            val batteryLevel = DeviceUtils.getBatteryLevel(context)
+            val storageInfo = DeviceUtils.getStorageInfo(context)
 
-                val healthData = DeviceUtils.getHealthData(context)
-                val checkServerData = createCheckServerData(healthData)
+            // Hash actual almacenado (del último sync exitoso)
+            val currentHash = preferencesManager.lastSyncHash.takeIf { it.isNotBlank() } ?: lastSyncHash
 
-                when (val result = apiClient.post(Constants.API_CHECK_SERVER, checkServerData)) {
-                    is ApiClient.ApiResult.Success -> {
-                        val response = JSONObject(result.data)
-                        processSyncResponse(response)
-                    }
-                    is ApiClient.ApiResult.Error -> {
-                        val errorMsg = "Sync API error: ${result.message}"
-                        logger.e(Logger.Category.SYNC, errorMsg, exception = result.exception)
-                        onSyncError?.invoke(errorMsg)
-                        SyncResult.Error(errorMsg, result.exception)
+            JSONObject().apply {
+                put("action", "check_server")
+                put("device_id", preferencesManager.deviceId)
+                put("last_sync_hash", if (forceNextSync) "" else currentHash)
+                put("app_version", deviceInfo["app_version"])
+                put("firmware_version", deviceInfo["firmware_version"])
+                put("battery_level", batteryLevel)
+                put("storage_free_mb", storageInfo["free_space_mb"])
+                put("connection_type", DeviceUtils.getConnectionType(context))
+
+                // Información adicional del dispositivo
+                put("device_health", JSONObject().apply {
+                    put("temperature_celsius", DeviceUtils.getDeviceTemperature())
+                    put("signal_strength", DeviceUtils.getSignalStrength(context))
+                })
+            }
+        }
+    }
+
+    /**
+     * Procesa la respuesta del servidor y ejecuta acciones necesarias
+     */
+    private suspend fun processSyncResponse(responseData: String): Boolean {
+        return try {
+            val jsonResponse = JSONObject(responseData)
+            val status = jsonResponse.optString("status")
+
+            when (status) {
+                "success" -> {
+                    val needsSync = jsonResponse.optBoolean("needs_sync", false)
+                    logger.d(Logger.Category.SYNC, "Server response: needs_sync=$needsSync")
+
+                    if (needsSync && jsonResponse.has("sync_data")) {
+                        // El servidor dice que necesitamos sincronizar
+                        val newSyncHash = jsonResponse.optString("new_sync_hash", "")
+                        val syncDataJson = jsonResponse.getJSONObject("sync_data")
+
+                        onSyncProgress?.invoke("Processing sync data from server")
+
+                        // Procesar datos de sincronización
+                        val syncData = parseSyncData(syncDataJson)
+
+                        // Actualizar hash local
+                        if (newSyncHash.isNotBlank()) {
+                            lastSyncHash = newSyncHash
+                            preferencesManager.lastSyncHash = newSyncHash
+                            logger.d(Logger.Category.SYNC, "Updated sync hash: $newSyncHash")
+                        }
+
+                        // Notificar sync completada con datos
+                        onSyncCompleted?.invoke(syncData)
+
+                        // Confirmar sincronización al servidor
+                        confirmSyncToServer(newSyncHash)
+
+                        // Resetear flag de force
+                        forceNextSync = false
+
+                        true
+                    } else {
+                        // No hay cambios, sync exitosa pero sin datos nuevos
+                        logger.d(Logger.Category.SYNC, "No sync needed - content is up to date")
+
+                        // Actualizar intervalo si el servidor lo especifica
+                        if (jsonResponse.has("next_check_interval")) {
+                            val newInterval = jsonResponse.getLong("next_check_interval") * 1000L
+                            if (newInterval != syncInterval) {
+                                updateSyncInterval(newInterval)
+                            }
+                        }
+
+                        // Notificar sync completada sin cambios
+                        onSyncCompleted?.invoke(SyncData(
+                            syncId = "no-changes-${System.currentTimeMillis()}",
+                            playlist = null,
+                            assets = emptyList(),
+                            needsSync = false
+                        ))
+
+                        true
                     }
                 }
 
-            } catch (e: Exception) {
-                val errorMsg = "Sync exception: ${e.message}"
-                logger.e(Logger.Category.SYNC, errorMsg, exception = e)
-                onSyncError?.invoke(errorMsg)
-                SyncResult.Error(errorMsg, e)
+                "device_not_registered" -> {
+                    logger.w(Logger.Category.SYNC, "Device not registered on server")
+                    onSyncError?.invoke("Device not registered. Please check device registration.")
+                    false
+                }
+
+                else -> {
+                    val message = jsonResponse.optString("message", "Unknown server error")
+                    logger.e(Logger.Category.SYNC, "Server error: $message")
+                    onSyncError?.invoke(message)
+                    false
+                }
             }
-        }
-    }
-
-    /**
-     * Crea los datos para el check_server API
-     */
-    private fun createCheckServerData(healthData: HealthData): JSONObject {
-        return JSONObject().apply {
-            put("action", "check_server")
-            put("device_id", preferencesManager.deviceId)
-            put("last_sync_hash", preferencesManager.lastSyncHash ?: "")
-            put("app_version", "1.0.0")
-            put("firmware_version", android.os.Build.VERSION.RELEASE)
-            put("battery_level", healthData.batteryLevel)
-            put("storage_free_mb", healthData.storageFreeBytes / (1024 * 1024))
-            put("connection_type", healthData.connectionType)
-            put("device_health", JSONObject().apply {
-                put("temperature_celsius", healthData.temperatureCelsius)
-                put("signal_strength", healthData.signalStrength)
-            })
-        }
-    }
-
-    /**
-     * Procesa la respuesta del servidor
-     */
-    private suspend fun processSyncResponse(response: JSONObject): SyncResult {
-        return try {
-            val needsSync = response.optBoolean("needs_sync", false)
-
-            if (!needsSync) {
-                logger.i(Logger.Category.SYNC, "No sync needed")
-                return SyncResult.NoUpdates
-            }
-
-            logger.i(Logger.Category.SYNC, "Server indicates sync needed")
-
-            val syncData = parseSyncData(response)
-
-            // Actualizar hash de sincronización
-            syncData.newSyncHash?.let { newHash ->
-                preferencesManager.lastSyncHash = newHash
-                logger.d(Logger.Category.SYNC, "Updated sync hash: ${newHash.take(8)}...")
-            }
-
-            // Actualizar timestamp de sincronización
-            syncData.syncTimestamp?.let { timestamp ->
-                preferencesManager.lastSync = timestamp
-            }
-
-            // Aplicar actualizaciones de configuración
-            if (syncData.configUpdates.isNotEmpty()) {
-                preferencesManager.updateFromServerConfig(syncData.configUpdates)
-                logger.d(Logger.Category.SYNC, "Applied config updates")
-            }
-
-            // Notificar éxito
-            onSyncCompleted?.invoke(syncData)
-            logger.i(Logger.Category.SYNC, "Sync completed successfully")
-
-            SyncResult.Success(syncData)
 
         } catch (e: Exception) {
             logger.e(Logger.Category.SYNC, "Error processing sync response", exception = e)
-            SyncResult.Error("Error processing sync: ${e.message}", e)
+            onSyncError?.invoke("Error processing server response: ${e.message}")
+            false
         }
     }
 
     /**
-     * Parsea los datos de sincronización del servidor
+     * Parsea los datos de sincronización del JSON del servidor
      */
-    private fun parseSyncData(response: JSONObject): SyncData {
-        val syncData = response.optJSONObject("sync_data")
-            ?: throw IllegalArgumentException("Missing sync_data in response")
+    private fun parseSyncData(syncDataJson: JSONObject): SyncData {
+        val syncId = syncDataJson.optString("sync_id", "sync-${System.currentTimeMillis()}")
+
+        // Parsear playlist
+        val playlist = if (syncDataJson.has("playlists")) {
+            val playlistsArray = syncDataJson.getJSONArray("playlists")
+            if (playlistsArray.length() > 0) {
+                parsePlaylist(playlistsArray.getJSONObject(0))
+            } else null
+        } else null
+
+        // Parsear assets
+        val assets = if (syncDataJson.has("assets")) {
+            parseAssets(syncDataJson.getJSONArray("assets"))
+        } else emptyList()
 
         return SyncData(
-            needsSync = true,
-            syncId = response.optString("sync_id"),
-            syncTimestamp = response.optString("sync_timestamp"),
-            newSyncHash = response.optString("new_sync_hash"),
-            playlist = parsePlaylist(syncData),
-            assets = parseAssets(syncData),
-            configUpdates = parseConfigUpdates(syncData),
-            clearCache = response.optBoolean("clear_cache", false)
+            syncId = syncId,
+            playlist = playlist,
+            assets = assets,
+            needsSync = true
         )
     }
 
     /**
-     * Parsea la playlist desde los datos de sync
+     * Parsea una playlist del JSON del servidor
      */
-    private fun parsePlaylist(syncData: JSONObject): Playlist? {
-        val playlistsArray = syncData.optJSONArray("playlists") ?: return null
-        if (playlistsArray.length() == 0) return null
-
-        val playlistJson = playlistsArray.getJSONObject(0) // Tomar la primera playlist
-
+    private fun parsePlaylist(playlistJson: JSONObject): Playlist {
         return Playlist(
-            id = playlistJson.getString("id"),
-            name = playlistJson.getString("name"),
-            lastModified = playlistJson.optString("last_modified", ""),
-            scenes = parseScenes(playlistJson.optJSONArray("scenes")),
-            isActive = playlistJson.optBoolean("is_active", true),
-            totalDuration = playlistJson.optInt("total_duration", 0)
+            id = playlistJson.optString("id"),
+            name = playlistJson.optString("name"),
+            lastModified = System.currentTimeMillis()
         )
     }
 
     /**
-     * Parsea las escenas de una playlist
+     * Parsea la lista de assets del servidor
      */
-    private fun parseScenes(scenesArray: JSONArray?): List<Scene> {
-        if (scenesArray == null) return emptyList()
-
-        val scenes = mutableListOf<Scene>()
-
-        for (i in 0 until scenesArray.length()) {
-            val sceneJson = scenesArray.getJSONObject(i)
-
-            val scene = Scene(
-                id = sceneJson.getString("id"),
-                name = sceneJson.getString("name"),
-                layout = sceneJson.getString("layout"),
-                layoutStructure = parseLayoutStructure(sceneJson.optJSONObject("layout_structure")),
-                duration = sceneJson.getInt("duration"),
-                transitionIn = sceneJson.optString("transition_in", "none"),
-                transitionOut = sceneJson.optString("transition_out", "none"),
-                zoneContents = parseZoneContents(sceneJson.optJSONArray("zone_contents"))
-            )
-
-            scenes.add(scene)
-        }
-
-        return scenes
-    }
-
-    /**
-     * Parsea la estructura de layout
-     */
-    private fun parseLayoutStructure(layoutJson: JSONObject?): LayoutStructure {
-        if (layoutJson == null) {
-            return LayoutStructure(emptyList())
-        }
-
-        val zonesArray = layoutJson.optJSONArray("zones") ?: JSONArray()
-        val zones = mutableListOf<Zone>()
-
-        for (i in 0 until zonesArray.length()) {
-            val zoneJson = zonesArray.getJSONObject(i)
-            val positionJson = zoneJson.getJSONObject("position")
-
-            val zone = Zone(
-                id = zoneJson.getString("id"),
-                name = zoneJson.getString("name"),
-                position = Position(
-                    x = positionJson.getDouble("x").toFloat(),
-                    y = positionJson.getDouble("y").toFloat(),
-                    width = positionJson.getDouble("width").toFloat(),
-                    height = positionJson.getDouble("height").toFloat()
-                ),
-                zIndex = zoneJson.optInt("z_index", 1),
-                allowedContentTypes = parseStringArray(zoneJson.optJSONArray("allowed_content_types"))
-            )
-
-            zones.add(zone)
-        }
-
-        return LayoutStructure(zones)
-    }
-
-    /**
-     * Parsea los contenidos de zona
-     */
-    private fun parseZoneContents(contentsArray: JSONArray?): List<ZoneContent> {
-        if (contentsArray == null) return emptyList()
-
-        val contents = mutableListOf<ZoneContent>()
-
-        for (i in 0 until contentsArray.length()) {
-            val contentJson = contentsArray.getJSONObject(i)
-            val content = contentJson.getJSONObject("content")
-
-            val zoneContent = ZoneContent(
-                zoneId = contentJson.getString("zone_id"),
-                content = Content(
-                    id = content.getString("id"),
-                    type = content.getString("type"),
-                    name = content.getString("name"),
-                    downloadUrl = content.optString("download_url").takeIf { it.isNotEmpty() },
-                    url = content.optString("url").takeIf { it.isNotEmpty() },
-                    text = content.optString("text").takeIf { it.isNotEmpty() },
-                    duration = content.getInt("duration"),
-                    fileSize = content.optLong("file_size"),
-                    checksum = content.optString("checksum").takeIf { it.isNotEmpty() }
-                ),
-                configuration = parseJsonObjectToMap(contentJson.optJSONObject("configuration"))
-            )
-
-            contents.add(zoneContent)
-        }
-
-        return contents
-    }
-
-    /**
-     * Parsea los assets del sync
-     */
-    private fun parseAssets(syncData: JSONObject): List<Asset> {
-        val assetsArray = syncData.optJSONArray("assets") ?: return emptyList()
+    private fun parseAssets(assetsArray: JSONArray): List<Asset> {
         val assets = mutableListOf<Asset>()
 
         for (i in 0 until assetsArray.length()) {
             val assetJson = assetsArray.getJSONObject(i)
 
             val asset = Asset(
-                id = assetJson.getString("id"),
-                name = assetJson.getString("name"),
-                type = assetJson.getString("type"),
-                originalName = assetJson.optString("original_name", assetJson.getString("name")),
-                downloadUrl = assetJson.optString("url").takeIf { it.isNotEmpty() },
-                checksum = assetJson.optString("checksum").takeIf { it.isNotEmpty() },
-                fileSize = assetJson.optLong("size_bytes", 0)
+                id = assetJson.optString("id"),
+                name = assetJson.optString("name"),
+                type = assetJson.optString("type", "unknown"),
+                checksum = assetJson.optString("checksum", ""),
+                sizeBytes = assetJson.optLong("size_bytes", 0),
+                originalName = assetJson.optString("original_name", "")
             )
 
             assets.add(asset)
@@ -331,54 +328,48 @@ class SyncManager(
     }
 
     /**
-     * Parsea las actualizaciones de configuración
+     * Confirma al servidor que la sincronización fue completada
      */
-    private fun parseConfigUpdates(syncData: JSONObject): Map<String, Any> {
-        val configJson = syncData.optJSONObject("config_updates") ?: return emptyMap()
-        return parseJsonObjectToMap(configJson)
+    private suspend fun confirmSyncToServer(syncHash: String) {
+        try {
+            val confirmationData = JSONObject().apply {
+                put("device_id", preferencesManager.deviceId)
+                put("sync_hash", syncHash)
+                put("timestamp", SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).format(Date()))
+            }
+
+            val response = apiClient.confirmSync(confirmationData)
+
+            if (response.isSuccessful) {
+                logger.d(Logger.Category.SYNC, "Sync confirmation sent to server")
+            } else {
+                logger.w(Logger.Category.SYNC, "Failed to confirm sync to server: ${response.code}")
+            }
+
+        } catch (e: Exception) {
+            logger.w(Logger.Category.SYNC, "Error sending sync confirmation", exception = e)
+            // No es crítico si falla la confirmación
+        }
     }
 
     /**
-     * Utilidades de parsing
+     * Actualiza el intervalo de sincronización
      */
-    private fun parseStringArray(jsonArray: JSONArray?): List<String> {
-        if (jsonArray == null) return emptyList()
+    private fun updateSyncInterval(newInterval: Long) {
+        if (newInterval > 0 && newInterval != syncInterval) {
+            val oldInterval = syncInterval
+            syncInterval = newInterval
 
-        val list = mutableListOf<String>()
-        for (i in 0 until jsonArray.length()) {
-            list.add(jsonArray.getString(i))
-        }
-        return list
-    }
+            logger.i(Logger.Category.SYNC,
+                "Sync interval updated: ${oldInterval / 1000}s -> ${newInterval / 1000}s")
 
-    private fun parseJsonObjectToMap(jsonObject: JSONObject?): Map<String, Any> {
-        if (jsonObject == null) return emptyMap()
+            // Guardar en preferencias
+            preferencesManager.syncInterval = newInterval
 
-        val map = mutableMapOf<String, Any>()
-        jsonObject.keys().forEach { key ->
-            map[key] = jsonObject.get(key)
-        }
-        return map
-    }
-
-    /**
-     * Fuerza un clear cache local
-     */
-    suspend fun forceClearCache(): Boolean {
-        return withContext(Dispatchers.IO) {
-            try {
-                logger.w(Logger.Category.SYNC, "Forcing cache clear")
-
-                // Limpiar preferencias de sync
-                preferencesManager.clearSyncData()
-
-                // TODO: Limpiar cache de assets físicos
-
-                logger.i(Logger.Category.SYNC, "Cache cleared successfully")
-                true
-            } catch (e: Exception) {
-                logger.e(Logger.Category.SYNC, "Error clearing cache", exception = e)
-                false
+            // Reiniciar auto sync con nuevo intervalo
+            if (syncJob?.isActive == true) {
+                stopAutoSync()
+                startAutoSync()
             }
         }
     }
@@ -387,20 +378,44 @@ class SyncManager(
      * Obtiene estadísticas de sincronización
      */
     fun getSyncStats(): Map<String, Any> {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+
         return mapOf(
-            "device_id" to preferencesManager.deviceId,
-            "last_sync" to (preferencesManager.lastSync ?: "Never"),
-            "last_sync_hash" to (preferencesManager.lastSyncHash?.take(8) ?: "None"),
-            "sync_interval" to "${preferencesManager.syncInterval / 1000}s",
-            "is_sync_running" to (syncJob?.isActive == true)
+            "is_syncing" to isSyncing,
+            "sync_interval_seconds" to (syncInterval / 1000),
+            "last_sync" to if (lastSyncTime > 0) dateFormat.format(Date(lastSyncTime)) else "Never",
+            "last_sync_hash" to lastSyncHash,
+            "success_count" to syncSuccessCount,
+            "error_count" to syncErrorCount,
+            "success_rate" to if (syncSuccessCount + syncErrorCount > 0) {
+                (syncSuccessCount.toFloat() / (syncSuccessCount + syncErrorCount) * 100).toInt()
+            } else 0,
+            "next_sync_in_seconds" to if (syncJob?.isActive == true && lastSyncTime > 0) {
+                maxOf(0, (syncInterval - (System.currentTimeMillis() - lastSyncTime)) / 1000)
+            } else 0
         )
     }
 
     /**
-     * Limpia recursos al destruir
+     * Verifica si hay una sincronización en progreso
      */
-    fun shutdown() {
-        stopPeriodicSync()
+    fun isSyncInProgress(): Boolean = isSyncing
+
+    /**
+     * Obtiene el tiempo del último sync exitoso
+     */
+    fun getLastSyncTime(): Long = lastSyncTime
+
+    /**
+     * Obtiene el hash del último sync exitoso
+     */
+    fun getLastSyncHash(): String = lastSyncHash
+
+    /**
+     * Limpieza al destruir el manager
+     */
+    fun cleanup() {
+        stopAutoSync()
         syncScope.cancel()
     }
 }

@@ -210,4 +210,8 @@ object DeviceUtils {
         if (deviceId.length != Constants.DEVICE_ID_LENGTH) return false
         return deviceId.all { it.isDigit() || it in 'A'..'F' }
     }
+
+
+
+    
 }
