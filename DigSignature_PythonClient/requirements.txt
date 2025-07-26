@@ -1,6 +1,6 @@
 # PiSignage Device Simulator Requirements
 # Install with: pip install -r requirements.txt
-
+ 
 # Core GUI Framework
 PyQt6>=6.4.0
 
