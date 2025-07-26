@@ -3454,3 +3454,7 @@ INFO 2025-07-26 11:21:27,875 basehttp 13100 12440 "GET /static/admin/img/sorting
 INFO 2025-07-26 11:21:27,875 basehttp 13100 3904 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
 WARNING 2025-07-26 11:23:32,353 log 13100 15956 Bad Request: /players/api/register/
 WARNING 2025-07-26 11:23:32,354 basehttp 13100 15956 "POST /players/api/register/ HTTP/1.1" 400 87
+INFO 2025-07-26 15:59:15,113 autoreload 3356 14040 Watching for file changes with StatReloader
+INFO 2025-07-26 15:59:31,506 autoreload 20612 21436 Watching for file changes with StatReloader
+WARNING 2025-07-26 16:02:39,087 log 20612 19804 Bad Request: /players/api/register/
+WARNING 2025-07-26 16:02:39,088 basehttp 20612 19804 "POST /players/api/register/ HTTP/1.1" 400 87
