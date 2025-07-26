@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+
+    <!-- Incluir preferencias de la aplicación -->
+    <include domain="sharedpref" path="digital_signage_prefs.xml" />
+
+    <!-- Excluir cache de assets (muy grande) -->
+    <exclude domain="cache" path="digitalsignage/" />
+
+    <!-- Excluir logs temporales -->
+    <exclude domain="file" path="logs/" />
+
+    <!-- Excluir archivos temporales -->
+    <exclude domain="file" path="temp/" />
+
+</full-backup-content>

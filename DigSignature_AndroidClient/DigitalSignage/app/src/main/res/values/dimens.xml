@@ -1,0 +1,44 @@
+<!-- res/values/dimens.xml -->
+
+<resources>
+    <!-- Margins and Padding -->
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+
+    <!-- Button Dimensions -->
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button_height_large">48dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_large">14sp</dimen>
+    <dimen name="text_size_xlarge">16sp</dimen>
+
+    <!-- Log Overlay -->
+    <dimen name="log_overlay_width">300dp</dimen>
+    <dimen name="log_overlay_height">200dp</dimen>
+    <dimen name="log_line_spacing">2dp</dimen>
+
+    <!-- Status Indicators -->
+    <dimen name="status_indicator_padding">8dp</dimen>
+    <dimen name="kiosk_indicator_padding">4dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_low">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_high">8dp</dimen>
+
+    <!-- Border Radius -->
+    <dimen name="border_radius_small">2dp</dimen>
+    <dimen name="border_radius_medium">4dp</dimen>
+    <dimen name="border_radius_large">8dp</dimen>
+</resources>

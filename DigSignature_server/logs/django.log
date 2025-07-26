@@ -3421,3 +3421,36 @@ INFO 2025-07-25 18:59:04,254 basehttp 7044 10700 "POST /scheduling/api/v1/device
 INFO 2025-07-25 18:59:12,162 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
 INFO 2025-07-25 18:59:34,254 basehttp 7044 10700 "POST /scheduling/api/v1/device/check_server/ HTTP/1.1" 200 153
 INFO 2025-07-25 18:59:37,763 basehttp 7044 2236 "POST /players/api/logs/batch/ HTTP/1.1" 200 134
+INFO 2025-07-26 11:14:46,624 autoreload 13100 2796 Watching for file changes with StatReloader
+INFO 2025-07-26 11:19:47,946 basehttp 13100 17100 "POST /players/api/register/ HTTP/1.1" 200 250
+INFO 2025-07-26 11:21:22,765 basehttp 13100 12440 "GET /admin/ HTTP/1.1" 200 19852
+INFO 2025-07-26 11:21:22,816 basehttp 13100 12440 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,826 basehttp 13100 12440 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,826 basehttp 13100 13964 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,828 basehttp 13100 3904 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,828 basehttp 13100 9256 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,834 basehttp 13100 9256 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,843 basehttp 13100 9256 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,849 basehttp 13100 12440 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,850 basehttp 13100 9256 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,850 basehttp 13100 13964 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:22,850 basehttp 13100 3904 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+WARNING 2025-07-26 11:21:22,990 log 13100 3904 Not Found: /favicon.ico
+WARNING 2025-07-26 11:21:22,991 basehttp 13100 3904 "GET /favicon.ico HTTP/1.1" 404 4523
+INFO 2025-07-26 11:21:27,738 basehttp 13100 3904 "GET /admin/players/player/ HTTP/1.1" 200 23793
+INFO 2025-07-26 11:21:27,796 basehttp 13100 3904 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,811 basehttp 13100 13964 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,811 basehttp 13100 9256 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,811 basehttp 13100 12440 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,812 basehttp 13100 1676 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,812 basehttp 13100 19316 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,814 basehttp 13100 13964 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,816 basehttp 13100 9256 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,817 basehttp 13100 12440 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,822 basehttp 13100 12440 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,828 basehttp 13100 12440 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,843 basehttp 13100 3904 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-26 11:21:27,875 basehttp 13100 12440 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-07-26 11:21:27,875 basehttp 13100 3904 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+WARNING 2025-07-26 11:23:32,353 log 13100 15956 Bad Request: /players/api/register/
+WARNING 2025-07-26 11:23:32,354 basehttp 13100 15956 "POST /players/api/register/ HTTP/1.1" 400 87

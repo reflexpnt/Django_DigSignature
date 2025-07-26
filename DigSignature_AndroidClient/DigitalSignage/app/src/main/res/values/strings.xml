@@ -1,0 +1,50 @@
+<!-- res/values/strings.xml -->
+
+<resources>
+    <string name="app_name">DigitalSignage</string>
+
+    <!-- UI Strings -->
+    <string name="exit_kiosk">Exit Kiosk</string>
+    <string name="enter_kiosk">Enter Kiosk</string>
+    <string name="hide_log">Hide Log</string>
+    <string name="show_log">Show Log</string>
+    <string name="sync">Sync</string>
+    <string name="rotate">Rotate</string>
+    <string name="mute">Mute</string>
+    <string name="unmute">Unmute</string>
+    <string name="copy_log">Copy Log</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="debug">Debug</string>
+
+    <!-- Status Strings -->
+    <string name="kiosk_mode">🔒 KIOSK MODE</string>
+    <string name="syncing">⏳ Syncing...</string>
+    <string name="synced">✅ Synced</string>
+    <string name="sync_error">❌ Error</string>
+    <string name="up_to_date">✅ Up to date</string>
+
+    <!-- Messages -->
+    <string name="logs_copied">Logs copied to clipboard</string>
+    <string name="cache_cleared">Cache cleared successfully</string>
+    <string name="error_copying_logs">Error copying logs</string>
+    <string name="error_clearing_cache">Error clearing cache</string>
+    <string name="debug_info_logged">Debug info logged</string>
+
+    <!-- Device Info -->
+    <string name="device_id_format">ID: %1$s</string>
+    <string name="battery_format">🔋 %1$d%%</string>
+
+    <!-- Default Content -->
+    <string name="app_started_log">Digital Signage App Started\nLogs will appear here...</string>
+    <string name="device_id_placeholder">ID: ----</string>
+
+    <!-- Error Messages -->
+    <string name="registration_failed">Device registration failed</string>
+    <string name="sync_failed">Synchronization failed</string>
+    <string name="network_error">Network error</string>
+    <string name="server_offline">Server offline</string>
+
+    <!-- Admin Strings -->
+    <string name="device_admin_name">DigitalSignage Device Admin</string>
+    <string name="device_admin_description">Allows DigitalSignage to control device for kiosk mode</string>
+</resources>

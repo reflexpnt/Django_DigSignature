@@ -1,0 +1,31 @@
+<!-- res/xml/device_admin_policies.xml -->
+
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-policies>
+
+        <!-- Política para bloquear el dispositivo -->
+        <force-lock />
+
+        <!-- Política para limpiar datos (factory reset) -->
+        <wipe-data />
+
+        <!-- Política para resetear contraseña -->
+        <reset-password />
+
+        <!-- Política para establecer tiempo límite de bloqueo -->
+        <limit-password />
+
+        <!-- Política para observar intentos de contraseña -->
+        <watch-login />
+
+        <!-- Política para deshabilitar cámaras -->
+        <disable-camera />
+
+        <!-- Política para cifrado de almacenamiento -->
+        <encrypted-storage />
+
+        <!-- Política para deshabilitar apps -->
+        <disable-keyguard-features />
+
+    </uses-policies>
+</device-admin>

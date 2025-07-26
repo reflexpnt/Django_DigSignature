@@ -1,0 +1,56 @@
+<!-- res/values/colors.xml -->
+
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#FF000000</color>
+    <color name="colorPrimaryDark">#FF000000</color>
+    <color name="colorAccent">#FF4444FF</color>
+
+    <!-- Background Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+
+    <!-- Button Colors -->
+    <color name="button_kiosk_exit">#FFFF4444</color>
+    <color name="button_kiosk_enter">#FF44FF44</color>
+    <color name="button_log_hide">#FF4444FF</color>
+    <color name="button_log_show">#FF8888FF</color>
+    <color name="button_sync">#FF44FF44</color>
+    <color name="button_rotate">#FFFF8800</color>
+    <color name="button_mute">#FF8844FF</color>
+    <color name="button_unmute">#FFAA44FF</color>
+    <color name="button_copy">#FFFFAA00</color>
+    <color name="button_clear">#FFFF4488</color>
+    <color name="button_debug">#FF888888</color>
+
+    <!-- Status Colors -->
+    <color name="status_online">#FF00FF00</color>
+    <color name="status_syncing">#FFFFAA00</color>
+    <color name="status_error">#FFFF0000</color>
+    <color name="status_offline">#FF888888</color>
+
+    <!-- Battery Colors -->
+    <color name="battery_high">#FF00FF00</color>
+    <color name="battery_medium">#FFFFAA00</color>
+    <color name="battery_low">#FFFF0000</color>
+
+    <!-- Log Colors -->
+    <color name="log_background">#CC000000</color>
+    <color name="log_text">#FF00FF00</color>
+    <color name="log_text_error">#FFFF0000</color>
+    <color name="log_text_warning">#FFFFAA00</color>
+    <color name="log_text_info">#FF00AAFF</color>
+
+    <!-- UI Overlay Colors -->
+    <color name="overlay_background">#80000000</color>
+    <color name="kiosk_indicator_background">#80FF0000</color>
+    <color name="status_indicator_background">#80000000</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFCCCCCC</color>
+    <color name="text_accent">#FF4444FF</color>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Cache directory para assets temporales -->
+    <cache-path
+        name="cache"
+        path="." />
+
+    <!-- Cache directory específico para DigitalSignage -->
+    <cache-path
+        name="digitalsignage_cache"
+        path="digitalsignage/" />
+
+    <!-- Assets de video -->
+    <cache-path
+        name="videos"
+        path="digitalsignage/videos/" />
+
+    <!-- Assets de imágenes -->
+    <cache-path
+        name="images"
+        path="digitalsignage/images/" />
+
+    <!-- Assets de HTML -->
+    <cache-path
+        name="html"
+        path="digitalsignage/html/" />
+
+    <!-- Assets generales -->
+    <cache-path
+        name="assets"
+        path="digitalsignage/assets/" />
+
+    <!-- Directorio interno de archivos -->
+    <files-path
+        name="internal_files"
+        path="." />
+
+    <!-- Logs exportables -->
+    <files-path
+        name="logs"
+        path="logs/" />
+
+    <!-- Directorio externo (si está disponible) -->
+    <external-path
+        name="external"
+        path="." />
+
+    <!-- Directorio externo específico para la app -->
+    <external-files-path
+        name="external_files"
+        path="." />
+
+    <!-- Media externa -->
+    <external-media-path
+        name="external_media"
+        path="." />
+
+</paths>

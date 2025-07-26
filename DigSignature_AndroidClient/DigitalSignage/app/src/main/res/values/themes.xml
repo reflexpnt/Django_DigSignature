@@ -1,0 +1,49 @@
+<!-- res/values/themes.xml -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.DigitalSignage" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/black</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+
+        <!-- No title bar -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!-- Fullscreen theme for MainActivity -->
+    <style name="Theme.DigitalSignage.Fullscreen" parent="Theme.DigitalSignage">
+        <!-- Fullscreen configuration -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- Hide system UI -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+        <!-- Layout configuration -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="p">shortEdges</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Keep screen on -->
+        <item name="android:keepScreenOn">true</item>
+
+        <!-- Kiosk mode optimizations -->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+</resources>
